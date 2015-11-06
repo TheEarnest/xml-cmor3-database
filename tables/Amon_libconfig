@@ -1,0 +1,31 @@
+table_id: "Table Amon"	
+modeling_realm: "atmos"	
+
+frequency:  "mon"	
+
+cmor_version: 2.6	# minimum version of CMOR that can read this table
+cf_version:   1.4	# version of CF that output conforms to
+project_id:   "CMIP5"	# project id
+table_date:   "17 July 2013"	# date this table was constructed
+
+missing_value: 1.e20	# value used to indicate a missing value
+                          #   in arrays output by netCDF as 32-bit IEEE 
+                          #   floating-point numbers (float or real)
+
+baseURL: "http://cmip-pcmdi.llnl.gov/CMIP5/dataLocation"	
+product: "output"	
+
+required_global_attributes: [ "creation_date","tracking_id","forcing","model_id","parent_experiment_id","parent_experiment_rip","branch_time","contact","institute_id" ]	# space separated required global attribute 
+
+forcings:   "N/A Nat Ant GHG SD SI SA TO SO Oz LU Sl Vl SS Ds BC MD OC AA"	
+
+approx_interval:  30.000000	# approximate spacing between successive time
+                          #   samples (in units of the output time 
+                          #   coordinate.
+
+generic_levels:   "alevel alevhalf"	
+
+@include "../tables/expt_ids_libconfig"
+@include "../tables/axis_entries_libconfig"
+@include "../tables/variable_entries_libconfig"
+

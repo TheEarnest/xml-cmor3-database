@@ -2,11 +2,10 @@
 
 #sqlite> select DISTINCT vg.label from requestVar vg, requestVarGroup rvg, requestItem ri, requestlink rl where  ri.mip="GeoMIP" and ri.rlid==rl.uid and rl.refid=rvg.uid and vg.vid=rvg.uid;
 import sqlite3
-#import dreq
-#import collections, string
-#import scope
 import pdb
 import xml.etree.ElementTree as ET
+import pylibconfig2 as cfg
+#https://github.com/heinzK1X/pylibconfig2
 
 
 
@@ -27,6 +26,7 @@ c.execute("""drop table if exists requestItem""")
 c.execute("""drop table if exists experiment""")
 c.execute("""drop table if exists exptgroup""")
 c.execute("""drop table if exists MIP""")
+c.execute("""drop table if exists axisEntry""")
 
 conn.commit()
 print "Create Tables"
@@ -175,6 +175,22 @@ c.execute(""" create table MIP (
         title text, 
         uid text,
         url text)""")
+
+c.execute(""" create table axisEntry (
+    alternate_hybrid_sigma text, 
+    axis_entries text, 
+    height10m text, 
+    height2m text, 
+    hybrid_height text, 
+    latitude text, 
+    longitude text, 
+    natural_log_pressure text, 
+    plevs text, 
+    smooth_level text, 
+    standard_hybrid_sigma text, 
+    standard_sigma text, 
+    time text, 
+    time2 text)""")
 
 # -----------------------------------
 # Read in database and set namespace
@@ -545,4 +561,64 @@ for child in MIP.getchildren():
 	conn.commit()
 
 c.close()
+
+
+cmor2=cfg.Config()
+cmor2.read_file("../tables/Amon_libconfig")
+pdb.set_trace()
+for axis in cmor2.axis_entries.keys():
+    alternate_hybrid_sigma = ""
+    axis_entries           = ""
+    height10m              = ""
+    height2m               = ""
+    hybrid_height          = ""
+    latitude               = ""
+    longitude              = ""
+    natural_log_pressure   = ""
+    plevs                  = ""
+    smooth_level           = ""
+    standard_hybrid_sigma  = ""
+    standard_sigma         = ""
+    time                   = ""
+    time2                  = ""
+
+
+    alternate_hybrid_sigma = axis.alternate_hybrid_sigma or ""
+    axis_entries           = axis.axis_entries or ""
+    height10m              = axis.height10m or ""
+    height2m               = axis.height2m or ""
+    hybrid_height          = axis.hybrid_height or ""
+    latitude               = axis.latitude or ""
+    longitude              = axislongitude or ""
+    natural_log_pressure   = axis.natural_log_pressure or ""
+    plevs                  = axis.plevs or ""
+    smooth_level           = axis.smooth_level or ""
+    standard_hybrid_sigma  = axis.standard_hybrid_sigma or ""
+    standard_sigma         = axis.standard_sigma or ""
+    time                   = axis.time or ""
+    time2                  = axis.time2 or ""
+
+    cmd = """ insert into axis_entry value ("""+ \
+          "'" + alternate_hybrid_sigma + "'" + """, """ \
+          "'" + axis_entries           + "'" + """, """ \
+          "'" + height10m              + "'" + """, """ \
+          "'" + height2m               + "'" + """, """ \
+          "'" + hybrid_height          + "'" + """, """ \
+          "'" + latitude               + "'" + """, """ \
+          "'" + longitude              + "'" + """, """ \
+          "'" + natural_log_pressure   + "'" + """, """ \
+          "'" + plevs                  + "'" + """, """ \
+          "'" + smooth_level           + "'" + """, """ \
+          "'" + standard_hybrid_sigma  + "'" + """, """ \
+          "'" + standard_sigma         + "'" + """, """ \
+          "'" + time                   + "'" + """, """ \
+          "'" + time2                  + "'" + """) """ 
+
+    c.execute(cmd)
+    conn.commit()
+
+c.close()
+
+pdb.set_trace()
+
 

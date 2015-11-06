@@ -1,0 +1,351 @@
+#!!!!!!!!!!!!
+axis_entries:{  
+#!!!!!!!!!!!!
+
+#============
+longitude: {
+#============
+#----------------------------------
+# Axis attributes:
+#----------------------------------
+  standard_name:    "longitude"	
+  units:            "degrees_east"	
+  axis:             "X"	# X, Y, Z, T (default: undeclared)
+  long_name:        "longitude"	
+#----------------------------------
+# Additional axis information:
+#----------------------------------
+  out_name:         "lon"	
+  valid_min:        0.0	
+  valid_max:        360.0	
+  stored_direction: "increasing"	
+  type:             "double"	
+  must_have_bounds: "yes"	
+} 
+#----------------------------------
+#
+#============
+latitude: {
+#============
+#----------------------------------
+# Axis attributes:
+#----------------------------------
+  standard_name:    "latitude"	
+  units:            "degrees_north"	
+  axis:             "Y"	# X, Y, Z, T (default: undeclared)
+  long_name:        "latitude"	
+#----------------------------------
+# Additional axis information:
+#----------------------------------
+  out_name:         "lat"	
+  valid_min:        -90.0	
+  valid_max:        90.0	
+  stored_direction: "increasing"	
+  type:             "double"	
+  must_have_bounds: "yes"	
+} 
+#----------------------------------
+#
+#============
+plevs: {
+#============
+#----------------------------------
+# Axis attributes:
+#----------------------------------
+  standard_name:    "air_pressure"	
+  units:            "Pa"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "down"	# up or down (default: undeclared)
+  long_name:        "pressure"	
+#----------------------------------
+# Additional axis information:
+#----------------------------------
+  out_name:         "plev"	
+  stored_direction: "decreasing"	
+  tolerance:        0.001	
+  type:             "double"	
+  requested:        [ "100000.","92500.","85000.","70000.","60000.","50000.","40000.","30000.","25000.","20000.","15000.","10000.","7000.","5000.","3000.","2000.","1000." ]	# space-separated list of requested coordinates 
+  must_have_bounds: "no"	
+} 
+#----------------------------------
+#
+#============
+time: {
+#============
+#----------------------------------
+# Axis attributes:
+#----------------------------------
+  standard_name:    "time"	
+  units:            "days since ?"	
+  axis:             "T"	# X, Y, Z, T (default: undeclared)
+  long_name:        "time"	
+#----------------------------------
+# Additional axis information:
+#----------------------------------
+  out_name:         "time"	
+  stored_direction: "increasing"	
+  type:             "double"	
+  must_have_bounds: "yes"	
+} 
+#----------------------------------
+#
+#============
+time2: {
+#============
+#----------------------------------
+# Axis attributes:
+#----------------------------------
+  standard_name:    "time"	
+  units:            "days since ?"	
+  axis:             "T"	# X, Y, Z, T (default: undeclared)
+  long_name:        "time"	
+#----------------------------------
+# Additional axis information:
+#----------------------------------
+  out_name:         "time"	
+  stored_direction: "increasing"	
+  type:             "double"	
+  must_have_bounds: "yes"	
+  climatology:      "yes"	
+} 
+#----------------------------------
+#
+#============
+height2m: {
+#============
+#----------------------------------
+# Axis attributes:
+#----------------------------------
+  standard_name:    "height"	
+  units:            "m"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "up"	# up or down (default: undeclared)
+  long_name:        "height"	
+#----------------------------------
+# Additional axis information:
+#----------------------------------
+  out_name:         "height"	
+  valid_min:        1.0	
+  valid_max:        10.0	
+  stored_direction: "increasing"	
+  type:             "double"	
+  value:            2.	# of scalar (singleton) dimension 
+  must_have_bounds: "no"	
+} 
+#----------------------------------
+#
+#============
+height10m: {
+#============
+#----------------------------------
+# Axis attributes:
+#----------------------------------
+  standard_name:    "height"	
+  units:            "m"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "up"	# up or down (default: undeclared)
+  long_name:        "height"	
+#----------------------------------
+# Additional axis information:
+#----------------------------------
+  out_name:         "height"	
+  valid_min:        1.0	
+  valid_max:        30.0	
+  stored_direction: "increasing"	
+  type:             "double"	
+  value:            10.	# of scalar (singleton) dimension 
+  must_have_bounds: "no"	
+} 
+#----------------------------------
+#
+#============
+smooth_level: {
+#============
+#
+# This coordinate is a hybrid height coordinate with units of meters (m).
+#  It increases upward.
+#  The values of a(k)*ztop, which appear in the formula below, should be stored as smooth_level. 
+#  Note that in the netCDF file the variable will be named "lev", not smooth_level.
+#
+#------------
+#
+# Axis attributes:
+#----------------------------------	
+  standard_name:    "atmosphere_sleve_coordinate"	
+  units:            "m"	
+  axis:             "Z"	
+  positive:"	      up"	
+  long_name:        "atmosphere smooth level vertical (SLEVE) coordinate"	
+#----------------------------------	
+#
+# Additional axis information:
+#----------------------------------	
+  out_name:         "lev"	
+  must_have_bounds: "yes"	
+  stored_direction: "increasing"	
+  valid_min:        -200.	
+  valid_max:        800000.	
+  formula:          "z = a*ztop + b1*zsurf1 + b2*zsurf2"	
+  z_factors:        "a: a b1: b1 b2: b2 ztop: ztop zsurf1: zsurf1 zsurf2: zsurf2"	
+  z_bounds_factors: "a: a_bnds b1: b1_bnds b2: b2_bnds ztop: ztop zsurf1: zsurf1 zsurf2: zsurf2"	
+} 
+#----------------------------------	
+#
+#============
+natural_log_pressure: {
+#============
+#
+#This coordinate is dimensionless and varies from near 0 at the surface and increases upward.
+#  The values of lev(k), which appears in the formula below, should be stored as natural_log_pressure.  
+#  Note that in the netCDF file the variable will be named "lev", not natural_log_pressure.
+#
+#------------
+#
+# Axis attributes:
+#----------------------------------	
+  standard_name:    "atmosphere_ln_pressure_coordinate"	
+  axis:             "Z"	
+  long_name:        "atmosphere natural log pressure coordinate"	
+  positive:"	      down"	
+#----------------------------------	
+#
+# Additional axis information:
+#----------------------------------	
+  out_name:         "lev"	
+  must_have_bounds: "yes"	
+  stored_direction: "decreasing"	
+  valid_min:        -1.	
+  valid_max:        20.	
+  formula:          "p = p0 * exp(-lev)"	
+  z_factors:        "p0: p0 lev: lev"	
+  z_bounds_factors: "p0: p0 lev: lev_bnds"	
+} 
+#----------------------------------	
+#
+#============
+standard_sigma: {
+#============
+#
+# This coordinate is dimensionless and varies from 0 at the model top to 1.0 at the surface.
+#  The values of sigma(k), which appears in the formula below, should be stored as standard_sigma.  
+#  Note that in the netCDF file the variable will be named "lev", not standard_sigma.
+#
+#------------
+#
+# Axis attributes:
+#----------------------------------	
+  standard_name:    "atmosphere_sigma_coordinate"	
+  axis:             "Z"	
+  positive:         "down"	
+  long_name:        "sigma coordinate"	
+#----------------------------------	
+#
+# Additional axis information:
+#----------------------------------	
+  out_name:         "lev"	
+  must_have_bounds: "yes"	
+  stored_direction: "decreasing"	
+  valid_min:        0.0	
+  valid_max:        1.0	
+  formula:          "p = ptop + sigma*(ps - ptop)"	
+  z_factors:        "ptop: ptop sigma: lev ps: ps"	
+  z_bounds_factors: "ptop: ptop sigma: lev_bnds ps: ps"	
+} 
+#----------------------------------	
+#
+#
+#============
+standard_hybrid_sigma: {
+#============
+#
+# This coordinate is dimensionless and varies from a small value at the model top to 1.0 at the surface.
+#  The values of a+ b, which appear in the formula below, should be stored as standard_hybrid_sigma.  
+#  Note that in the netCDF file the variable will be named "lev", not standard_hybrid_sigma.
+#
+#---------------------------------
+# Axis attributes:
+#----------------------------------	
+  standard_name:    "atmosphere_hybrid_sigma_pressure_coordinate"	
+  units:            "1"	
+  axis:             "Z"	
+  positive:         "down"	
+  long_name:        "hybrid sigma pressure coordinate"	
+#----------------------------------
+# Additional axis information:
+#----------------------------------	
+  out_name:         "lev"	
+  must_have_bounds: "yes"	
+  stored_direction: "decreasing"	
+  valid_min:        0.0	
+  valid_max:        1.0	
+  formula:          "p = a*p0 + b*ps"	
+  z_factors:        "p0: p0 a: a b: b ps: ps"	
+  z_bounds_factors: "p0: p0 a: a_bnds b: b_bnds ps: ps"	
+} 
+#----------------------------------		
+#
+#
+#============
+alternate_hybrid_sigma: {
+#============
+#
+# This coordinate is dimensionless and varies from a small value at the model top to 1.0 at the surface.
+#  The values of ap/p0 + b, which appear in the formula below, should be stored as alternate_hybrid_sigma.  
+#  Note that in the netCDF file the variable will be named "lev", not alternate_hybrid_sigma.
+#
+#------------
+#
+# Axis attributes:
+#----------------------------------	
+  standard_name:    "atmosphere_hybrid_sigma_pressure_coordinate"	
+  units:            "1"	
+  axis:             "Z"	
+  positive:         "down"	
+  long_name:        "hybrid sigma pressure coordinate"	
+#----------------------------------	
+#
+# Additional axis information:
+#----------------------------------	
+  out_name:         "lev"	
+  must_have_bounds: "yes"	
+  stored_direction: "decreasing"	
+  valid_min:        0.0	
+  valid_max:        1.0	
+  formula:          "p = ap + b*ps"	
+  z_factors:        "ap: ap b: b ps: ps"	
+  z_bounds_factors: "ap: ap_bnds b: b_bnds ps: ps"	
+} 
+#----------------------------------		
+#
+#
+#============
+hybrid_height: {
+#============
+#
+# This coordinate has dimension of meters (m) and increases upward.
+#  The values of a which appear in the formula below, should be stored as hybrid_height.  
+#  Note that in the netCDF file the variable will be named "lev", not hybrid_height.
+#
+#------------
+#
+# Axis attributes:
+#----------------------------------	
+  standard_name:    "atmosphere_hybrid_height_coordinate"	
+  units:            "m"	
+  axis:             "Z"	
+  positive:         "up"	
+  long_name:        "hybrid height coordinate"	
+#----------------------------------	
+#
+# Additional axis information:
+#----------------------------------	
+  out_name:         "lev"	
+  must_have_bounds: "yes"	
+  stored_direction: "increasing"	
+  valid_min:        0.0	
+  formula:          "z = a + b*orog"	
+  z_factors:        "a: lev b: b orog: orog"	
+  z_bounds_factors: "a: lev_bnds b: b_bnds orog: orog"	
+} 
+
+}   # Close Axis_entries
