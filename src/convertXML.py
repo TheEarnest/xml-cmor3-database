@@ -617,6 +617,26 @@ for axis in cmor2.axis_entries.keys():
     c.execute(cmd)
     conn.commit()
 
+#  axis
+#  climatology
+#  formula
+#  long_name
+#  must_have_bounds
+#  out_name
+#  positive
+#  requested
+#  standard_name
+#  stored_direction
+#  tolerance
+#  type
+#  units
+#  valid_max
+#  valid_min
+#  value
+#  z_bounds_factors
+#  z_factors
+
+
 c.close()
 
 pdb.set_trace()
