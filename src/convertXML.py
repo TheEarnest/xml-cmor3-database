@@ -176,21 +176,28 @@ c.execute(""" create table MIP (
         uid text,
         url text)""")
 
+
 c.execute(""" create table axisEntry (
-    alternate_hybrid_sigma text, 
-    axis_entries text, 
-    height10m text, 
-    height2m text, 
-    hybrid_height text, 
-    latitude text, 
-    longitude text, 
-    natural_log_pressure text, 
-    plevs text, 
-    smooth_level text, 
-    standard_hybrid_sigma text, 
-    standard_sigma text, 
-    time text, 
-    time2 text)""")
+name text,
+axis text,
+climatology text,
+formula text,
+long_name text,
+must_have_bounds text,
+out_name text,
+positive text,
+requested text,
+standard_name text,
+stored_direction text,
+tolerance text,
+type text,
+units text,
+valid_max text,
+valid_min text,
+value text,
+z_bounds_factors text,
+z_factors text)""")
+
 
 # -----------------------------------
 # Read in database and set namespace
@@ -567,6 +574,8 @@ cmor2=cfg.Config()
 cmor2.read_file("../tables/Amon_libconfig")
 pdb.set_trace()
 for axis in cmor2.axis_entries.keys():
+    for item in cmor2.axis_entries.__getattribute__(axis).keys():
+        print item
     alternate_hybrid_sigma = ""
     axis_entries           = ""
     height10m              = ""
