@@ -1,9 +1,12 @@
 #!/bin/env python
 import sqlite3
 import json
-conn = sqlite3.connect('/tmp/CMIP6')
+conn = sqlite3.connect('./CMIP6.sql3')
 c = conn.cursor()
 
+# =======================================================================
+#                               getMIPs()                             
+# =======================================================================
 def getMIPs():
     '''
     Extract all MIPs
@@ -13,6 +16,9 @@ def getMIPs():
     MIPS=c.fetchall()
     return MIPS
 
+# =======================================================================
+#                        getExperimetnGroups()
+# =======================================================================
 def getExperimentGroups(MIP):
     '''
     Retrieve Experiment Groups and Experiments requested by a MIP
@@ -28,7 +34,9 @@ def getExperimentGroups(MIP):
     c.execute(cmd)
     ExptGroups = c.fetchall()
     return ExptGroups
-
+# =======================================================================
+#                    getExperimentGroupUID()
+# =======================================================================
 def getExperimentGroupUID(Label):
     '''
     Retrive Experiment Group UID from Label
@@ -41,6 +49,9 @@ def getExperimentGroupUID(Label):
     ExptGroupUID = c.fetchall()
     return ExptGroupUID[0][0]
 
+# =======================================================================
+#                    getExperimentGroupLabel()
+# =======================================================================
 def getExperimentGroupLabel(exptGroupUID):
     '''
     Retrieve Experiment Groups Label
@@ -53,6 +64,9 @@ def getExperimentGroupLabel(exptGroupUID):
     ExptGroupLabel = c.fetchall()
     return ExptGroupLabel[0][0]
 
+# =======================================================================
+#                        getExperimentLabel()
+# =======================================================================
 def getExperimentLabel(experimentUID):
     '''
     Retrieve Experiment Label
@@ -65,6 +79,9 @@ def getExperimentLabel(experimentUID):
     ExptGroupLabel = c.fetchall()
     return ExptGroupLabel[0][0]
 
+# =======================================================================
+#                           getExperimentUID()
+# =======================================================================
 def getExperimentUID(experimentLabel):
     '''
     Retrieve Experiment Identifier
@@ -78,6 +95,9 @@ def getExperimentUID(experimentLabel):
     return ExptGroupUID[0][0]
 
 
+# =======================================================================
+#                getExperimentsbyExptGroupID()
+# =======================================================================
 def getExperimentsbyExptGroupID(exptGroupUID,MIP):
     '''
     Retrieve experiments from an experiment group ID.
@@ -98,6 +118,9 @@ def getExperimentsbyExptGroupID(exptGroupUID,MIP):
     Experiments= c.fetchall()
     return Experiments
 
+# =======================================================================
+#               getExperimentsbyExptGroupLabel()
+# =======================================================================
 def getExperimentsbyExptGroupLabel(exptGrpLabel,MIP):
     '''
     Retrieve experiments from an experiment group Label.
@@ -118,6 +141,9 @@ def getExperimentsbyExptGroupLabel(exptGrpLabel,MIP):
     Experiments= c.fetchall()
     return Experiments
 
+# =======================================================================
+#                                getGrid()
+# =======================================================================
 def getGrid(structureID):
     '''
     Retrieve structure grid from stid
@@ -127,6 +153,9 @@ def getGrid(structureID):
     data=c.fetchone()
     return data        
 
+# =======================================================================
+#                              getSpatialShape()
+# =======================================================================
 def getSpatialShape(spatialID):
     '''
     Retrieve XYZ grid from spatialShape table
@@ -141,6 +170,9 @@ def getSpatialShape(spatialID):
     spatial=c.fetchone()
     return spatial
 
+# =======================================================================
+#                              getTemporalShape()
+# =======================================================================
 def getTemporalShape(spatialID):
     '''
     Retrieve time dimension from temporalShape table
@@ -155,6 +187,9 @@ def getTemporalShape(spatialID):
     temporal=c.fetchone()
     return temporal
 
+# =======================================================================
+#                             getVariables()
+# =======================================================================
 def getVariables(MIP,exptGroupLabel,experimentLabel):
     '''
     Get all variables requested by an experiment group
@@ -195,6 +230,9 @@ def getVariables(MIP,exptGroupLabel,experimentLabel):
     variables = c.fetchall()
     return variables
 
+# =======================================================================
+#                   convertVarStructureToDictionary()
+# =======================================================================
 def convertVarStructureToDictionary(variable):
     '''
        Take a variable query result and convert it to a dictionary
@@ -214,54 +252,69 @@ def convertVarStructureToDictionary(variable):
              }
     return varDict
 
-MIPs = getMIPs();
-cmor3Table={}
-cmor3Table['MIPs'] = {}
-for MIP in MIPs:
-    cmor3Table['MIPs'][MIP[0]] = {}
-    cmor3Table['MIPs'][MIP[0]]['experimentGroups'] = {}
-    exptGroups = getExperimentGroups(MIP[0])
-    for exptGroup in exptGroups:
-        exptGroupLabel =  getExperimentGroupLabel(exptGroup[0])
-        cmor3Table['MIPs'][MIP[0]]['experimentGroups'][exptGroupLabel] = {}
-        cmor3Table['MIPs'][MIP[0]]['experimentGroups'][exptGroupLabel]['experiments'] = {}
-        experimentsDict = cmor3Table['MIPs'][MIP[0]]['experimentGroups'][exptGroupLabel]['experiments'] 
-        experiments =  getExperimentsbyExptGroupID(exptGroup[0],MIP[0])
-        for experiment in experiments:
-            experimentLabel =  getExperimentLabel(experiment[0])
-            experimentsDict[experimentLabel]= {}
-            experimentsDict[experimentLabel]['variables'] = {}
-            variablesDict=experimentsDict[experimentLabel]['variables'] 
-            variables=getVariables(MIP[0],exptGroupLabel,experimentLabel)
-	    for variable in variables:
-                grid = getGrid(variable[0])
-                spatialShape = getSpatialShape(grid[0])
-                temporalShape = getTemporalShape(grid[1])
-                varDict = convertVarStructureToDictionary(variable)
-		# Print Report
-		# ----------------------
-                variablesDict[varDict['label']] = {}
-                currentVarDict=variablesDict[varDict['label']]
-                currentVarDict['frequency']         = varDict['frequency']
-                currentVarDict['mipTable']          = varDict['mipTable']
-                currentVarDict['modeling_realm']    = varDict['modeling_realm']
-                currentVarDict['ok_max_mean_abs']   = varDict['ok_max_mean_abs']
-                currentVarDict['ok_min_mean_abs']   = varDict['ok_min_mean_abs']
-                currentVarDict['positive']          = varDict['positive']
-                currentVarDict['valid_max']         = varDict['valid_max']
-                currentVarDict['valid_min']         = varDict['valid_min']
-                currentVarDict['cell_measures']     = grid[2]
-                currentVarDict['cell_methods']      = grid[3]
-                currentVarDict['dimensions']        = spatialShape[0]
-                currentVarDict['levelFlag']         = spatialShape[1]
-                currentVarDict['levels']            = spatialShape[2]
-                currentVarDict['timeDimension']     = temporalShape[0]
-                currentVarDict['timeLabel']         = temporalShape[1]
-c.close()
-print json.dumps(cmor3Table, indent=4)
+# =======================================================================
+#                               QueryAmon()
+# =======================================================================
+def QueryAmon(MIP):
+    '''
+    '''
+    pass 
 
-    # ----------------------
-    # Extract all variables
-    # ----------------------
-#select DISTINCT eg.label,ex.label from requestItem ri, experiment ex, exptGroup eg where ex.mip='CFMIP' and eg.uid=ex.egid and eg.uid=ri.esid order by eg.label;^C
+# =======================================================================
+#                                QueryAll()
+# =======================================================================
+def QueryAll():
+    '''
+       Query all MIPS ExperimentGroups experiments and variables
+    '''
+    MIPs = getMIPs();
+    cmor3Table={}
+    cmor3Table['MIPs'] = {}
+    for MIP in MIPs:
+        cmor3Table['MIPs'][MIP[0]] = {}
+        cmor3Table['MIPs'][MIP[0]]['experimentGroups'] = {}
+        exptGroups = getExperimentGroups(MIP[0])
+        for exptGroup in exptGroups:
+            exptGroupLabel =  getExperimentGroupLabel(exptGroup[0])
+            cmor3Table['MIPs'][MIP[0]]['experimentGroups'][exptGroupLabel] = {}
+            cmor3Table['MIPs'][MIP[0]]['experimentGroups'][exptGroupLabel]['experiments'] = {}
+            experimentsDict = cmor3Table['MIPs'][MIP[0]]['experimentGroups'][exptGroupLabel]['experiments'] 
+            experiments =  getExperimentsbyExptGroupID(exptGroup[0],MIP[0])
+            for experiment in experiments:
+                experimentLabel =  getExperimentLabel(experiment[0])
+                experimentsDict[experimentLabel]= {}
+                experimentsDict[experimentLabel]['variables'] = {}
+                variablesDict=experimentsDict[experimentLabel]['variables'] 
+                variables=getVariables(MIP[0],exptGroupLabel,experimentLabel)
+            for variable in variables:
+                    grid = getGrid(variable[0])
+                    spatialShape = getSpatialShape(grid[0])
+                    temporalShape = getTemporalShape(grid[1])
+                    varDict = convertVarStructureToDictionary(variable)
+            # Print Report
+            # ----------------------
+                    variablesDict[varDict['label']] = {}
+                    currentVarDict=variablesDict[varDict['label']]
+                    currentVarDict['frequency']         = varDict['frequency']
+                    currentVarDict['mipTable']          = varDict['mipTable']
+                    currentVarDict['modeling_realm']    = varDict['modeling_realm']
+                    currentVarDict['ok_max_mean_abs']   = varDict['ok_max_mean_abs']
+                    currentVarDict['ok_min_mean_abs']   = varDict['ok_min_mean_abs']
+                    currentVarDict['positive']          = varDict['positive']
+                    currentVarDict['valid_max']         = varDict['valid_max']
+                    currentVarDict['valid_min']         = varDict['valid_min']
+                    currentVarDict['cell_measures']     = grid[2]
+                    currentVarDict['cell_methods']      = grid[3]
+                    currentVarDict['dimensions']        = spatialShape[0]
+                    currentVarDict['levelFlag']         = spatialShape[1]
+                    currentVarDict['levels']            = spatialShape[2]
+                    currentVarDict['timeDimension']     = temporalShape[0]
+                    currentVarDict['timeLabel']         = temporalShape[1]
+    c.close()
+    print json.dumps(cmor3Table, indent=4)
+
+        # ----------------------
+        # Extract all variables
+        # ----------------------
+    #select DISTINCT eg.label,ex.label from requestItem ri, experiment ex, exptGroup eg where ex.mip='CFMIP' and eg.uid=ex.egid and eg.uid=ri.esid order by eg.label;^C
 
