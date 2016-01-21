@@ -422,8 +422,8 @@ class CMOR3Table:
                         tolerance,
                         type,
                         units,
-                        valid_max,
                         valid_min,
+                        valid_max,
                         value,
                         z_bounds_factors,
                         z_factors

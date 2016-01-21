@@ -48,7 +48,7 @@ def createHeader(realm="Amon",bJSON=True):
     Header = replaceString( Header, tableDate,      "tableDate" )
     Header = replaceString( Header, missingValue,   "missingValue" )
     Header = replaceString( Header, approxInterval, "approxInterval" )
-    Header = replaceString( Header, realm, "table" )
+    Header = replaceString( Header, realm,          "table" )
     Header = replaceString( Header, genericLevels, "generic_levels" )
     Header = Header.replace("<modeling_realm>",varSQL[0][3])
     Header = Header.replace("<frequency>",varSQL[0][1])
@@ -128,6 +128,11 @@ def createFormulaVar(bJSON=True):
 
     for entry in formulaVars:
         fvar = list(entry)
+        # ----------------------------------------------- 
+        # Add double quote for JSON if dimension is empty
+        # ----------------------------------------------- 
+        if( fvar[3] == "" ):
+            fvar[3] = "\"\"" 
         if( bJSON ):
             var_entry = var_entry + CMOR3Template.FormulaVarTemplateJSON
         else:
@@ -136,7 +141,7 @@ def createFormulaVar(bJSON=True):
         var_entry = replaceString(var_entry, fvar[0], "variable_entry")
         var_entry = replaceString(var_entry, fvar[1], "long_name")
         var_entry = replaceString(var_entry, fvar[2], "type")
-        var_entry = replaceString(var_entry, fvar[3], "dimensions")
+        var_entry = replaceString(var_entry, fvar[3].strip(), "dimensions")
         var_entry = replaceString(var_entry, fvar[4], "units")
 
 #    if( bJSON ):
@@ -150,10 +155,6 @@ def createVariables(bJSON=True):
     """
     Define All Variables 
     """
-#    if( bJSON ):
-#        var_entry = "\"variable_entry\": {"
-#    else:
-#        var_entry = ""
 
     var_entry =  createFormulaVar(bJSON)
 
@@ -179,15 +180,15 @@ def createVariables(bJSON=True):
         var_entry = replaceString(var_entry, var[17], "long_name")
         var_entry = replaceString(var_entry, var[16].replace('"','\''), "comment")
         var_entry = replaceString(var_entry, var[6],  "positive")
-        var_entry = replaceString(var_entry, var[8],  "valid_min")
-        var_entry = replaceString(var_entry, var[7],  "valid_max")
+        var_entry = replaceString(var_entry, var[7],  "valid_min")
+        var_entry = replaceString(var_entry, var[8],  "valid_max")
         var_entry = replaceString(var_entry, var[5],  "ok_min_mean_abs")
         var_entry = replaceString(var_entry, var[4],  "ok_max_mean_abs")
 
         var_entry = var_entry.replace("<dimensions>",
-                                      var[9].replace("|"," ")+
+                                      (var[9].replace("|"," ")+
                                       " " +
-                                      var[10].replace("|"," "))
+                                      var[10].replace("|"," ")).strip(" "))
         
         var_entry = var_entry.replace("<outname>",var[0])
         var_entry = var_entry.replace("<type>",var[15])
@@ -224,7 +225,7 @@ def main(argv):
     realm="Amon"
     bJSON=False
     try:
-        opts, args = getopt.getopt(argv,"hr:j",["realm="])
+        opts, args = getopt.getopt(argv,"hr:j",["realm=","JSON="])
     except getopt.GetoptError:
         print 'CMORCreateTable.py -r <realm> -j'
         sys.exit(2)
@@ -234,7 +235,7 @@ def main(argv):
             sys.exit()
         elif opt in ("-r", "--realm"):
             realm = arg
-        elif opt in ("-j", "--bJSON"):
+        elif opt in ("-j", "--JSON"):
             bJSON = True
 
     vars = cursor.getVarFromMipTable(realm,'MIP')
