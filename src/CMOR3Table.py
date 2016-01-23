@@ -336,6 +336,58 @@ class CMOR3Table:
         return variables    
 
     # -------------------------------------------------------------------- 
+    #      getAxesGrids()
+    # -------------------------------------------------------------------- 
+    def getAxesGrids(self):
+        '''
+        Return all axes for CMIP grids table
+        '''
+        cmd=""" select ae.name,
+                       ae.axis,
+                       ae.long_name,
+                       ae.out_name,
+                       ae.standard_name,
+                       ae.type,
+                       ae.units,
+                       ae.valid_min,
+                       ae.valid_max
+                from axisEntry ae
+                where isGrid = 'yes';"""
+
+        self.c.execute(cmd)
+        axes = self.c.fetchall()
+
+        return axes
+
+    # -------------------------------------------------------------------- 
+    #      getVarGrids()
+    # -------------------------------------------------------------------- 
+    def getVarGrids(self):
+        '''
+        Return all variables for CMIP grids table
+        '''
+        cmd="""select DISTINCT v.label, 
+                               var.sn, 
+                               var.units, 
+                               v.title, 
+                               ss.dimensions, 
+                               v.label, 
+                               v.valid_min, 
+                               v.valid_max 
+               from CMORvar v, 
+                    structure st, 
+                    spatialShape ss, 
+                    var  
+               where st.uid = v.stid 
+                     and ss.uid = st.spid  
+                     and v.vid=var.uid 
+                     and v.mipTable like '%grids%'"""
+        self.c.execute(cmd)
+        variables = self.c.fetchall()
+
+        return variables    
+
+    # -------------------------------------------------------------------- 
     #      getVarProvenance()
     # -------------------------------------------------------------------- 
     def getVarProvenance(self, prov, MIP):

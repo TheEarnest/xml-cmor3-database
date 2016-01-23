@@ -37,8 +37,12 @@ def createHeader(realm="Amon",bJSON=True):
     """
     Create CMIP6 Header table
     """
-    approxInterval = tableDict[realm]["approxInterval"]
-    genericLevels = tableDict[realm]["genericLevels"]
+    try:
+        approxInterval = tableDict[realm]["approxInterval"]
+        genericLevels = tableDict[realm]["genericLevels"]
+    except:
+        approxInterval = ""
+        genericLevels = ""
     Header=CMOR3Template.Header
     if( bJSON ):
         Header=CMOR3Template.HeaderJSON
@@ -131,8 +135,6 @@ def createFormulaVar(bJSON=True):
         # ----------------------------------------------- 
         # Add double quote for JSON if dimension is empty
         # ----------------------------------------------- 
-        if( fvar[3] == "" ):
-            fvar[3] = "\"\"" 
         if( bJSON ):
             var_entry = var_entry + CMOR3Template.FormulaVarTemplateJSON
         else:
@@ -141,12 +143,74 @@ def createFormulaVar(bJSON=True):
         var_entry = replaceString(var_entry, fvar[0], "variable_entry")
         var_entry = replaceString(var_entry, fvar[1], "long_name")
         var_entry = replaceString(var_entry, fvar[2], "type")
+        if( fvar[3] == "" ):
+            fvar[3] = "\"\"" 
+        fvar[3] = " ".join(eval(fvar[3]))
         var_entry = replaceString(var_entry, fvar[3].strip(), "dimensions")
         var_entry = replaceString(var_entry, fvar[4], "units")
 
-#    if( bJSON ):
-#        var_entry = var_entry + "}"
     return var_entry
+
+# ==============================================================
+#                     createVariables()
+# ==============================================================
+def createGrids(bJSON=True):
+    """
+    Create grib tables
+    """
+
+    Header = CMOR3Template.GridHeaderJSON
+    Header = replaceString( Header, cmorVersion,    "cmorVersion" )
+    Header = replaceString( Header, cfVersion,      "cfVersion" )
+    Header = replaceString( Header, projectID,      "projectID" )
+    Header = replaceString( Header, tableDate,      "tableDate" )
+    Header = replaceString( Header, missingValue,   "missingValue" )
+    Footer = "}\n"
+
+    GridAxes = cursor.getAxesGrids()
+
+    vars = cursor.getVarGrids()
+    varSQL=[ vars[i] for i in range(len(vars)) ]
+
+    axis_entry="\"axis_entry\": {"
+    for entry in GridAxes:
+        axis = list(entry)
+        axis_entry += CMOR3Template.GridAxisTemplateJSON
+
+        axis_entry = replaceString(axis_entry, axis[0], "grid_axis_entry")
+        axis_entry = replaceString(axis_entry, axis[1], "axis")
+        axis_entry = replaceString(axis_entry, axis[2], "long_name")
+        axis_entry = replaceString(axis_entry, axis[3], "out_name")
+        axis_entry = replaceString(axis_entry, axis[4], "standard_name")
+        axis_entry = replaceString(axis_entry, axis[5], "type")
+        axis_entry = replaceString(axis_entry, axis[6], "units")
+
+    axis_entry += "\"Dummy\": \"\"\n},"
+
+    variable_entry="\"variable_entry\": {"
+    for varGrid in varSQL:
+        variable_entry += CMOR3Template.GridVarTemplateJSON
+        variable_entry = replaceString(variable_entry, varGrid[0], "grid_variable_entry")
+        variable_entry = replaceString(variable_entry, varGrid[1], "standard_name")
+        variable_entry = replaceString(variable_entry, varGrid[2], "units")
+        variable_entry = replaceString(variable_entry, varGrid[3], "long_name")
+        variable_entry = replaceString(variable_entry, varGrid[5], "out_name")
+        variable_entry = replaceString(variable_entry, varGrid[6], "valid_min")
+        variable_entry = replaceString(variable_entry, varGrid[7], "valid_max")
+        variable_entry = variable_entry.replace("<dimensions>",
+                                      (varGrid[4].replace("|"," ")).strip(" "))
+        
+    variable_entry = variable_entry + "\"Dummy\":   \"\"\n }"
+
+    CMIP6Table=(json.loads("".join(Header+axis_entry+variable_entry+Footer)))
+
+    if( "Dummy" in CMIP6Table['axis_entry']):
+        del CMIP6Table['axis_entry']['Dummy']
+    if( "Dummy" in CMIP6Table['variable_entry']):
+        del CMIP6Table['variable_entry']['Dummy']
+
+    print(json.dumps(CMIP6Table,indent=4))
+
 
 # ==============================================================
 #                     createVariables()
@@ -170,7 +234,6 @@ def createVariables(bJSON=True):
         # -------------------------------------------------------------
         if( var[16] == 'unset'): 
             var[16] = ''
-
         var_entry = replaceString(var_entry, var[0],  "variable_entry")
         var_entry = replaceString(var_entry, var[3],  "modeling_realm")
         var_entry = replaceString(var_entry, var[14], "standard_name")
@@ -180,8 +243,8 @@ def createVariables(bJSON=True):
         var_entry = replaceString(var_entry, var[17], "long_name")
         var_entry = replaceString(var_entry, var[16].replace('"','\''), "comment")
         var_entry = replaceString(var_entry, var[6],  "positive")
-        var_entry = replaceString(var_entry, var[7],  "valid_min")
-        var_entry = replaceString(var_entry, var[8],  "valid_max")
+        var_entry = replaceString(var_entry, var[8],  "valid_min")
+        var_entry = replaceString(var_entry, var[7],  "valid_max")
         var_entry = replaceString(var_entry, var[5],  "ok_min_mean_abs")
         var_entry = replaceString(var_entry, var[4],  "ok_max_mean_abs")
 
@@ -238,17 +301,29 @@ def main(argv):
         elif opt in ("-j", "--JSON"):
             bJSON = True
 
+    # -------------------------------------------------------------
+    #  Create grids and exit
+    # -------------------------------------------------------------
+    if realm == "grids":
+       createGrids()
+       return 0
+
+    # -------------------------------------------------------------
+    #  Create all other tables
+    # -------------------------------------------------------------
     vars = cursor.getVarFromMipTable(realm,'MIP')
-    varSQL=[ vars[i] for i in range(len(vars))]
+    varSQL=[ vars[i] for i in range(len(vars)) ]
+
     if( not varSQL ):
-      print "no Variable found for "+realm
-      return -1
-    Header = createHeader(realm,bJSON=bJSON)
-    experiments = createExptIDs(bJSON=bJSON)
-    axis_entry = createAxes(bJSON=bJSON)
-    formula_var_entry = createFormulaVar(bJSON=bJSON)
-    variable_entry =  createVariables(bJSON=bJSON)
-    Footer = createFooter(bJSON=bJSON)
+        print "no Variable found for "+realm
+        return -1
+
+    Header            =  createHeader( realm, bJSON = bJSON )
+    experiments       =  createExptIDs(       bJSON = bJSON )
+    axis_entry        =  createAxes(          bJSON = bJSON )
+    formula_var_entry =  createFormulaVar(    bJSON = bJSON )
+    variable_entry    =  createVariables(     bJSON = bJSON )
+    Footer            =  createFooter(        bJSON = bJSON )
     
     if( bJSON ):
         CMIP6Table=(json.loads("".join(Header+experiments+axis_entry+variable_entry+Footer)))

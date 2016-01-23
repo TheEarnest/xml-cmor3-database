@@ -5,6 +5,7 @@ import sqlite3
 import pdb
 import xml.etree.ElementTree as ET
 import pylibconfig2 as cfg
+import uuid
 #https://github.com/heinzK1X/pylibconfig2
 
 
@@ -206,7 +207,8 @@ c.execute(""" create table axisEntry (
 	valid_min text,
 	value text,
 	z_bounds_factors text,
-	z_factors text)""")
+	z_factors text, 
+    isgrid text)""")
 
 c.execute(""" create table expIDs (
 	id text,
@@ -675,7 +677,8 @@ for axis in cmor2.axis_entries.keys():
           "'" + str(valid_min)    + "'" + """, """ \
           "'" + str(value)        + "'" + """, """ \
           "'" + str(z_bounds_factors)  + "'" + """, """ \
-          "'" + str(z_factors)         + "'" + """) """ 
+          "'" + str(z_factors)         + "'" + """, """ \
+          "'no'" + """) """ 
     c.execute(cmd)
     conn.commit()
 
@@ -708,7 +711,6 @@ for var in formulaVar:
     units     = cmor2.variable_entry.__dict__[var].units                         \
                     if ('units' in cmor2.variable_entry.__dict__[var].keys())     else ""
 
-    pdb.set_trace()
     cmd = """select name from formulaVar where name = '"""+str(name)+"';"
     c.execute(cmd)
     results = c.fetchall()
@@ -791,7 +793,224 @@ for axis in cmor2.axis_entries.keys():
               "'" + str(valid_min)    + "'" + """, """ \
               "'" + str(value)        + "'" + """, """ \
               "'" + str(z_bounds_factors)  + "'" + """, """ \
-              "'" + str(z_factors)         + "'" + """) """ 
+              "'" + str(z_factors)         + "'" + """, """ \
+              "'no'" + """) """ 
+        c.execute(cmd)
+        conn.commit()
+
+cmor2=cfg.Config()
+cmor2.read_file("./CMIP5_grids_CMOR3")
+print "Create axes for grids"
+for axis in cmor2.axis_entry.keys():
+    name               = axis
+    caxis              = cmor2.axis_entry.__getattribute__(axis).__getattribute__('axis')             \
+                           if ('axis'             in cmor2.axis_entry.__getattribute__(axis).keys())     else ""
+    climatology        = cmor2.axis_entry.__getattribute__(axis).__getattribute__('climatology')      \
+                           if ('climatology'      in cmor2.axis_entry.__getattribute__(axis).keys())     else ""
+    formula            = cmor2.axis_entry.__getattribute__(axis).__getattribute__('formula')          \
+                           if ('formula'          in cmor2.axis_entry.__getattribute__(axis).keys())     else "" 
+    long_name          = cmor2.axis_entry.__getattribute__(axis).__getattribute__('long_name')        \
+                           if ('long_name'        in cmor2.axis_entry.__getattribute__(axis).keys())     else "" 
+    must_have_bounds   = cmor2.axis_entry.__getattribute__(axis).__getattribute__('must_have_bounds') \
+                           if ('must_have_bounds' in cmor2.axis_entry.__getattribute__(axis).keys())     else ""
+    out_name           = cmor2.axis_entry.__getattribute__(axis).__getattribute__('out_name')         \
+                           if ('out_name'       in cmor2.axis_entry.__getattribute__(axis).keys())       else "" 
+    positive           = cmor2.axis_entry.__getattribute__(axis).__getattribute__('positive').strip()         \
+                           if ('positive'       in cmor2.axis_entry.__getattribute__(axis).keys())       else ""
+    requested          = cmor2.axis_entry.__getattribute__(axis).__getattribute__('requested')        \
+                           if ('requested'      in cmor2.axis_entry.__getattribute__(axis).keys())       else ""
+    standard_name      = cmor2.axis_entry.__getattribute__(axis).__getattribute__('standard_name')    \
+                           if ('standard_name'  in cmor2.axis_entry.__getattribute__(axis).keys())       else ""
+    stored_direction   = cmor2.axis_entry.__getattribute__(axis).__getattribute__('stored_direction') \
+                           if ('stored_direction' in cmor2.axis_entry.__getattribute__(axis).keys())     else ""
+    tolerance          = cmor2.axis_entry.__getattribute__(axis).__getattribute__('tolerance')        \
+                           if ('tolerance' in cmor2.axis_entry.__getattribute__(axis).keys())            else ""
+    ctype              = cmor2.axis_entry.__getattribute__(axis).__getattribute__('type')             \
+                           if ('type'      in cmor2.axis_entry.__getattribute__(axis).keys())            else ""
+    units              = cmor2.axis_entry.__getattribute__(axis).__getattribute__('units')            \
+                           if ('units'     in cmor2.axis_entry.__getattribute__(axis).keys())            else ""
+    valid_max          = cmor2.axis_entry.__getattribute__(axis).__getattribute__('valid_max')        \
+                           if ('valid_max' in cmor2.axis_entry.__getattribute__(axis).keys())            else ""
+    valid_min          = cmor2.axis_entry.__getattribute__(axis).__getattribute__('valid_min')        \
+                           if ('valid_min' in cmor2.axis_entry.__getattribute__(axis).keys())            else ""
+    value              = cmor2.axis_entry.__getattribute__(axis).__getattribute__('value')            \
+                           if ('value'     in cmor2.axis_entry.__getattribute__(axis).keys())            else ""
+    z_bounds_factors   = cmor2.axis_entry.__getattribute__(axis).__getattribute__('z_bounds_factors') \
+                           if ('z_bounds_factors'    in cmor2.axis_entry.__getattribute__(axis).keys())  else ""
+    z_factors          = cmor2.axis_entry.__getattribute__(axis).__getattribute__('z_factors')        \
+                           if ('z_factors' in cmor2.axis_entry.__getattribute__(axis).keys())            else ""
+
+
+    cmd = """select name from axisEntry where name = '"""+str(name)+"';"
+    c.execute(cmd)
+    results = c.fetchall()
+
+    if not results:
+        cmd = """insert into axisEntry values ("""+ \
+              "'" + str(name)              + "'" + """, """ \
+              "'" + str(caxis)             + "'" + """, """ \
+              "'" + str(climatology)       + "'" + """, """ \
+              "'" + str(formula)           + "'" + """, """ \
+              "'" + str(long_name)         + "'" + """, """ \
+              "'" + str(must_have_bounds)  + "'" + """, """ \
+              "'" + str(out_name)          + "'" + """, """ \
+              "'" + str(positive)          + "'" + """, """ \
+              "'" + str(requested)         + "'" + """, """ \
+              "'" + str(standard_name)     + "'" + """, """ \
+              "'" + str(stored_direction)  + "'" + """, """ \
+              "'" + str(tolerance)    + "'" + """, """ \
+              "'" + str(ctype)             + "'" + """, """ \
+              "'" + str(units)             + "'" + """, """ \
+              "'" + str(valid_max)    + "'" + """, """ \
+              "'" + str(valid_min)    + "'" + """, """ \
+              "'" + str(value)        + "'" + """, """ \
+              "'" + str(z_bounds_factors)  + "'" + """, """ \
+              "'" + str(z_factors)         + "'" + """, """ \
+              "'yes') """ 
+        c.execute(cmd)
+        conn.commit()
+
+gridVar = [ key for key in  cmor2.variable_entry.keys() ]
+
+pdb.set_trace()
+print "Create grid variables"
+ssLabelTmpl="grid-"
+for var in gridVar:
+    count = 1
+    ssLabel = ssLabelTmpl + str(count)
+
+    name = var
+    deflate         = ""
+    deflate_level   = ""
+    description     = ""
+    frequency       = ""
+    label           = ""
+    mipTable        = ""
+    modeling_realm  = ""
+    ok_max_mean_abs = ""
+    ok_min_mean_abs = ""
+    positive        = ""
+    prov            = ""
+    provNote        = ""
+    rowIndex        = ""
+    shuffle         = ""
+    stid            = ""
+    title           = ""
+    vtype           = ""
+    uid             = ""
+    valid_max       = ""
+    valid_min       = ""
+    vid             = ""
+
+    
+    dimensions  = "|".join(cmor2.variable_entry.__dict__[var].dimensions)
+    cmd = """select uid from spatialShape where dimensions = '"""+dimensions+"';"
+    c.execute(cmd)
+    results = c.fetchall()
+
+    if not results:
+        # -------------------------
+        # Insert new struture ID
+        # -------------------------
+        spid = uuid.uuid4().urn.split(':')[2]
+        cmd = """insert into spatialShape values ("""+ \
+                     "'" + dimensions + "'" + """, """ + \
+                     "'ssd-" + name   + "'" + """, """ + \
+                     "'false'"        + """, """ + \
+                     "'0'"            + """, """ + \
+                     "'ssd-" + name   + "'" + """, """ + \
+                     "'" + spid        + "'" + """) """ 
+        c.execute(cmd)
+        conn.commit()
+
+    stid = uuid.uuid4().urn.split(':')[2]
+    cmd = """insert into structure values ("""+ \
+                 "'area:areacella'" + """, """ + \
+                 "''" + """, """ + \
+                 "''" + """, """ + \
+                 "''" + """, """ + \
+                 "''" + """, """ + \
+                 "''" + """, """ + \
+                 "'" + ssLabel  + "'" + """, """  \
+                 "''" + """, """ + \
+                 "''" + """, """ + \
+                 "''" + """, """ + \
+                 "'" + spid       + "'" + """, """  \
+                 "'" + "0000-0000-0000"       + "'" + """, """ \
+                 "'" + stid        + "'" + """) """ 
+    c.execute(cmd)
+    conn.commit()
+
+    # -------------------------
+    # select new uid for grid shape
+    # -------------------------
+    cmd = """select uid from var where label = '"""+name+"';"
+    c.execute(cmd)
+    results = c.fetchall()
+    if not results:
+        units     = cmor2.variable_entry.__dict__[var].units                         \
+                    if ('units' in cmor2.variable_entry.__dict__[var].keys())     else ""
+        vid = uuid.uuid4().urn.split(':')[2]
+        cmd = """insert into var values ("""+ \
+                 "'grid variable'" + """, """ + \
+                 "'" + ssLabel       + "'" + """, """  \
+                 "'" + name       + "'" + """, """  \
+                 "''" + """, """ + \
+                 "''" + """, """ + \
+                 "''" + """, """ + \
+                 "''" + """, """ + \
+                 "''" + """, """ + \
+                 "'" + vid       + "'" + """, """  \
+                 "'" + units      + "'" + """) """ 
+        c.execute(cmd)
+        results = c.fetchall()
+    else:
+        vid = results[0][0]
+
+    long_name = cmor2.variable_entry.__dict__[var].long_name                     \
+                    if ('long_name' in cmor2.variable_entry.__dict__[var].keys()) else ""
+    standard_name = cmor2.variable_entry.__dict__[var].standard_name                          \
+                    if ('standard_name' in cmor2.variable_entry.__dict__[var].keys())      else ""
+    units     = cmor2.variable_entry.__dict__[var].units                         \
+                    if ('units' in cmor2.variable_entry.__dict__[var].keys())     else ""
+    out_name  = cmor2.variable_entry.__dict__[var].out_name                          \
+                    if ('out_name ' in cmor2.variable_entry.__dict__[var].keys())      else ""
+    valid_min = cmor2.variable_entry.__dict__[var].valid_min                          \
+                    if ('valid_min' in cmor2.variable_entry.__dict__[var].keys())      else ""
+    valid_max = cmor2.variable_entry.__dict__[var].valid_max                          \
+                    if ('valid_max' in cmor2.variable_entry.__dict__[var].keys())      else ""
+
+    cmd = """select label from CMORvar where label = '"""+str(name)+"' and mipTable='grids';"
+    c.execute(cmd)
+    results = c.fetchall()
+
+    #grid
+    if not results:
+        mipTable= "grids"
+        label = name
+        cmd = """insert into CMORvar values ("""+ \
+             "'" + deflate         + "'" + """, """ + \
+             "'" + deflate_level   + "'" + """, """ + \
+             "'" + description.replace("'","\"")     + "'" + """, """ + \
+             "'" + frequency       + "'" + """, """ + \
+             "'" + label           + "'" + """, """ + \
+             "'" + mipTable        + "'" + """, """ + \
+             "'" + modeling_realm  + "'" + """, """ + \
+             "'" + ok_max_mean_abs + "'" + """, """ + \
+             "'" + ok_min_mean_abs + "'" + """, """ + \
+             "'" + positive        + "'" + """, """ + \
+             "'" + prov            + "'" + """, """ + \
+             "'" + provNote        + "'" + """, """ + \
+             "'" + rowIndex        + "'" + """, """ + \
+             "'" + shuffle         + "'" + """, """ + \
+             "'" + stid            + "'" + """, """ + \
+             "'" + title           + "'" + """, """ + \
+             "'" + vtype           + "'" + """, """ + \
+             "'" + uid             + "'" + """, """ + \
+             "'" + str(valid_max)       + "'" + """, """ + \
+             "'" + str(valid_min)       + "'" + """, """ + \
+             "'" + vid             + "'" + """) """ 
+
         c.execute(cmd)
         conn.commit()
 
