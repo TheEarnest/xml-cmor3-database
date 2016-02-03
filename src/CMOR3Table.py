@@ -250,7 +250,7 @@ class CMOR3Table:
                      requestItem ri, 
                      requestlink rl, 
                      CMORvar v 
-                where  ri.mip='"""+MIP+"""'  and 
+                where  rl.mip='"""+MIP+"""'  and 
                        eg.uid='"""+exptGroupUID+"""' and 
                        ex.uid='"""+exptUID+"""' and 
                        eg.uid=ri.esid and
@@ -307,8 +307,7 @@ class CMOR3Table:
                                 v.type,
                                 vv.description,
                                 vv.title
-                from experiment ex, 
-                    exptGroup eg, 
+                from exptGroup eg, 
                     requestVar rv, 
                     requestVarGroup rvg, 
                     requestItem ri, 
@@ -318,7 +317,7 @@ class CMOR3Table:
                     structure st,
                     CMORvar v,
                     var vv
-                where ri.mip like '%"""+MIP+"""%' and
+                where rl.mip like '%"""+MIP+"""%' and
                       eg.uid=ri.esid and 
                       ri.rlid=rl.uid and 
                       rl.refid=rvg.uid and 
@@ -330,6 +329,7 @@ class CMOR3Table:
                       v.vid=vv.uid and
                       v.mipTable='"""+mipTable+"""'
                 order by eg.label,ex.label;"""
+        #print cmd
         self.c.execute(cmd)
         variables = self.c.fetchall()
 
@@ -352,7 +352,7 @@ class CMOR3Table:
                        ae.valid_min,
                        ae.valid_max
                 from axisEntry ae
-                where isGrid = 'yes';"""
+                where origin = 'grid';"""
 
         self.c.execute(cmd)
         axes = self.c.fetchall()
@@ -423,7 +423,7 @@ class CMOR3Table:
                     structure st,
                     CMORvar v,
                     var vv
-                where ri.mip like '%"""+MIP+"""%' and
+                where rl.mip like '%"""+MIP+"""%' and
                       eg.uid=ri.esid and 
                       ri.rlid=rl.uid and 
                       ri.tab='"""+prov+"""' and 
@@ -456,7 +456,7 @@ class CMOR3Table:
     # -------------------------------------------------------------------- 
     #      getAllAxes()
     # -------------------------------------------------------------------- 
-    def getAllAxes(self):
+    def getAxes(self):
         '''
         Return all available axes
         '''
@@ -479,7 +479,8 @@ class CMOR3Table:
                         value,
                         z_bounds_factors,
                         z_factors
-                 from axisEntry; """ 
+                 from axisEntry  
+                 where origin != 'grid';"""
         self.c.execute(cmd)
         axes = self.c.fetchall()
         return axes

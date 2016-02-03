@@ -8,7 +8,7 @@ import sys, getopt
 import pdb
 
 cmorVersion="3.0"
-cfVersion = "1.4"
+cfVersion = "1.6"
 projectID="CMIP6"
 tableDate = datetime.date.today().strftime("%d %B %Y")
 missingValue="1e20"
@@ -77,7 +77,7 @@ def createAxes(bJSON=True):
     Define all axis entries in table
     """
 
-    Allaxes = cursor.getAllAxes()
+    Allaxes = cursor.getAxes()
     if( bJSON ):
         axis_entry="\"axis_entry\": {"
     else:
@@ -272,7 +272,7 @@ def createExptIDs(bJSON=True):
        for expt in experiments:
            expt_ids = expt_ids +  "\""+expt[1]+"\":"+"  \""+expt[2].replace('"','\'')+"\",\n"
        expt_ids = expt_ids +  "\"Dummy\":"+"\"\"\n"
-       expt_ids =  expt_ids + """},"""
+       expt_ids =  expt_ids + """}"""
     else:
        expt_ids = ""
        for expt in experiments:
@@ -287,19 +287,25 @@ def main(argv):
     global vars, varSQL
     realm="Amon"
     bJSON=False
+    expt=False
     try:
-        opts, args = getopt.getopt(argv,"hr:j",["realm=","JSON="])
+        opts, args = getopt.getopt(argv,"hr:je",["realm=","JSON", "expt"])
+        if( not opts  ):
+          print 'CMORCreateTable.py [-r <realm> | -e ] -j'
+          sys.exit(2)
     except getopt.GetoptError:
-        print 'CMORCreateTable.py -r <realm> -j'
+        print 'CMORCreateTable.py [-r <realm> | -e ] -j'
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print 'CMORCreateTable.py -r <realm> -j' 
+            print 'CMORCreateTable.py [-r <realm> | -e ] -j'
             sys.exit()
         elif opt in ("-r", "--realm"):
             realm = arg
         elif opt in ("-j", "--JSON"):
             bJSON = True
+        elif opt in ("-e", "--expt"):
+            expt = True
 
     # -------------------------------------------------------------
     #  Create grids and exit
@@ -326,15 +332,18 @@ def main(argv):
     Footer            =  createFooter(        bJSON = bJSON )
     
     if( bJSON ):
-        CMIP6Table=(json.loads("".join(Header+experiments+axis_entry+variable_entry+Footer)))
-
-        if( "Dummy" in CMIP6Table['experiments']):
-            del CMIP6Table['experiments']['Dummy']
-        if( "Dummy" in CMIP6Table['axis_entry']):
-            del CMIP6Table['axis_entry']['Dummy']
-        if( "Dummy" in CMIP6Table['variable_entry']):
-            del CMIP6Table['variable_entry']['Dummy']
-        print(json.dumps(CMIP6Table,indent=4))
+        if( expt ):
+            CMIP6Table=(json.loads("{"+"".join(experiments)+"}"))
+            if( "Dummy" in CMIP6Table['experiments']):
+                del CMIP6Table['experiments']['Dummy']
+            print(json.dumps(CMIP6Table,indent=4))
+        else:
+            CMIP6Table=(json.loads("".join(Header+axis_entry+variable_entry+Footer)))
+            if( "Dummy" in CMIP6Table['axis_entry']):
+                del CMIP6Table['axis_entry']['Dummy']
+            if( "Dummy" in CMIP6Table['variable_entry']):
+                del CMIP6Table['variable_entry']['Dummy']
+            print(json.dumps(CMIP6Table,indent=4))
     else:
         print Header
         print experiments
