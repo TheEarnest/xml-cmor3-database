@@ -618,6 +618,14 @@ for file in [ "../tables/Amon_libconfig", "CMIP5_Omon_CMOR3"]:
     #
     formulaVar = [ key for key in  cmor2.variable_entry.keys() 
                    if cmor2.variable_entry.__dict__[key].long_name.find("formula") != -1]
+    variables = [ key for key in  cmor2.axis_entries.keys() if hasattr(cmor2.axis_entries.__dict__[key],'z_factors') ]
+
+    z_bnds     = { key for var in variables for key in cmor2.axis_entries.__dict__[var].z_bounds_factors.split(" ") if key.find(':') == -1  if key in cmor2.variable_entry.__dict__.keys() }
+    z_factors  = { key for var in variables for key in cmor2.axis_entries.__dict__[var].z_factors.split(" ") if key.find(':') == -1  if key in cmor2.variable_entry.__dict__.keys() }
+
+    z_factors.update(z_bnds)
+
+    formulaVar = list(z_factors)
     print "Create formula variables"
     for var in formulaVar:
         name = var
@@ -625,7 +633,7 @@ for file in [ "../tables/Amon_libconfig", "CMIP5_Omon_CMOR3"]:
                         if ('long_name' in cmor2.variable_entry.__dict__[var].keys()) else ""
         ctype     = cmor2.variable_entry.__dict__[var].type                          \
                         if ('type' in cmor2.variable_entry.__dict__[var].keys())      else ""
-        dimension = cmor2.variable_entry.__dict__[var].dimensions                    \
+        dimension = " ".join(cmor2.variable_entry.__dict__[var].dimensions[:])        \
                         if ('dimensions' in cmor2.variable_entry.__dict__[var].keys()) else ""
         units     = cmor2.variable_entry.__dict__[var].units                         \
                         if ('units' in cmor2.variable_entry.__dict__[var].keys())     else ""
@@ -732,9 +740,18 @@ for file in files:
     cmor2.read_file(file)
     # Add formula variables
     #
-    formulaVar = [ key for key in  cmor2.variable_entry.keys() 
-                   if cmor2.variable_entry.__dict__[key].long_name.find("formula") != -1]
+    #formulaVar = [ key for key in  cmor2.variable_entry.keys() 
+    #               if cmor2.variable_entry.__dict__[key].long_name.find("formula") != -1]
 
+    pdb.set_trace()
+    variables = [ key for key in  cmor2.axis_entries.keys() if hasattr(cmor2.axis_entries.__dict__[key],'z_factors') ]
+
+    z_bnds     = { key for var in variables for key in cmor2.axis_entries.__dict__[var].z_bounds_factors.split(" ") if key.find(':') == -1  if key in cmor2.variable_entry.__dict__.keys() }
+    z_factors  = { key for var in variables for key in cmor2.axis_entries.__dict__[var].z_factors.split(" ") if key.find(':') == -1  if key in cmor2.variable_entry.__dict__.keys() }
+
+    z_factors.update(z_bnds)
+
+    formulaVar = list(z_factors)
     print "Create formula variables"
     for var in formulaVar:
         name = var
@@ -742,7 +759,7 @@ for file in files:
                         if ('long_name' in cmor2.variable_entry.__dict__[var].keys()) else ""
         ctype     = cmor2.variable_entry.__dict__[var].type                          \
                         if ('type' in cmor2.variable_entry.__dict__[var].keys())      else ""
-        dimension = cmor2.variable_entry.__dict__[var].dimensions                    \
+        dimension = " ".join(cmor2.variable_entry.__dict__[var].dimensions[:])       \
                         if ('dimensions' in cmor2.variable_entry.__dict__[var].keys()) else ""
         units     = cmor2.variable_entry.__dict__[var].units                         \
                         if ('units' in cmor2.variable_entry.__dict__[var].keys())     else ""
