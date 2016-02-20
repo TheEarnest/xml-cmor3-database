@@ -306,7 +306,7 @@ class CMOR3Table:
                                 vv.sn,
                                 v.type,
                                 vv.description,
-                                vv.title
+                                v.title
                 from exptGroup eg, 
                     requestVar rv, 
                     requestVarGroup rvg, 
@@ -411,7 +411,7 @@ class CMOR3Table:
                                 vv.sn,
                                 v.type,
                                 vv.description,
-                                vv.title
+                                v.title
                 from experiment ex, 
                     exptGroup eg, 
                     requestVar rv, 
