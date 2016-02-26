@@ -1,0 +1,200 @@
+#============
+axis_entries:{  
+
+plev7: {
+  standard_name:    "air_pressure"	
+  units:            "Pa"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "down"	# up or down (default: undeclared)
+  long_name:        "pressure"	
+  out_name:         "plev"	
+  stored_direction: "decreasing"	
+  tolerance:        0.001	
+  type:             "double"	
+  requested:        [ "90000.","74000.","62000.","50000.","37500.","24500.","9000." ]	# space-separated list of requested coordinates 
+  requested_bounds: [ "100000.","80000.","80000.","68000.","68000.","56000.","56000.","44000.","44000.","31000.","31000.","18000.","18000.","0."]
+  must_have_bounds: "yes"	
+    }, 
+plev3: {
+  standard_name:    "air_pressure"	
+  units:            "Pa"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "down"	# up or down (default: undeclared)
+  long_name:        "pressure"	
+  out_name:         "plev"	
+  stored_direction: "decreasing"	
+  tolerance:        0.001	
+  type:             "double"	
+  requested:        [ "85000.", "50000.", "25000." ]	# space-separated list of requested coordinates 
+  must_have_bounds: "no"	
+    }, 
+plev3h: {
+  standard_name:    "air_pressure"	
+  units:            "Pa"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "down"	# up or down (default: undeclared)
+  long_name:        "pressure"	
+  out_name:         "plev"	
+  stored_direction: "decreasing"	
+  tolerance:        0.001	
+  type:             "double"	
+  requested:        [ "10000.", "1000.", "100." ]	
+  must_have_bounds: "no"	
+    }, 
+plev4s: {
+  standard_name:    "air_pressure"	
+  units:            "Pa"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "down"	# up or down (default: undeclared)
+  long_name:        "pressure"	
+  out_name:         "plev"	
+  stored_direction: "decreasing"	
+  tolerance:        0.001	
+  type:             "double"	
+  requested:        [ "85000.", "50000.", "20000.", "5000." ]	# space-separated list of requested coordinates 
+  must_have_bounds: "no"	
+    }, 
+plev4: {
+  standard_name:    "air_pressure"	
+  units:            "Pa"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "down"	# up or down (default: undeclared)
+  long_name:        "pressure"	
+  out_name:         "plev"	
+  stored_direction: "decreasing"	
+  tolerance:        0.001	
+  type:             "double"	
+  requested:        [ "92500.", "85000.", "50000.", "25000." ]	# space-separated list of requested coordinates 
+  must_have_bounds: "no"	
+    }, 
+plev7h: {
+  standard_name:    "air_pressure"	
+  units:            "Pa"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "down"	# up or down (default: undeclared)
+  long_name:        "pressure"	
+  out_name:         "plev"	
+  stored_direction: "decreasing"	
+  tolerance:        0.001	
+  type:             "double"	
+  requested:        [ "92500.", "85000.", "70000.", "60000.", "50000.", "25000.", "5000." ]	# space-separated list of requested coordinates 
+  must_have_bounds: "no"	
+    }, 
+plev7c: {
+  standard_name:    "air_pressure"	
+  units:            "Pa"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "down"	# up or down (default: undeclared)
+  long_name:        "pressure"	
+  out_name:         "plev"	
+  stored_direction: "decreasing"	
+  tolerance:        0.001	
+  type:             "double"	
+  requested:        [ "90000.", "74000.", "62000.", "50000.", "37500.", "24500.", "9000." ]	# space-separated list of requested coordinates 
+  must_have_bounds: "no"	
+    }, 
+plev8: {
+  standard_name:    "air_pressure"	
+  units:            "Pa"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "down"	# up or down (default: undeclared)
+  long_name:        "pressure"	
+  out_name:         "plev"	
+  stored_direction: "decreasing"	
+  tolerance:        0.001	
+  type:             "double"	
+  requested:        [ "100000.", "85000.", "70000.", "50000.", "25000.", "10000.", "5000.", "1000." ]	# space-separated list of requested coordinates 
+  must_have_bounds: "no"	
+    }, 
+plev10: {
+  standard_name:    "air_pressure"	
+  units:            "Pa"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "down"	# up or down (default: undeclared)
+  long_name:        "pressure"	
+  out_name:         "plev"	
+  stored_direction: "decreasing"	
+  tolerance:        0.001	
+  type:             "double"	
+  requested:        [ "100000.", "85000.", "70000.", "50000.", "25000.", "15000.", "10000.", "7000.", "5000.", "1000." ]
+  must_have_bounds: "no"	
+    }, 
+plev14: {
+  standard_name:    "air_pressure"	
+  units:            "Pa"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "down"	# up or down (default: undeclared)
+  long_name:        "pressure"	
+  out_name:         "plev"	
+  stored_direction: "decreasing"	
+  tolerance:        0.001	
+  type:             "double"	
+  requested:        [ "100000.", "92500.", "85000.", "70000.", "60000.", "50000.", "25000.", "15000.", "10000.", "5000.", "2000.", "1000.", "500.", "100." ]	# space-separated list of requested coordinates 
+  must_have_bounds: "no"	
+    }, 
+plev17: {
+  standard_name:    "air_pressure"	
+  units:            "Pa"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "down"	# up or down (default: undeclared)
+  long_name:        "pressure"	
+  out_name:         "plev"	
+  stored_direction: "decreasing"	
+  tolerance:        0.001	
+  type:             "double"	
+  requested:        [ "100000.", "92500.", "85000.", "70000.", "60000.", "50000.", "40000.", "30000.", "25000.", "20000.", "15000.", "10000.", "7000.", "5000.", "3000.", "2000.", "1000."  ]	
+  must_have_bounds: "no"	
+    }, 
+plev19: {
+  standard_name:    "air_pressure"	
+  units:            "Pa"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "down"	# up or down (default: undeclared)
+  long_name:        "pressure"	
+  out_name:         "plev"	
+  stored_direction: "decreasing"	
+  tolerance:        0.001	
+  type:             "double"	
+  requested:        [ "100000.", "92500.", "85000.", "70000.", "60000.", "50000.", "40000.", "30000.", "25000.", "20000.", "15000.", "10000.", "7000.", "5000.", "3000.", "2000.", "1000.", "500.", "100." ]	
+  must_have_bounds: "no"	
+    }, 
+plev23: {
+  standard_name:    "air_pressure"	
+  units:            "Pa"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "down"	# up or down (default: undeclared)
+  long_name:        "pressure"	
+  out_name:         "plev"	
+  stored_direction: "decreasing"	
+  tolerance:        0.001	
+  type:             "double"	
+  requested:        [ "100000.", "92500.", "85000.", "70000.", "60000.", "50000.", "40000.", "30000.", "25000.", "20000.", "15000.", "10000.", "7000.", "5000.", "3000.", "2000.", "1000.", "700.", "500.", "300.", "200.", "100.", "40." ]	# space-separated list of requested coordinates 
+  must_have_bounds: "no"	
+    }, 
+plev27: {
+  standard_name:    "air_pressure"	
+  units:            "Pa"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "down"	# up or down (default: undeclared)
+  long_name:        "pressure"	
+  out_name:         "plev"	
+  stored_direction: "decreasing"	
+  tolerance:        0.001	
+  type:             "double"	
+  requested:        [ "100000.", "97500.", "95000.", "92500.", "90000.", "87500.", "85000.", "82500.", "80000.", "77500.", "75000.", "70000.", "65000.", "60000.", "55000.", "50000.", "45000.", "40000.", "35000.", "30000.", "25000.", "22500.", "20000.", "17500.", "15000.", "12500.", "10000." ]
+  must_have_bounds: "no"	
+    }, 
+plev39: {
+  standard_name:    "air_pressure"	
+  units:            "Pa"	
+  axis:             "Z"	# X, Y, Z, T (default: undeclared)
+  positive:         "down"	# up or down (default: undeclared)
+  long_name:        "pressure"	
+  out_name:         "plev"	
+  stored_direction: "decreasing"	
+  tolerance:        0.001	
+  type:             "double"	
+  requested:        [ "100000.", "92500.", "85000.", "70000.", "60000.", "50000.", "40000.", "30000.", "25000.", "20000.", "17000.", "15000.", "13000.", "11500.", "10000.", "9000.", "8000.", "7000.", "5000.", "3000.", "2000.", "1500.", "1000.", "700.", "500.", "300.", "200.", "150.", "100.", "70.", "50.", "40.", "30.", "20.", "15.", "10.", "7.", "5.", "3." ]	
+  must_have_bounds: "no"	
+    }, 
+}

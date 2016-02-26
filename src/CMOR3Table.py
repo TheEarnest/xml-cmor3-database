@@ -372,7 +372,6 @@ class CMOR3Table:
                       v.vid=vv.uid and
                       v.mipTable='""" + mipTable + """'
                 order by eg.label;"""
-        print cmd
         self.c.execute(cmd)
         variables = self.c.fetchall()
 
@@ -512,6 +511,7 @@ class CMOR3Table:
                         out_name,
                         positive,
                         requested,
+                        requested_bounds,
                         standard_name,
                         stored_direction,
                         tolerance,

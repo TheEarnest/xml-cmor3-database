@@ -5,7 +5,7 @@ import datetime
 import CMOR3Template
 import sys
 import getopt
-# import pdb
+import pdb
 
 cmorVersion = "3.0"
 cfVersion = "1.6"
@@ -95,6 +95,8 @@ def createAxes(bJSON=True):
 
         if(axis[8] == ""):
             axis[8] = "\"\""
+        if(axis[9] == ""):
+            axis[9] = "\"\""
         axis_entry = replaceString(axis_entry, axis[0], "axis_entry")
         axis_entry = replaceString(axis_entry, axis[1], "axis")
         axis_entry = replaceString(axis_entry, axis[2], "climatology")
@@ -104,16 +106,17 @@ def createAxes(bJSON=True):
         axis_entry = replaceString(axis_entry, axis[6], "out_name")
         axis_entry = replaceString(axis_entry, axis[7], "positive")
         axis_entry = replaceString(axis_entry, axis[8], "requested")
-        axis_entry = replaceString(axis_entry, axis[9], "standard_name")
-        axis_entry = replaceString(axis_entry, axis[10], "stored_direction")
-        axis_entry = replaceString(axis_entry, axis[11], "tolerance")
-        axis_entry = replaceString(axis_entry, axis[12], "type")
-        axis_entry = replaceString(axis_entry, axis[13], "units")
-        axis_entry = replaceString(axis_entry, axis[14], "valid_min")
-        axis_entry = replaceString(axis_entry, axis[15], "valid_max")
-        axis_entry = replaceString(axis_entry, axis[16], "value")
-        axis_entry = replaceString(axis_entry, axis[17], "z_bounds_factors")
-        axis_entry = replaceString(axis_entry, axis[18], "z_factors")
+        axis_entry = replaceString(axis_entry, axis[9], "requested_bounds")
+        axis_entry = replaceString(axis_entry, axis[10], "standard_name")
+        axis_entry = replaceString(axis_entry, axis[11], "stored_direction")
+        axis_entry = replaceString(axis_entry, axis[12], "tolerance")
+        axis_entry = replaceString(axis_entry, axis[13], "type")
+        axis_entry = replaceString(axis_entry, axis[14], "units")
+        axis_entry = replaceString(axis_entry, axis[15], "valid_min")
+        axis_entry = replaceString(axis_entry, axis[16], "valid_max")
+        axis_entry = replaceString(axis_entry, axis[17], "value")
+        axis_entry = replaceString(axis_entry, axis[18], "z_bounds_factors")
+        axis_entry = replaceString(axis_entry, axis[19], "z_factors")
     if(bJSON):
         axis_entry = axis_entry + "\"Dummy\": \"\"\n},"
     return axis_entry
@@ -329,7 +332,6 @@ def main(argv):
     Header            = createHeader(realm, bJSON=bJSON)
     experiments       = createExptIDs(bJSON=bJSON)
     axis_entry        = createAxes(bJSON=bJSON)
-    formula_var_entry = createFormulaVar(bJSON=bJSON)
     variable_entry    = createVariables(bJSON=bJSON)
     Footer            = createFooter(bJSON=bJSON)
 
@@ -340,7 +342,11 @@ def main(argv):
                 del CMIP6Table['experiments']['Dummy']
             print(json.dumps(CMIP6Table, indent=4))
         else:
-            CMIP6Table = (json.loads("".join(Header + axis_entry + formula_var_entry +
+            string = "".join(Header + axis_entry + variable_entry + Footer)
+            f = open("/mnt/hgfs/nadeau1/test.json","w")
+            f.write(string)
+            f.close
+            CMIP6Table = (json.loads("".join(Header + axis_entry +
                                                 variable_entry + Footer)))
             if("Dummy" in CMIP6Table['axis_entry']):
                 del CMIP6Table['axis_entry']['Dummy']

@@ -42,57 +42,7 @@ axisTemplateJSON = """
                     "out_name":         "<out_name>",
                     "positive":         "<positive>",
                     "requested":        <requested>,
-                    "stored_direction":  "<stored_direction>",
-                    "tolerance":        "<tolerance>",
-                    "type":             "<type>",
-                    "valid_max":        "<valid_max>",
-                    "valid_min":        "<valid_min>",
-                    "value":             "<value>",
-                    "z_bounds_factors": "<z_bounds_factors>",
-                    "z_factors":        "<z_factors>"
-                },
-"""
-FormulaVarTemplateJSON = """
-"<variable_entry>": {
-                        "long_name":   "<long_name>",
-                        "units":       "<units>",
-                        "dimensions":  "<dimensions>",
-                        "type":        "<type>"
-                    },
-"""
-
-VarTemplateJSON = """
-"<variable_entry>": {
-                        "modeling_realm":    "<modeling_realm>",
-                        "standard_name":     "<standard_name>",
-                        "units":             "<units>",
-                        "cell_methods":      "<cell_methods>",
-                        "cell_measures":     "<cell_measure>",
-                        "long_name":         "<long_name>",
-                        "comment":           "<comment>",
-                        "dimensions":        "<dimensions>",
-                        "out_name":          "<outname>",
-                        "type":              "<type>",
-                        "positive":          "<positive>",
-                        "valid_min":         "<valid_min>",
-                        "valid_max":         "<valid_max>",
-                        "ok_min_mean_abs":   "<ok_min_mean_abs>",
-                        "ok_max_mean_abs":   "<ok_max_mean_abs>"
-},
-"""
-
-axisTemplateJSON = """
-"<axis_entry>": {
-                    "standard_name":    "<standard_name>",
-                    "units":            "<units>",
-                    "axis":             "<axis>",
-                    "long_name":        "<long_name>",
-                    "climatology":      "<climatology>",
-                    "formula":          "<formula>",
-                    "must_have_bounds": "<must_have_bounds>",
-                    "out_name":         "<out_name>",
-                    "positive":         "<positive>",
-                    "requested":        <requested>,
+                    "requested_bounds": <requested_bounds>,
                     "stored_direction":  "<stored_direction>",
                     "tolerance":        "<tolerance>",
                     "type":             "<type>",
@@ -290,6 +240,7 @@ must_have_bounds: <must_have_bounds>
 out_name:         <out_name>
 positive:         <positive>
 requested:        <requested>
+requested_bounds: <requested_bounds>
 stored_direction: <stored_direction>
 tolerance:        <tolerance>
 type:             <type>
