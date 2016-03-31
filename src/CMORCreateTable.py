@@ -8,8 +8,9 @@ import getopt
 import pdb
 
 cmorVersion = "3.0"
+data_spec_version = "3.0"
 cfVersion = "1.6"
-projectID = "CMIP6"
+activityID = "CMIP6"
 tableDate = datetime.date.today().strftime("%d %B %Y")
 missingValue = "1e20"
 approxInterval = "30.000000"
@@ -39,25 +40,39 @@ def createHeader(realm="Amon", bJSON=True):
     """
     Create CMIP6 Header table
     """
+    newlineIE=False
+    newlineWN=False
     try:
         approxInterval = tableDict[realm]["approxInterval"]
         genericLevels = tableDict[realm]["genericLevels"]
+        if( "approxIntervalError" in tableDict[realm].keys() ):
+            approxIE = tableDict[realm]["approxIntervalError"]
+            newlineIE = '"approx_interval_error": "'+approxIE+'", \n <DUMMYENTRY>\n'
+        if( "approxIntervalWarning" in tableDict[realm].keys() ):
+            approxWN = tableDict[realm]["approxIntervalWarning"]
+            newlineWN = '"approx_interval_warning": "'+approxWN+'", \n <DUMMYENTRY>\n'
     except:
         approxInterval = ""
         genericLevels = ""
     Header = CMOR3Template.Header
     if(bJSON):
         Header = CMOR3Template.HeaderJSON
-    Header = replaceString(Header, cmorVersion,    "cmorVersion")
-    Header = replaceString(Header, cfVersion,      "cfVersion")
-    Header = replaceString(Header, projectID,      "projectID")
-    Header = replaceString(Header, tableDate,      "tableDate")
-    Header = replaceString(Header, missingValue,   "missingValue")
-    Header = replaceString(Header, approxInterval, "approxInterval")
-    Header = replaceString(Header, realm,          "table")
-    Header = replaceString(Header, genericLevels, "generic_levels")
+    if(newlineIE):
+        Header = replaceString(Header, newlineIE,    "DUMMYENTRY")
+    if(newlineWN):
+        Header = replaceString(Header, newlineWN,    "DUMMYENTRY")
+    Header = replaceString(Header, data_spec_version,    "data_spec_version")
+    Header = replaceString(Header, cmorVersion,          "cmorVersion")
+    Header = replaceString(Header, cfVersion,            "cfVersion")
+    Header = replaceString(Header, activityID,           "activityID")
+    Header = replaceString(Header, tableDate,            "tableDate")
+    Header = replaceString(Header, missingValue,         "missingValue")
+    Header = replaceString(Header, approxInterval,       "approxInterval")
+    Header = replaceString(Header, realm,                "table")
+    Header = replaceString(Header, genericLevels,        "generic_levels")
     Header = Header.replace("<modeling_realm>", varSQL[0][3])
     Header = Header.replace("<frequency>", varSQL[0][1])
+    Header = replaceString(Header, "",  "DUMMYENTRY")
     return Header
 
 
@@ -166,7 +181,7 @@ def createGrids(bJSON=True):
     Header = CMOR3Template.GridHeaderJSON
     Header = replaceString(Header, cmorVersion,    "cmorVersion")
     Header = replaceString(Header, cfVersion,      "cfVersion")
-    Header = replaceString(Header, projectID,      "projectID")
+    Header = replaceString(Header, activityID,      "activityID")
     Header = replaceString(Header, tableDate,      "tableDate")
     Header = replaceString(Header, missingValue,   "missingValue")
     Footer = "}\n"

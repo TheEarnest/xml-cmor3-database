@@ -4,29 +4,20 @@
 HeaderJSON = """
 {
     "Header":{
-                    "table_id": "Table <table>",
-                    "modeling_realm": "<modeling_realm>",
-                    "frequency":    "<frequency>",
-                    "cmor_version": "<cmorVersion>",
-                    "cf_version":   "<cfVersion>",
-                    "project_id":   "<projectID>",
-                    "table_date":   "<tableDate>",
-                    "missing_value": "<missingValue>",
-                    "baseURL": "http://cmip-pcmdi.llnl.gov/CMIP6/dataLocation",
-                    "product": "output",
-                    "required_global_attributes": [ "creation_date",
-                                                    "tracking_id",
-                                                    "forcing",
-                                                    "model_id",
-                                                    "parent_experiment_id",
-                                                    "parent_experiment_rip",
-                                                    "branch_time",
-                                                    "contact",
-                                                    "institute_id" 
-                                                  ],
-                    "forcings":   "N/A Nat Ant GHG SD SI SA TO SO Oz LU Sl Vl SS Ds BC MD OC AA",
+                    "data_spec_version": "<data_spec_version>",
+                    "table_id":         "Table <table>",
+                    "realm":            "<modeling_realm>",
+                    "frequency":        "<frequency>",
+                    "cmor_version":     "<cmorVersion>",
+                    "cf_version":       "<cfVersion>",
+                    "activity_id":      "<activityID>-XXXX",
+                    "table_date":       "<tableDate>",
+                    "missing_value":    "<missingValue>",
+                    "product":          "output",
                     "approx_interval":  "<approxInterval>",
-                    "generic_levels":   "<generic_levels>"
+                    <DUMMYENTRY>
+                    "generic_levels":   "<generic_levels>",
+                    "Conventions":      "CF-1.8 CMIP-6.0"
               },
 """
 
@@ -89,7 +80,7 @@ GridHeaderJSON = """
                 "table_id": "Table grids",
                 "cmor_version":  "<cmorVersion>",
                 "cf_version":    "<cfVersion>",
-                "project_id":    "<projectID>",
+                "activity_id":    "<activityID>",
                 "table_date":    "<tableDate>",
                 "missing_value": "<missingValue>",
                 "baseURL": "http://cmip-pcmdi.llnl.gov/CMIP6/dataLocation",
@@ -146,39 +137,73 @@ tableDict = { "Amon": { "approxInterval" : "30.00000",
                         "genericLevels"  : "",
                         "frequency"      : "mon"
                       },
+              "cfMon": { "approxInterval" : "30.00000",
+                        "genericLevels"  : "olevel",
+                        "frequency"      : "mon"
+                      },
               "Omon": { "approxInterval" : "30.00000",
                         "genericLevels"  : "olevel",
                         "frequency"      : "mon"
                       },
-              "OImon": { "approxInterval" : "30.00000",
-                        "genericLevels"  : "olevel",
-                        "frequency"      : "monClim"
-                      },
-              "OImon": { "approxInterval" : "30.00000",
+              "SImon": { "approxInterval" : "30.00000",
                         "genericLevels"  : "",
                         "frequency"      : "mon"
+                      },
+              "aero": { "approxInterval" : "30.00000",
+                        "genericLevels"  : "alevel alev1",
+                        "frequency"      : "mon"
+                      },
+              "Oclim": { "approxInterval" : "30.00000",
+                        "genericLevels"  : "olevel",
+                        "frequency"      : "monClim"
                       },
               "Oyr": { "approxInterval" : "365.00000",
                         "genericLevels"  : "olevel",
                         "frequency"      : "yr"
                       },
+              "SIday":  { "approxInterval" : "1.00000",
+                        "genericLevels"  : "",
+                        "frequency"      : "day"
+                      },
+              "Oday":  { "approxInterval" : "1.00000",
+                        "genericLevels"  : "",
+                        "frequency"      : "day"
+                      },
+              "cfDay":  { "approxInterval" : "1.00000",
+                        "genericLevels"  : "alevel alevhalf",
+                        "frequency"      : "day"
+                      },
               "day":  { "approxInterval" : "1.00000",
                         "genericLevels"  : "",
                         "frequency"      : "day"
+                      },
+              "cf3hr":  { "approxInterval" : "0.125000",
+                        "genericLevels"  : "",
+                        "frequency"      : "3hr"
                       },
               "3hr":  { "approxInterval" : "0.125000",
                         "genericLevels"  : "",
                         "frequency"      : "3hr"
                       },
-              "6hr":  { "approxInterval" : "0.250000",
+              "6hrLev":  { "approxInterval" : "0.250000",
                         "genericLevels"  : "alevel",
                         "frequency"      : "3hr"
                       },
-             "subhr": { "approxInterval" : "0.017361",
+              "6hrPlev":  { "approxInterval" : "0.250000",
+                        "genericLevels"  : "",
+                        "frequency"      : "3hr"
+                      },
+              "subhr": { "approxInterval" : "0.017361",
                         "genericLevels"  : "alevel alevhalf",
                         "frequency"      : "subhr"
                       },
-                "fx": { "approxInterval" : "0.00000",
+              "cfsites": { "approxInterval" : "0.017361",
+                           "genericLevels"  : "alevel alevhalf",
+                           "approxIntervalWarning":  "0.25",
+                           "approxIntervalError":  "0.75",
+                           "frequency"      : "subhr"
+                      },
+              "fx": { "approxInterval" : "0.00000",
                         "genericLevels"  : "olevel",
                         "frequency"      : "fx"
                       }
@@ -196,7 +221,7 @@ frequency:  "<frequency>"
 
 cmor_version: <cmorVersion>  # minimum version of CMOR that can read this table
 cf_version:   <cfVersion>    # version of CF that output conforms to
-project_id:   "<projectID>"    # project id
+activity_id:   "<activityID>"    # project id
 table_date:   "<tableDate>"   # date this table was constructed
 
 missing_value: <missingValue>    # value used to indicate a missing value
