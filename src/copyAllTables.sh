@@ -5,5 +5,7 @@ for realm in ${ARRAY[@]}; do
     filename="CMIP6_${realm}.json"
     echo $filename
     cp /tmp/$filename .
+    cp $filename /software/cmor3/cmor/Tables/
+    cp $filename /software/cmip6-cmor-tables/Tables
 done
 exit 0
