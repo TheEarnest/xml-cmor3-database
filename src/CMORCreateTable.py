@@ -8,7 +8,7 @@ import getopt
 import pdb
 
 cmorVersion = "3.0"
-data_spec_version = "3.0"
+data_specs_version = "3.0"
 cfVersion = "1.6"
 activityID = "CMIP6"
 tableDate = datetime.date.today().strftime("%d %B %Y")
@@ -61,7 +61,7 @@ def createHeader(realm="Amon", bJSON=True):
         Header = replaceString(Header, newlineIE,    "DUMMYENTRY")
     if(newlineWN):
         Header = replaceString(Header, newlineWN,    "DUMMYENTRY")
-    Header = replaceString(Header, data_spec_version,    "data_spec_version")
+    Header = replaceString(Header, data_specs_version,   "data_specs_version")
     Header = replaceString(Header, cmorVersion,          "cmorVersion")
     Header = replaceString(Header, cfVersion,            "cfVersion")
     Header = replaceString(Header, activityID,           "activityID")
@@ -132,6 +132,7 @@ def createAxes(bJSON=True):
         axis_entry = replaceString(axis_entry, axis[17], "value")
         axis_entry = replaceString(axis_entry, axis[18], "z_bounds_factors")
         axis_entry = replaceString(axis_entry, axis[19], "z_factors")
+        axis_entry = replaceString(axis_entry, axis[20], "bounds_values")
     if(bJSON):
         axis_entry = axis_entry + "\"Dummy\": \"\"\n},"
     return axis_entry
@@ -267,9 +268,14 @@ def createVariables(bJSON=True):
         var_entry = replaceString(var_entry, var[5],  "ok_min_mean_abs")
         var_entry = replaceString(var_entry, var[4],  "ok_max_mean_abs")
 
-        var_entry = var_entry.replace("<dimensions>",
-                                      (var[9].replace("|", " ") + " " +
-                                          var[10].replace("|", " ")).strip(" "))
+        dimensions = var[9].replace("|", " ") + " " 
+        if( var[18] != "" ):
+            dimensions = dimensions + var[18].strip(" ") + " "
+        dimensions = dimensions + var[10].replace("|", " ").strip(" ") + " "
+        if( var[19] != "" ):
+            dimensions = dimensions + var[19].strip(" ") + " "
+        dimensions = dimensions.strip(" ")
+        var_entry = var_entry.replace("<dimensions>",dimensions)
         var_entry = var_entry.replace("<outname>", var[0])
         var_entry = var_entry.replace("<type>", var[15])
     if(bJSON):

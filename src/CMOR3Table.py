@@ -349,7 +349,9 @@ class CMOR3Table:
                                 vv.sn,
                                 v.type,
                                 vv.description,
-                                v.title
+                                v.title,
+                                st.odims,
+                                st.coords
                 from exptGroup eg,
                     requestVar rv,
                     requestVarGroup rvg,
@@ -521,7 +523,8 @@ class CMOR3Table:
                         valid_max,
                         value,
                         z_bounds_factors,
-                        z_factors
+                        z_factors,
+                        bounds_values
                  from axisEntry
                  where origin != 'grid';"""
         self.c.execute(cmd)

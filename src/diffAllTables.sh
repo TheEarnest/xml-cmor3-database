@@ -3,8 +3,7 @@ ARRAY=(Amon LImon Lmon  Omon Oclim Oday Oyr SIday SImon grids aero 3hr 6hrLev 6h
 
 for realm in ${ARRAY[@]}; do
     filename="CMIP6_${realm}.json"
-    #echo "Creating: ${filename}"
-    echo "python CMORCreateTable.py -r ${realm} -j  > /tmp/${filename}"
-    echo "python CMORCreateTable.py -r ${realm} -j  > /tmp/${filename}" |sh
+    echo $filename
+    diff /tmp/$filename .
 done
 exit 0

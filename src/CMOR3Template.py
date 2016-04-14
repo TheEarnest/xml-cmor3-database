@@ -4,12 +4,11 @@
 HeaderJSON = """
 {
     "Header":{
-                    "data_spec_version": "<data_spec_version>",
+                    "data_specs_version": "<data_specs_version>",
                     "table_id":         "Table <table>",
                     "realm":            "<modeling_realm>",
                     "frequency":        "<frequency>",
                     "cmor_version":     "<cmorVersion>",
-                    "cf_version":       "<cfVersion>",
                     "activity_id":      "<activityID>-XXXX",
                     "table_date":       "<tableDate>",
                     "missing_value":    "<missingValue>",
@@ -39,9 +38,10 @@ axisTemplateJSON = """
                     "type":             "<type>",
                     "valid_max":        "<valid_max>",
                     "valid_min":        "<valid_min>",
-                    "value":             "<value>",
+                    "value":            "<value>",
                     "z_bounds_factors": "<z_bounds_factors>",
-                    "z_factors":        "<z_factors>"
+                    "z_factors":        "<z_factors>",
+                    "bounds_values":    "<bounds_values>"
                 },
 """
 FormulaVarTemplateJSON = """
@@ -77,6 +77,7 @@ VarTemplateJSON = """
 GridHeaderJSON = """
 {
     "Header":{
+                "data_specs_version": "<data_specs_version>",
                 "table_id": "Table grids",
                 "cmor_version":  "<cmorVersion>",
                 "cf_version":    "<cfVersion>",
@@ -84,7 +85,8 @@ GridHeaderJSON = """
                 "table_date":    "<tableDate>",
                 "missing_value": "<missingValue>",
                 "baseURL": "http://cmip-pcmdi.llnl.gov/CMIP6/dataLocation",
-                "product": "output"
+                "product": "output",
+                "Conventions":      "CF-1.8 CMIP-6.0"
              },
 
     "mapping_entry": {
@@ -138,7 +140,7 @@ tableDict = { "Amon": { "approxInterval" : "30.00000",
                         "frequency"      : "mon"
                       },
               "cfMon": { "approxInterval" : "30.00000",
-                        "genericLevels"  : "olevel",
+                        "genericLevels"  : "alevel alevhalf",
                         "frequency"      : "mon"
                       },
               "Omon": { "approxInterval" : "30.00000",

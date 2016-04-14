@@ -32,6 +32,7 @@ c.execute("""drop table if exists vocab_activity""")
 c.execute("""drop table if exists vocab_frequency""")
 c.execute("""drop table if exists vocab_realm""")
 c.execute("""drop table if exists vocab_grid""")
+c.execute("""drop table if exists grid""")
 
 conn.commit()
 print "Create Tables"
@@ -212,6 +213,7 @@ c.execute(""" create table axisEntry (
     value text,
     z_bounds_factors text,
     z_factors text,
+    bounds_values text,
     origin text)""")
 
 c.execute(""" create table expIDs (
@@ -260,6 +262,31 @@ c.execute(""" create table vocab_grid (
     label text,
     title text,
     uuid text)""")
+
+c.execute(""" create table grid (
+    altLabel text,
+    axis text,
+    bounds text,
+    boundsRequested text,
+    boundsValues text,
+    coords text,
+    description text,
+    direction text,
+    isGrid text,
+    isIndex text,
+    label text,
+    positive text,
+    requested text,
+    standardName text,
+    tables text,
+    title text,
+    tolRequested text,
+    type text,
+    uid text,
+    units text,
+    value text
+)""")
+
 
 print "----------------------"
 print "reading file vocab.xml"
@@ -390,6 +417,58 @@ print "----------------------"
 contentDoc = ET.parse("../docs/dreq.xml")
 root = contentDoc.getroot()
 namespace = '{urn:w3id.org:cmip6.dreq.dreq:a}'
+
+print "Create grid"
+
+grid = root.findall('./{0}main/{0}grids'.format(namespace))[0]
+for child in grid.getchildren():
+        altLabel              = child.get('altLabel') or ""
+        axis                  = child.get('axis') or ""             
+        bounds                = child.get('bounds') or ""
+        boundsRequested       = child.get('boundsRequested') or ""
+        boundsValues          = child.get('boundsValues') or ""
+        coords                = child.get('coords') or ""
+        description           = child.get('description').replace("'","\"") or ""
+        direction             = child.get('direction') or ""
+        isGrid                = child.get('isGrid') or ""
+        isIndex               = child.get('isIndex') or ""
+        label                 = child.get('label') or ""
+        positive              = child.get('positive') or ""
+        requested             = child.get('requested') or ""
+        standardName          = child.get('standardName') or ""
+        tables                = child.get('tables') or ""
+        title                 = child.get('title') or ""
+        tolRequested          = child.get('tolRequested') or ""
+        itype                 = child.get('type') or ""
+        uid                   = child.get('uid') or ""
+        units                 = child.get('units') or ""
+        value                 = child.get('value') or ""
+
+        cmd = """ insert into grid values (""" + \
+             "'" + altLabel        + "'" + """, """ + \
+             "'" + axis            + "'" + """, """ + \
+             "'" + bounds          + "'" + """, """ + \
+             "'" + boundsRequested + "'" + """, """ + \
+             "'" + boundsValues    + "'" + """, """ + \
+             "'" + coords          + "'" + """, """ + \
+             "'" + description     + "'" + """, """ + \
+             "'" + direction       + "'" + """, """ + \
+             "'" + isGrid          + "'" + """, """ + \
+             "'" + isIndex         + "'" + """, """ + \
+             "'" + label           + "'" + """, """ + \
+             "'" + positive        + "'" + """, """ + \
+             "'" + requested       + "'" + """, """ + \
+             "'" + standardName    + "'" + """, """ + \
+             "'" + tables          + "'" + """, """ + \
+             "'" + title           + "'" + """, """ + \
+             "'" + tolRequested    + "'" + """, """ + \
+             "'" + itype           + "'" + """, """ + \
+             "'" + uid             + "'" + """, """ + \
+             "'" + units           + "'" + """, """ + \
+             "'" + value + "'" + """) """
+        c.execute(cmd)
+        conn.commit()
+grid = ""
 
 var = root.findall('./{0}main/{0}var'.format(namespace))[0]
 print "Create var"
@@ -871,6 +950,8 @@ for file in ["../tables/Amon_libconfig", "CMIP5_Omon_CMOR3" ]:
                                if ('z_bounds_factors'    in cmor2.axis_entries.__getattribute__(axis).keys())  else ""
         z_factors          = cmor2.axis_entries.__getattribute__(axis).__getattribute__('z_factors')        \
                                if ('z_factors' in cmor2.axis_entries.__getattribute__(axis).keys())            else ""
+        bounds_values      = cmor2.axis_entries.__getattribute__(axis).__getattribute__('bounds_values')    \
+                               if ('bounds_values'  in cmor2.axis_entries.__getattribute__(axis).keys())       else ""
 
         cmd = """select name from axisEntry where name = '""" + str(name).strip() + "';"
         c.execute(cmd)
@@ -897,6 +978,7 @@ for file in ["../tables/Amon_libconfig", "CMIP5_Omon_CMOR3" ]:
                   "'" + str(value)        + "'" + """, """ \
                   "'" + str(z_bounds_factors)  + "'" + """, """ \
                   "'" + str(z_factors)         + "'" + """, """ \
+                  "'" + str(bounds_values)     + "'" + """, """ \
                   "'" + "Amon"                 + "'" + """) """
             c.execute(cmd)
             conn.commit()
@@ -1008,6 +1090,8 @@ for file in files:
                                if ('z_bounds_factors'    in cmor2.axis_entries.__getattribute__(axis).keys())  else ""
         z_factors          = cmor2.axis_entries.__getattribute__(axis).__getattribute__('z_factors')        \
                                if ('z_factors' in cmor2.axis_entries.__getattribute__(axis).keys())            else ""
+        bounds_values      = cmor2.axis_entries.__getattribute__(axis).__getattribute__('bounds_values')    \
+                               if ('bounds_values' in cmor2.axis_entries.__getattribute__(axis).keys())        else ""
 
         cmd = """select name from axisEntry where name = '""" + str(name).strip() + "';"
         c.execute(cmd)
@@ -1035,6 +1119,7 @@ for file in files:
                   "'" + str(value)        + "'" + """, """ \
                   "'" + str(z_bounds_factors)  + "'" + """, """ \
                   "'" + str(z_factors)         + "'" + """, """ \
+                  "'" + str(bounds_values)         + "'" + """, """ \
                   "'" + str(tkFile)            + "'" + """) """
             c.execute(cmd)
             conn.commit()
@@ -1082,6 +1167,8 @@ for axis in cmor2.axis_entry.keys():
                            if ('z_bounds_factors'    in cmor2.axis_entry.__getattribute__(axis).keys())  else ""
     z_factors          = cmor2.axis_entry.__getattribute__(axis).__getattribute__('z_factors')        \
                            if ('z_factors' in cmor2.axis_entry.__getattribute__(axis).keys())            else ""
+    bounds_values      = cmor2.axis_entry.__getattribute__(axis).__getattribute__('bounds_values')    \
+                           if ('bounds_values' in cmor2.axis_entry.__getattribute__(axis).keys())        else ""
 
     cmd = """select name from axisEntry where name = '""" + str(name).strip() + "';"
     c.execute(cmd)
@@ -1109,6 +1196,7 @@ for axis in cmor2.axis_entry.keys():
               "'" + str(value)        + "'" + """, """ \
               "'" + str(z_bounds_factors)  + "'" + """, """ \
               "'" + str(z_factors)         + "'" + """, """ \
+              "'" + str(bounds_values)         + "'" + """, """ \
               "'grid') """
         c.execute(cmd)
         conn.commit()
@@ -1146,6 +1234,7 @@ for var in gridVar:
     vid             = ""
 
     dimensions  = "|".join(cmor2.variable_entry.__dict__[var].dimensions)
+    print dimensions
     cmd = """select uid from spatialShape where dimensions = '""" + dimensions + "';"
     c.execute(cmd)
     results = c.fetchall()
@@ -1164,7 +1253,9 @@ for var in gridVar:
                      "'" + spid        + "'" + """) """
         c.execute(cmd)
         conn.commit()
-
+    else:
+        spid=results[0][0]
+    print spid
     stid = uuid.uuid4().urn.split(':')[2]
     cmd = """insert into structure values (""" + \
                  "'area:areacella'" + """, """ + \
@@ -1250,8 +1341,8 @@ for var in gridVar:
              "'" + title           + "'" + """, """ + \
              "'" + vtype           + "'" + """, """ + \
              "'" + uid             + "'" + """, """ + \
-             "'" + str(valid_max)       + "'" + """, """ + \
-             "'" + str(valid_min)       + "'" + """, """ + \
+             "'" + str(valid_max)  + "'" + """, """ + \
+             "'" + str(valid_min)  + "'" + """, """ + \
              "'" + vid             + "'" + """) """
 
         c.execute(cmd)
