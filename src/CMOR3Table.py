@@ -526,7 +526,34 @@ class CMOR3Table:
                         z_factors,
                         bounds_values
                  from axisEntry
-                 where origin != 'grid';"""
+                 where origin != 'grid'
+              UNION
+                 select label, 
+                        axis, 
+                        "", 
+                        "",
+                        description,
+                        bounds, 
+                        altLabel,
+                        positive, 
+                        requested,
+                        "",
+                        standardName,
+                        "",
+                        "",
+                        type,
+                        units,
+                        "",
+                        "",
+                        value,
+                        "",
+                        "",
+                        boundsValues
+                 from grid   
+                 where type != 'character' and 
+                       isIndex != 'ok' and 
+                       label not in (select name from axisEntry) and 
+                       label != "" order by climatology;"""
         self.c.execute(cmd)
         axes = self.c.fetchall()
         return axes

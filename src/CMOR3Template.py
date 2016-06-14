@@ -9,14 +9,14 @@ HeaderJSON = """
                     "realm":            "<modeling_realm>",
                     "frequency":        "<frequency>",
                     "cmor_version":     "<cmorVersion>",
-                    "activity_id":      "<activityID>-XXXX",
                     "table_date":       "<tableDate>",
                     "missing_value":    "<missingValue>",
                     "product":          "output",
                     "approx_interval":  "<approxInterval>",
                     <DUMMYENTRY>
                     "generic_levels":   "<generic_levels>",
-                    "Conventions":      "CF-1.8 CMIP-6.0"
+                    "mip_era":          "CMIP6",
+                    "Conventions":      "CF-1.6 CMIP-6.0"
               },
 """
 
@@ -81,12 +81,11 @@ GridHeaderJSON = """
                 "table_id": "Table grids",
                 "cmor_version":  "<cmorVersion>",
                 "cf_version":    "<cfVersion>",
-                "activity_id":    "<activityID>",
                 "table_date":    "<tableDate>",
                 "missing_value": "<missingValue>",
                 "baseURL": "http://cmip-pcmdi.llnl.gov/CMIP6/dataLocation",
                 "product": "output",
-                "Conventions":      "CF-1.8 CMIP-6.0"
+                "Conventions":      "CF-1.6 CMIP-6.0"
              },
 
     "mapping_entry": {

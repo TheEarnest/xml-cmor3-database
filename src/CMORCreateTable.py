@@ -7,8 +7,8 @@ import sys
 import getopt
 import pdb
 
-cmorVersion = "3.0"
-data_specs_version = "3.0"
+cmorVersion = "3.1"
+data_specs_version = "01.beta.29"
 cfVersion = "1.6"
 activityID = "CMIP6"
 tableDate = datetime.date.today().strftime("%d %B %Y")
@@ -70,8 +70,12 @@ def createHeader(realm="Amon", bJSON=True):
     Header = replaceString(Header, approxInterval,       "approxInterval")
     Header = replaceString(Header, realm,                "table")
     Header = replaceString(Header, genericLevels,        "generic_levels")
-    Header = Header.replace("<modeling_realm>", varSQL[0][3])
-    Header = Header.replace("<frequency>", varSQL[0][1])
+    try: 
+        Header = Header.replace("<modeling_realm>", varSQL[2][3])
+        Header = Header.replace("<frequency>", varSQL[2][1])
+    except:
+        Header = Header.replace("<modeling_realm>", varSQL[0][3])
+        Header = Header.replace("<frequency>", varSQL[0][1])
     Header = replaceString(Header, "",  "DUMMYENTRY")
     return Header
 
