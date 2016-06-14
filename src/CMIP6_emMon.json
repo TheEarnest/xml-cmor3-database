@@ -1,7 +1,7 @@
 {
     "Header": {
         "product": "output", 
-        "approx_interval": "", 
+        "approx_interval": "30.00000", 
         "realm": "ocnBgchem", 
         "cmor_version": "3.1", 
         "Conventions": "CF-1.6 CMIP-6.0", 

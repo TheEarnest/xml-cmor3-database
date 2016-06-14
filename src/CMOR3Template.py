@@ -205,10 +205,105 @@ tableDict = { "Amon": { "approxInterval" : "30.00000",
                            "frequency"      : "subhr"
                       },
               "fx": { "approxInterval" : "0.00000",
-                        "genericLevels"  : "olevel",
-                        "frequency"      : "fx"
-                      }
-
+                            "genericLevels"  : "olevel",
+                            "frequency"      : "fx"
+                      },
+              "6hrPlevpt": { "approxInterval" : "0.250000",
+                            "genericLevels"  : "",
+                            "frequency"      : "3hr"
+                       },
+              "aerannual": { "approxInterval" : "365.00000",
+                            "genericLevels"  : "",
+                            "frequency"      : "yr"
+                       },
+              "aerdaily":  { "approxInterval" : "1.00000",
+                            "genericLevels"  : "",
+                            "frequency"      : "day"
+                       },
+              "aerfixed":  { "approxInterval" : "0.00000",
+                                "genericLevels"  : "",
+                                "frequency"      : "fx"
+                       },
+              "aerhourly": { "approxInterval" : "0.017361",
+                                "genericLevels"  : "",
+                                "frequency"      : "subhr"
+                       },
+              "aermonthly":  { "approxInterval" : "30.00000",
+                                    "genericLevels"  : "",
+                                    "frequency"      : "mon"
+                       },
+              "AmonAdj":     { "approxInterval" : "30.00000",
+                                    "genericLevels"  : "",
+                                    "frequency"      : "mon"
+                        },
+              "CCMI1_hourly": { "approxInterval" : "0.017361",
+                                "genericLevels"  : "",
+                                "frequency"      : "subhr"
+                        },
+              "CCMI1_monthly": { "approxInterval" : "30.00000",
+                                "genericLevels"  : "",
+                                "frequency"      : "mon"
+                        },
+               "aerfixed":  { "approxInterval" : "0.00000",
+                                    "genericLevels"  : "",
+                                    "frequency"      : "fx"
+                        },
+              "CORDEX_day": { "approxInterval" : "1.00000",
+                            "genericLevels"  : "",
+                            "frequency"      : "day"
+                        },
+              "aerdaily":  { "approxInterval" : "1.00000",
+                                    "genericLevels"  : "",
+                                    "frequency"      : "day"
+                        },
+              "em1hr":     { "approxInterval" : "0.017361",
+                                    "genericLevels"  : "",
+                                    "frequency"      : "subhr"
+                        },
+              "em1hrclimmon": { "approxInterval" : "0.017361",
+                                    "genericLevels"  : "",
+                                    "frequency"      : "subhr"
+                        },
+              "em3hr": { "approxInterval" : "0.125000",
+                                    "genericLevels"  : "",
+                                    "frequency"      : "3hr"
+                        },
+              "em3hrpt":  { "approxInterval" : "0.125000",
+                                    "genericLevels"  : "",
+                                    "frequency"      : "3hr"
+                        },
+              "emDay": { "approxInterval" : "1.00000",
+                                    "genericLevels"  : "",
+                                    "frequency"      : "day"
+                       },
+              "emDaypt":  { "approxInterval" : "1.00000",
+                                    "genericLevels"  : "",
+                                    "frequency"      : "day"
+                       },
+              "emDayZ":  { "approxInterval" : "1.00000",
+                                    "genericLevels"  : "",
+                                    "frequency"      : "day"
+                       },
+              "emFx": { "approxInterval" : "0.00000",
+                                    "genericLevels"  : "",
+                                    "frequency"      : "fx"
+                       },
+            "emMon": { "approxInterval" : "30.00000",
+                                    "genericLevels"  : "",
+                                    "frequency"      : "mon"
+                       },
+            "emMonclim":{ "approxInterval" : "30.00000",
+                                    "genericLevels"  : "",
+                                    "frequency"      : "mon"
+                       },
+            "emMonpt": { "approxInterval" : "30.00000",
+                                    "genericLevels"  : "",
+                                    "frequency"      : "mon"
+                       },
+            "emMonZ":  { "approxInterval" : "30.00000",
+                                    "genericLevels"  : "",
+                                    "frequency"      : "mon"
+                       }
              }
 
 # ==================
