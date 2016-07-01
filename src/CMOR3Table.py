@@ -537,7 +537,7 @@ class CMOR3Table:
                         altLabel,
                         positive, 
                         requested,
-                        "",
+                        boundsRequested,
                         standardName,
                         "",
                         "",

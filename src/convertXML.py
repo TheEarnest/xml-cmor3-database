@@ -425,8 +425,16 @@ for child in grid.getchildren():
         altLabel              = child.get('altLabel') or ""
         axis                  = child.get('axis') or ""             
         bounds                = child.get('bounds') or ""
-        boundsRequested       = child.get('boundsRequested') or ""
-        boundsValues          = child.get('boundsValues') or ""
+
+        if child.get('boundsRequested'):
+            boundsRequested   = str([float(x) for x in child.get('boundsRequested').split()] )
+        else:
+            boundsRequested   = ""
+
+        if child.get('boundsValues'):
+            boundsValues  = str([float(x) for x in child.get('boundsValues').split()] )
+        else:
+            boundsValues  = ""
         coords                = child.get('coords') or ""
         description           = child.get('description').replace("'","\"") or ""
         direction             = child.get('direction') or ""
@@ -434,7 +442,15 @@ for child in grid.getchildren():
         isIndex               = child.get('isIndex') or ""
         label                 = child.get('label') or ""
         positive              = child.get('positive') or ""
-        requested             = child.get('requested') or ""
+        requested  = ""
+        if child.get('requested'):
+            try:
+                requested  = str([float(x) for x in child.get('requested').split()])
+            except:
+                try:
+                    requested  = str([float(x) for x in child.get('requested').split()])
+                except:
+                    requested  = ""
         standardName          = child.get('standardName') or ""
         tables                = child.get('tables') or ""
         title                 = child.get('title') or ""
