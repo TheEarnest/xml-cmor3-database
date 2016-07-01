@@ -116,9 +116,6 @@ def createAxes(bJSON=True):
             axis[8] = "\"\""
         if(axis[9] == ""):
             axis[9] = "\"\""
-        if(axis[0] in ['alt16', 'alt40']):
-          print 
-          pdb.set_trace()
         axis_entry = replaceString(axis_entry, axis[0], "axis_entry")
         axis_entry = replaceString(axis_entry, axis[1], "axis")
         axis_entry = replaceString(axis_entry, axis[2], "climatology")
