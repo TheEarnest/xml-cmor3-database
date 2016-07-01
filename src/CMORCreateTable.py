@@ -1,4 +1,5 @@
 import json
+from collections import OrderedDict
 import CMOR3Table
 import re
 import datetime
@@ -8,7 +9,7 @@ import getopt
 import pdb
 
 cmorVersion = "3.1"
-data_specs_version = "01.beta.29"
+data_specs_version = "01.beta.30"
 cfVersion = "1.6"
 activityID = "CMIP6"
 tableDate = datetime.date.today().strftime("%d %B %Y")
@@ -362,7 +363,7 @@ def main(argv):
 
     if(bJSON):
         if(expt):
-            CMIP6Table = (json.loads("{" + "".join(experiments) + "}"))
+            CMIP6Table = (json.loads("{" + "".join(experiments) + "}", object_pairs_hook=OrderedDict) )
             if("Dummy" in CMIP6Table['experiments']):
                 del CMIP6Table['experiments']['Dummy']
             print(json.dumps(CMIP6Table, indent=4))
@@ -372,7 +373,7 @@ def main(argv):
             f.write(string)
             f.close
             CMIP6Table = (json.loads("".join(Header + axis_entry +
-                                                variable_entry + Footer)))
+                                                variable_entry + Footer), object_pairs_hook=OrderedDict))
             if("Dummy" in CMIP6Table['axis_entry']):
                 del CMIP6Table['axis_entry']['Dummy']
             if("Dummy" in CMIP6Table['variable_entry']):
