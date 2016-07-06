@@ -35,6 +35,16 @@ def replaceString(var_entry, var, field):
 
 
 # ==============================================================
+#                     deleteLine()
+# ==============================================================
+def deleteLine(var_entry, field):
+    """
+       Delete a line which contains field.
+    """
+    var_entry = re.sub(r'(?m)".*<'+field+'>".*\n?', '', var_entry)
+    return var_entry
+
+# ==============================================================
 #                     createHeader()
 # ==============================================================
 def createHeader(realm="Amon", bJSON=True):
@@ -272,6 +282,17 @@ def createVariables(bJSON=True):
         var_entry = replaceString(var_entry, var[7],  "valid_max")
         var_entry = replaceString(var_entry, var[5],  "ok_min_mean_abs")
         var_entry = replaceString(var_entry, var[4],  "ok_max_mean_abs")
+
+        if( var[20] == "" ):
+            var_entry = deleteLine( var_entry, "flag_values" )
+        else:
+            var_entry = replaceString(var_entry, var[20], "flag_values")
+
+        if( var[21] == "" ):
+            var_entry = deleteLine( var_entry, "flag_meanings" )
+        else:
+            var_entry = replaceString(var_entry, var[21], "flag_meanings")
+
 
         dimensions = var[9].replace("|", " ") + " " 
         if( var[18] != "" ):

@@ -68,6 +68,8 @@ VarTemplateJSON = """
                         "positive":          "<positive>",
                         "valid_min":         "<valid_min>",
                         "valid_max":         "<valid_max>",
+                        "flag_values":       "<flag_values>",
+                        "flag_meanings":     "<flag_meanings>",
                         "ok_min_mean_abs":   "<ok_min_mean_abs>",
                         "ok_max_mean_abs":   "<ok_max_mean_abs>"
 },

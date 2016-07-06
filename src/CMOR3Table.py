@@ -351,7 +351,9 @@ class CMOR3Table:
                                 vv.description,
                                 v.title,
                                 st.odims,
-                                st.coords
+                                st.coords,
+                                st.flag_values,
+                                st.flag_meanings
                 from exptGroup eg,
                     requestVar rv,
                     requestVarGroup rvg,
