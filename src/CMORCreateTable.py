@@ -9,7 +9,7 @@ import getopt
 import pdb
 
 cmorVersion = "3.1"
-data_specs_version = "01.beta.30"
+data_specs_version = "01.beta.32"
 cfVersion = "1.6"
 activityID = "CMIP6"
 tableDate = datetime.date.today().strftime("%d %B %Y")
@@ -118,6 +118,11 @@ def createAxes(bJSON=True):
 
     for entry in Allaxes:
         axis = list(entry)
+        # ----------------------------------------
+        # fudge requested value for xgre and ygre
+        # ----------------------------------------
+        if( (axis[0] == "xgre" ) or (axis[0] == "ygre") ):
+            axis[8] = ""
         if(bJSON):
             axis_entry = axis_entry + CMOR3Template.axisTemplateJSON
         else:
@@ -390,11 +395,10 @@ def main(argv):
             print(json.dumps(CMIP6Table, indent=4))
         else:
             string = "".join(Header + axis_entry + variable_entry + Footer)
-            f = open("/mnt/hgfs/nadeau1/test.json","w")
+            f = open("/tmp/test.json","w")
             f.write(string)
             f.close
-            CMIP6Table = (json.loads("".join(Header + axis_entry +
-                                                variable_entry + Footer), object_pairs_hook=OrderedDict))
+            CMIP6Table = (json.loads("".join(Header + axis_entry + variable_entry + Footer), object_pairs_hook=OrderedDict))
             if("Dummy" in CMIP6Table['axis_entry']):
                 del CMIP6Table['axis_entry']['Dummy']
             if("Dummy" in CMIP6Table['variable_entry']):
