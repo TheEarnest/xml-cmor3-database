@@ -9,7 +9,7 @@ import getopt
 import pdb
 
 cmorVersion = "3.1"
-data_specs_version = "01.beta.32"
+data_specs_version = "01.beta.36"
 cfVersion = "1.6"
 activityID = "CMIP6"
 tableDate = datetime.date.today().strftime("%d %B %Y")
