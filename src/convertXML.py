@@ -5,13 +5,15 @@ import sqlite3
 import xml.etree.ElementTree as ET
 import pylibconfig2 as cfg
 import uuid
+import sys
 import pdb
 # https://github.com/heinzK1X/pylibconfig2
 
 
 conn = sqlite3.connect('./CMIP6.sql3')
+conn.isolation_level = None
 c = conn.cursor()
-c.execute("""drop table if exists var""")
+c.execute("""drop table if exists var;""")
 c.execute("""drop table if exists CMORvar""")
 c.execute("""drop table if exists structure""")
 c.execute("""drop table if exists spatialShape""")
@@ -34,7 +36,6 @@ c.execute("""drop table if exists vocab_realm""")
 c.execute("""drop table if exists vocab_grid""")
 c.execute("""drop table if exists grid""")
 
-conn.commit()
 print "Create Tables"
 
 c.execute("""create table formulaVar (
@@ -298,6 +299,7 @@ contentDoc = ET.parse("../docs/vocab.xml")
 root = contentDoc.getroot()
 print "Create institute"
 institute = root.findall('./institute')[0]
+c.execute("begin")
 for child in institute.getchildren():
         description = child.get('description').replace("'", "\"") or ""
         iid = child.get('id') or ""
@@ -313,14 +315,15 @@ for child in institute.getchildren():
              "'" + label       + "'" + """, """ + \
              "'" + title       + "'" + """, """ + \
              "'" + url         + "'" + """, """ + \
-             "'" + uid        + "'" + """) """
+             "'" + uid.replace('\'','')        + "'" + """) """
         c.execute(cmd)
-        conn.commit()
 institute = ""
+conn.execute("commit")
 
 print "Create model"
 
 model = root.findall('./model')[0]
+c.execute("begin")
 for child in model.getchildren():
         description = child.get('description').replace("'", "\"") or ""
         mid         = child.get('id') or ""
@@ -332,9 +335,8 @@ for child in model.getchildren():
              "'" + mid         + "'" + """, """ + \
              "'" + label       + "'" + """, """ + \
              "'" + title       + "'" + """, """ + \
-             "'" + uid         + "'" + """) """
+             "'" + uid.replace('\'','')         + "'" + """) """
         c.execute(cmd)
-        conn.commit()
 model = ""
 
 print "Create activity"
@@ -352,9 +354,8 @@ for child in activity.getchildren():
              "'" + status    + "'" + """, """ + \
              "'" + title     + "'" + """, """ + \
              "'" + url       + "'" + """, """ + \
-             "'" + uid       + "'" + """) """
+             "'" + uid.replace('\'','')       + "'" + """) """
         c.execute(cmd)
-        conn.commit()
 activity = ""
 
 print "Create frequency"
@@ -370,9 +371,8 @@ for child in frequency.getchildren():
              "'" + iso       + "'" + """, """ + \
              "'" + label     + "'" + """, """ + \
              "'" + title     + "'" + """, """ + \
-             "'" + uid       + "'" + """) """
+             "'" + uid.replace('\'','')       + "'" + """) """
         c.execute(cmd)
-        conn.commit()
 frequency = ""
 
 print "Create realm"
@@ -386,9 +386,8 @@ for child in realm.getchildren():
              "'" + rid       + "'" + """, """ + \
              "'" + label     + "'" + """, """ + \
              "'" + title     + "'" + """, """ + \
-             "'" + uid       + "'" + """) """
+             "'" + uid.replace('\'','')       + "'" + """) """
         c.execute(cmd)
-        conn.commit()
 realm = ""
 
 
@@ -403,10 +402,10 @@ for child in grid.getchildren():
              "'" + gid       + "'" + """, """ + \
              "'" + label     + "'" + """, """ + \
              "'" + title     + "'" + """, """ + \
-             "'" + uid       + "'" + """) """
+             "'" + uid.replace('\'','')       + "'" + """) """
         c.execute(cmd)
-        conn.commit()
 grid = ""
+conn.execute("commit")
 # -----------------------------------
 # Read in dreq.xml and set namespace
 # -----------------------------------
@@ -418,9 +417,97 @@ contentDoc = ET.parse("../docs/dreq.xml")
 root = contentDoc.getroot()
 namespace = '{urn:w3id.org:cmip6.dreq.dreq:a}'
 
+# *********************************************************************
+# Create first shot of axes from Martin's table.  If axes are missing,
+# they will be created by reading CMIP5 tables
+# *********************************************************************
+axes = root.findall('./{0}main/{0}grids'.format(namespace))[0]
+print "Create Martin's dreq.xml axes"
+c.execute("begin")
+for child in axes.getchildren():
+    name               = child.get('label') or ""
+    if name in ['alevel', 'olevel', 'alevhalf' ]:
+        continue
+    if name == 'sdepth1':
+        pdb.set_trace()
+    caxis              = child.get('axis') or ""
+    long_name          = child.get('title') or ""
+    must_have_bounds   = child.get('bounds') or ""
+    out_name           = child.get('altLabel') or ""
+    positive           = child.get('positive') or ""
+
+    if child.get('boundsRequested'):
+        requested_bounds = str([str(x) for x in child.get('boundsRequested').split()] )
+    else:
+        requested_bounds = ""
+
+    if child.get('requested'):
+        try:
+            requested  = str([str(x) for x in child.get('requested').split()])
+        except:
+            try:
+                requested  = str([str(x) for x in child.get('requested').split()])
+            except:
+                sys.exit(1)
+    else:
+        requested  = ""
+
+    if child.get('boundsValues'):
+        bounds_values = str([float(x) for x in child.get('boundsValues').split()] )
+        # convert list into string of values
+        # -----------------------------------
+        bounds_values = " ".join(str(value) for value in eval(bounds_values))
+    else:
+        bounds_values = ""
+
+    standard_name      = child.get('standardName') or ""
+    stored_direction   = child.get('direction') or ""
+    ctype              = child.get('type') or ""
+    units              = child.get('units') or ""
+    valid_max          = child.get('valid_max') or ""
+    valid_min          = child.get('valid_min') or ""
+    value              = child.get('value') or ""
+    tolerance          = ""
+    z_bounds_factors   = ""
+    z_factors          = ""
+    climatology        = ""
+    formula            = ""
+                        
+    cmd = """select name from axisEntry where name = '""" + str(name).strip() + "';"
+    c.execute(cmd)
+    results = c.fetchall()
+    if not results:
+        cmd = """insert into axisEntry values (""" + \
+              "'" + str(name)              + "'" + """, """ \
+              "'" + str(caxis)             + "'" + """, """ \
+              "'" + str(climatology)       + "'" + """, """ \
+              "'" + str(formula)           + "'" + """, """ \
+              "'" + str(long_name)         + "'" + """, """ \
+              "'" + str(must_have_bounds)  + "'" + """, """ \
+              "'" + str(out_name)          + "'" + """, """ \
+              "'" + str(positive)          + "'" + """, """ \
+              "'" + str(requested).replace("'","\"")        + "'" + """, """ \
+              "'" + str(requested_bounds).replace("'", "\"")  + "'" + """, """ \
+              "'" + str(standard_name)     + "'" + """, """ \
+              "'" + str(stored_direction)  + "'" + """, """ \
+              "'" + str(tolerance)         + "'" + """, """ \
+              "'" + str(ctype)             + "'" + """, """ \
+              "'" + str(units)             + "'" + """, """ \
+              "'" + str(valid_max)         + "'" + """, """ \
+              "'" + str(valid_min)         + "'" + """, """ \
+              "'" + str(value)             + "'" + """, """ \
+              "'" + str(z_bounds_factors)  + "'" + """, """ \
+              "'" + str(z_factors)         + "'" + """, """ \
+              "'" + str(bounds_values)     + "'" + """, """ \
+              "'" + "XML"                  + "'" + """) """
+        c.execute(cmd)
+axes=""
+c.execute("commit")
+
 print "Create grid"
 
 grid = root.findall('./{0}main/{0}grids'.format(namespace))[0]
+c.execute("begin")
 for child in grid.getchildren():
         altLabel              = child.get('altLabel') or ""
         axis                  = child.get('axis') or ""             
@@ -479,25 +566,25 @@ for child in grid.getchildren():
              "'" + title           + "'" + """, """ + \
              "'" + tolRequested    + "'" + """, """ + \
              "'" + itype           + "'" + """, """ + \
-             "'" + uid             + "'" + """, """ + \
+             "'" + uid.replace('\'','')             + "'" + """, """ + \
              "'" + units           + "'" + """, """ + \
              "'" + value + "'" + """) """
         c.execute(cmd)
-        conn.commit()
 grid = ""
+
 
 var = root.findall('./{0}main/{0}var'.format(namespace))[0]
 print "Create var"
 for child in var.getchildren():
     description = child.get('description').replace("'", "\"")  or ""
-    vid         = child.get('id')           or ""
+    vid         = child.get('id').replace('\'','')           or ""
     label       = child.get('label')        or ""
     proComment  = child.get('proComment')   or ""
     proNote     = child.get('pronote')      or ""
     prov        = child.get('prov')         or ""
     sn          = child.get('sn')           or ""
     title       = child.get('title').replace("'", "\"")        or ""
-    uid         = child.get('uid')          or ""
+    uid         = child.get('uid').replace('\'','')          or ""
     units       = child.get('units')        or ""
 
     cmd = """insert into var values (""" + \
@@ -509,11 +596,10 @@ for child in var.getchildren():
          "'" + prov        + "'" + """, """ + \
          "'" + sn          + "'" + """, """ + \
          "'" + title       + "'" + """, """ + \
-         "'" + uid         + "'" + """, """ + \
+         "'" + uid.replace('\'','')         + "'" + """, """ + \
          "'" + units       + "'" + """) """
 
     c.execute(cmd)
-    conn.commit()
 var = ""
 
 # ----------------------------------
@@ -542,10 +628,10 @@ for child in CMORvar.getchildren():
     stid            = child.get('stid')            or ""
     title           = child.get('title')           or ""
     vtype           = child.get('type')            or ""
-    uid             = child.get('uid')             or ""
+    uid             = child.get('uid').replace('\'','')             or ""
     valid_max       = child.get('valid_max')       or ""
     valid_min       = child.get('valid_min')       or ""
-    vid             = child.get('vid')             or ""
+    vid             = child.get('vid').replace('\'','')             or ""
 
     defaultPriority = defaultPriority.replace('None', '')
     deflate         = deflate.replace('None', '')
@@ -589,13 +675,12 @@ for child in CMORvar.getchildren():
          "'" + stid            + "'" + """, """ + \
          "'" + title           + "'" + """, """ + \
          "'" + vtype           + "'" + """, """ + \
-         "'" + uid             + "'" + """, """ + \
+         "'" + uid.replace('\'','')             + "'" + """, """ + \
          "'" + valid_max       + "'" + """, """ + \
          "'" + valid_min       + "'" + """, """ + \
-         "'" + vid             + "'" + """) """
+         "'" + vid.replace('\'','')            + "'" + """) """
 
     c.execute(cmd)
-    conn.commit()
 CMORvar = ""
 
 # ----------------------------------
@@ -631,9 +716,8 @@ for child in structure.getchildren():
          "'" + prov            + "'" + """, """ + \
          "'" + spid            + "'" + """, """ + \
          "'" + tmid            + "'" + """, """ + \
-         "'" + uid             + "'" + """) """
+         "'" + uid.replace('\'','')             + "'" + """) """
     c.execute(cmd)
-    conn.commit()
 structure = ""
 
 # ----------------------------------
@@ -655,9 +739,8 @@ for child in spatialShape.getchildren():
                  "'" + levelFlag  + "'" + """, """ + \
                  "'" + levels     + "'" + """, """ + \
                  "'" + title      + "'" + """, """ + \
-                 "'" + uid        + "'" + """) """
+                 "'" + uid.replace('\'','')        + "'" + """) """
     c.execute(cmd)
-    conn.commit()
 
 spatialShape = ""
 # ----------------------------------
@@ -674,9 +757,8 @@ for child in temporalShape.getchildren():
                  "'" + dimensions + "'" + """, """ + \
                  "'" + label      + "'" + """, """ + \
                  "'" + title      + "'" + """, """ + \
-                 "'" + uid        + "'" + """) """
+                 "'" + uid.replace('\'','')        + "'" + """) """
     c.execute(cmd)
-    conn.commit()
 temporalShape = ""
 
 # ----------------------------------
@@ -700,11 +782,10 @@ for child in requestVar.getchildren():
                  "'" + priority + "'" + """, """ + \
                  "'" + tables   + "'" + """, """ + \
                  "'" + title    + "'" + """, """ + \
-                 "'" + uid      + "'" + """, """ + \
+                 "'" + uid.replace('\'','')      + "'" + """, """ + \
                  "'" + vgid     + "'" + """, """ + \
-                 "'" + vid      + "'" + """) """
+                 "'" + vid.replace('\'','')      + "'" + """) """
     c.execute(cmd)
-    conn.commit()
 requestVar = ""
 
 requestVarGroup = root.findall('./{0}main/{0}requestVarGroup'.format(namespace))[0]
@@ -723,9 +804,8 @@ for child in requestVarGroup.getchildren():
                  "'" + ref     + "'" + """, """ + \
                  "'" + refNote + "'" + """, """ + \
                  "'" + title   + "'" + """, """ + \
-                 "'" + uid     + "'" + """) """
+                 "'" + uid.replace('\'','')     + "'" + """) """
     c.execute(cmd)
-    conn.commit()
 requestVarGroup = ""
 
 requestLink = root.findall('./{0}main/{0}requestLink'.format(namespace))[0]
@@ -760,9 +840,8 @@ for child in requestLink.getchildren():
                  "'" + refid    + "'" + """, """ + \
                  "'" + tab      + "'" + """, """ + \
                  "'" + title    + "'" + """, """ + \
-                 "'" + uid      + "'" + """) """
+                 "'" + uid.replace('\'','')      + "'" + """) """
     c.execute(cmd)
-    conn.commit()
 requestLink = ""
 
 requestItem = root.findall('./{0}main/{0}requestItem'.format(namespace))[0]
@@ -797,9 +876,8 @@ for child in requestItem.getchildren():
                  "'" + rlid       + "'" + """, """ + \
                  "'" + tab        + "'" + """, """ + \
                  "'" + title.replace("'", "\"")      + "'" + """, """ + \
-                 "'" + uid        + "'" + """) """
+                 "'" + uid.replace('\'','')        + "'" + """) """
     c.execute(cmd)
-    conn.commit()
 requestItem = ""
 
 experiment = root.findall('./{0}main/{0}experiment'.format(namespace))[0]
@@ -833,11 +911,10 @@ for child in experiment.getchildren():
              "'" + ntot       + "'" + """, """ + \
              "'" + starty     + "'" + """, """ + \
              "'" + tier       + "'" + """, """ + \
-             "'" + uid        + "'" + """, """ + \
+             "'" + uid.replace('\'','')        + "'" + """, """ + \
              "'" + yps        + "'" + """) """
 
     c.execute(cmd)
-    conn.commit()
 experiment = ""
 
 exptgroup = root.findall('./{0}main/{0}exptgroup'.format(namespace))[0]
@@ -851,9 +928,8 @@ for child in exptgroup.getchildren():
              "'" + label    + "'" + """, """ + \
              "'" + ntot     + "'" + """, """ + \
              "'" + tierMin  + "'" + """, """ + \
-             "'" + uid      + "'" + """) """
+             "'" + uid.replace('\'','')      + "'" + """) """
     c.execute(cmd)
-    conn.commit()
 exptgroup = ""
 MIP = root.findall('./{0}main/{0}mip'.format(namespace))[0]
 print "Create MIP"
@@ -867,10 +943,9 @@ for child in MIP.getchildren():
              "'" + label  + "'" + """, """ + \
              "'" + status + "'" + """, """ + \
              "'" + title  + "'" + """, """ + \
-             "'" + uid    + "'" + """, """ + \
+             "'" + uid.replace('\'','')    + "'" + """, """ + \
              "'" + url    + "'" + """) """
     c.execute(cmd)
-    conn.commit()
 
 for file in ["../tables/Amon_libconfig", "CMIP5_Omon_CMOR3" ]:
     cmor2 = cfg.Config()
@@ -921,7 +996,6 @@ for file in ["../tables/Amon_libconfig", "CMIP5_Omon_CMOR3" ]:
                   "'" + str(units)             + "'" + """) """
 
         c.execute(cmd)
-        conn.commit()
 
     print "Create axes"
     for axis in cmor2.axis_entries.keys():
@@ -1009,14 +1083,13 @@ for expt in cmor2.expt_ids:
           "'" + str(eid)              + "'" + """, """ \
           "'" + str(title)             + "'" + """) """
     c.execute(cmd)
-    conn.commit()
-
 # *********************************************************
 # CMOR 3 files are libconfig2 format from old CMOR2 tables
 # *********************************************************
 files = ["./CMIP5_Omon_CMOR3", "./CMIP6_OImon_CMOR3", "./CMIP6_LImon_CMOR3",
          "./CMIP6_Lmon_CMOR3", "./CMIP5_3hr_CMOR3",
-         "./CMIP5_cfSites_CMOR3", "./CMIP5_cf3hr_CMOR3", "./CMIP5_cfMon_CMOR3", "./CMIP6_new_axis_CMOR3" ]
+         "./CMIP5_cfSites_CMOR3", "./CMIP5_cf3hr_CMOR3", "./CMIP5_cfMon_CMOR3"]
+#, "./CMIP6_new_axis_CMOR3" ]
 for file in files:
     print "reading file" + file
     cmor2 = cfg.Config()
@@ -1059,7 +1132,6 @@ for file in files:
                   "'" + str(units)             + "'" + """) """
 
             c.execute(cmd)
-            conn.commit()
 
     print "Create axes"
     for axis in cmor2.axis_entries.keys():
@@ -1138,7 +1210,6 @@ for file in files:
                   "'" + str(bounds_values)         + "'" + """, """ \
                   "'" + str(tkFile)            + "'" + """) """
             c.execute(cmd)
-            conn.commit()
 
 cmor2 = cfg.Config()
 cmor2.read_file("./CMIP5_grids_CMOR3")
@@ -1215,7 +1286,6 @@ for axis in cmor2.axis_entry.keys():
               "'" + str(bounds_values)         + "'" + """, """ \
               "'grid') """
         c.execute(cmd)
-        conn.commit()
 
 gridVar = [key for key in cmor2.variable_entry.keys()]
 
@@ -1268,7 +1338,6 @@ for var in gridVar:
                      "'ssd-" + name   + "'" + """, """ + \
                      "'" + spid        + "'" + """) """
         c.execute(cmd)
-        conn.commit()
     else:
         spid=results[0][0]
     print spid
@@ -1288,7 +1357,6 @@ for var in gridVar:
                  "'" + "0000-0000-0000"       + "'" + """, """ \
                  "'" + stid        + "'" + """) """
     c.execute(cmd)
-    conn.commit()
 
     # -------------------------
     # select new uid for grid shape
@@ -1309,7 +1377,7 @@ for var in gridVar:
                  "''" + """, """ + \
                  "''" + """, """ + \
                  "''" + """, """ + \
-                 "'" + vid       + "'" + """, """  \
+                 "'" + vid.replace('\'','')       + "'" + """, """  \
                  "'" + units      + "'" + """) """
         c.execute(cmd)
         results = c.fetchall()
@@ -1356,14 +1424,14 @@ for var in gridVar:
              "'" + stid            + "'" + """, """ + \
              "'" + title           + "'" + """, """ + \
              "'" + vtype           + "'" + """, """ + \
-             "'" + uid             + "'" + """, """ + \
+             "'" + uid.replace('\'','')             + "'" + """, """ + \
              "'" + str(valid_max)  + "'" + """, """ + \
              "'" + str(valid_min)  + "'" + """, """ + \
-             "'" + vid             + "'" + """) """
+             "'" + vid.replace('\'','')             + "'" + """) """
 
         c.execute(cmd)
-        conn.commit()
 
+c.execute("commit")
 ###  Work on cfMon
 #cmor2=cfg.Config()
 #cmor2.read_file("./CMIP5_cfMon_CMOR3")
