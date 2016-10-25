@@ -6,10 +6,11 @@ import datetime
 import CMOR3Template
 import sys
 import getopt
+import packageConfig
 import pdb
 
 cmorVersion = "3.1"
-data_specs_version = "01.beta.36"
+data_specs_version = packageConfig.__version__
 cfVersion = "1.6"
 activityID = "CMIP6"
 tableDate = datetime.date.today().strftime("%d %B %Y")
