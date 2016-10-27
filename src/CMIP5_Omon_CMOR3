@@ -291,7 +291,7 @@ axis_entries:{  longitude: {
 #----------------------------------	
   out_name:         "lev"	
   must_have_bounds: "yes"	
-  stored_direction: "decreasing"	
+  stored_direction: "increasing"	
   valid_min:        0.	
   valid_max:        12000.	
 #----------------------------------	
