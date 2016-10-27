@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 SQLITE3=${SQLITE3:-sqlite3}
 CMIP6DB=${CMIP6DB:-CMIP6.sql3}
 
