@@ -434,6 +434,21 @@ class CMOR3Table:
         return variables
 
     # --------------------------------------------------------------------
+    #      getMipTables
+    # --------------------------------------------------------------------
+    def getMipTables(self):
+        '''
+        Return all mipTables (Amon,Omon,...) from CMORvar SQL table.
+        '''
+        cmd = """select DISTINCT  v.mipTable
+                from CMORvar v
+                order by v.mipTable;"""
+        self.c.execute(cmd)
+        mipTables = self.c.fetchall()
+
+        return mipTables
+
+    # --------------------------------------------------------------------
     #      getVarProvenance()
     # --------------------------------------------------------------------
     def getVarProvenance(self, prov, MIP):
