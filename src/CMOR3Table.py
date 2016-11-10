@@ -382,6 +382,52 @@ class CMOR3Table:
         return variables
 
     # --------------------------------------------------------------------
+    #      getCMORVarFromMipTable()
+    # --------------------------------------------------------------------
+    def getCMORVarFromMipTable(self, mipTable, MIP):
+        '''
+        Return all variables from a provenance (Amon,Omon,...) for a selected MIP
+        from CMORVar table only.
+        '''
+        cmd = """select DISTINCT  v.label,
+                                v.frequency,
+                                v.mipTable,
+                                v.modeling_realm,
+                                v.ok_max_mean_abs,
+                                v.ok_min_mean_abs,
+                                v.positive,
+                                v.valid_max,
+                                v.valid_min,
+                                ss.dimensions,
+                                ts.dimensions,
+                                st.cell_methods,
+                                st.cell_measures,
+                                vv.units,
+                                vv.sn,
+                                v.type,
+                                vv.description,
+                                v.title,
+                                st.odims,
+                                st.coords,
+                                st.flag_values,
+                                st.flag_meanings
+                from spatialShape ss,
+                    temporalShape ts,
+                    structure st,
+                    var vv,
+                    CMORvar v
+                where v.stid = st.uid and
+                      st.spid = ss.uid and
+                      st.tmid = ts.uid and
+                      v.vid=vv.uid and
+                      v.mipTable='""" + mipTable + """'
+                order by v.label;"""
+        self.c.execute(cmd)
+        variables = self.c.fetchall()
+
+        return variables
+
+    # --------------------------------------------------------------------
     #      getAxesGrids()
     # --------------------------------------------------------------------
     def getAxesGrids(self):
