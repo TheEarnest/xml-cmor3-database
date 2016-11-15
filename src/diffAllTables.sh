@@ -10,4 +10,11 @@ for realm in $(${SQLITE3} "${CMIP6DB}" \
     echo $filename
     diff /tmp/$filename .
 done
+cmd="diff /tmp/CMIP6_coordinate.json ."
+echo $cmd
+$cmd
+cmd="diff /tmp/CMIP6_formula_terms.json ."
+echo $cmd
+$cmd
+
 exit 0
