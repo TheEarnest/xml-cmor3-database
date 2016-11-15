@@ -4,8 +4,13 @@
         "table_id": "Table 6hrPlev", 
         "realm": "atmos", 
         "frequency": "6hr", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "0.250000", 
@@ -2549,9 +2554,15 @@
         }, 
         "zg7h": {
             "modeling_realm": "atmos", 
+<<<<<<< Updated upstream
             "standard_name": "geopotential_height", 
             "units": "m", 
             "cell_methods": "time: point", 
+=======
+            "standard_name": "eastward_wind", 
+            "units": "m s-1", 
+            "cell_methods": "area: time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Geopotential Height", 
             "comment": "", 
@@ -2564,6 +2575,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "ua4": {
             "modeling_realm": "atmos", 
             "standard_name": "eastward_wind", 
@@ -2582,6 +2594,9 @@
             "ok_max_mean_abs": ""
         }, 
         "hus4": {
+=======
+        "ua7h": {
+>>>>>>> Stashed changes
             "modeling_realm": "atmos", 
             "standard_name": "specific_humidity", 
             "units": "1.0", 
@@ -2634,9 +2649,15 @@
         }, 
         "ta7h": {
             "modeling_realm": "atmos", 
+<<<<<<< Updated upstream
             "standard_name": "air_temperature", 
             "units": "K", 
             "cell_methods": "time: point", 
+=======
+            "standard_name": "northward_wind", 
+            "units": "m s-1", 
+            "cell_methods": "area: time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Air Temperature", 
             "comment": "Air Temperature", 
@@ -2649,6 +2670,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "ua7h": {
             "modeling_realm": "atmos", 
             "standard_name": "eastward_wind", 
@@ -2666,6 +2688,8 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+=======
+>>>>>>> Stashed changes
         "va7h": {
             "modeling_realm": "atmos", 
             "standard_name": "northward_wind", 
@@ -2690,10 +2714,34 @@
             "cell_methods": "", 
             "cell_measures": "area: areacella", 
             "long_name": "Northward Wind", 
+<<<<<<< Updated upstream
             "comment": "Northward component of the wind", 
             "dimensions": "longitude latitude time p200", 
             "out_name": "va200", 
             "type": "", 
+=======
+            "comment": "Northward component of the wind at 850hPa", 
+            "dimensions": "longitude latitude time p850", 
+            "out_name": "va850", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "wap4": {
+            "modeling_realm": "atmos", 
+            "standard_name": "lagrangian_tendency_of_air_pressure", 
+            "units": "Pa s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "omega (=dp/dt)", 
+            "comment": "Omega (vertical velocity in pressure coordinates, positive downwards)", 
+            "dimensions": "longitude latitude plev4 time", 
+            "out_name": "wap4", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2717,6 +2765,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "va850": {
             "modeling_realm": "atmos", 
             "standard_name": "northward_wind", 
@@ -2728,6 +2777,19 @@
             "dimensions": "longitude latitude time p850", 
             "out_name": "va850", 
             "type": "", 
+=======
+        "zg1000": {
+            "modeling_realm": "aerosol", 
+            "standard_name": "geopotential_height", 
+            "units": "m", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Geopotential Height at 1000 hPa", 
+            "comment": "Geopotential height on the 1000 hPa surface", 
+            "dimensions": "longitude latitude time p1000", 
+            "out_name": "zg1000", 
+            "type": "float", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 

@@ -2,10 +2,17 @@
     "Header": {
         "data_specs_version": "01.beta.38", 
         "table_id": "Table emMonZ", 
+<<<<<<< Updated upstream
         "realm": "aerosol", 
         "frequency": "mon", 
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "realm": "atmos", 
+        "frequency": "mon", 
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "30.00000", 
@@ -2479,10 +2486,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "va": {
             "modeling_realm": "aerosol", 
             "standard_name": "northward_wind", 
             "units": "m s-1", 
+=======
+        "epfy": {
+            "modeling_realm": "atmos", 
+            "standard_name": "northward_eliassen_palm_flux_in_air", 
+            "units": "m3 s-2", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Northward Wind", 
@@ -2496,10 +2510,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "n2o": {
             "modeling_realm": "aerosol", 
             "standard_name": "mole_fraction_of_nitrous_oxide_in_air", 
             "units": "mol mol-1", 
+=======
+        "epfz": {
+            "modeling_realm": "atmos", 
+            "standard_name": "upward_eliassen_palm_flux_in_air", 
+            "units": "m3 s-2", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "N2O volume mixing ratio", 
@@ -2564,10 +2585,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "h2o": {
             "modeling_realm": "aerosol", 
             "standard_name": "mole_fraction_of_water_vapor_in_air", 
             "units": "mol mol-1", 
+=======
+        "jo2": {
+            "modeling_realm": "atmos", 
+            "standard_name": "photolysis_rate_of_molecular_oxygen", 
+            "units": "s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "H2O volume mixing ratio", 
@@ -2581,10 +2609,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "vt100": {
             "modeling_realm": "aerosol", 
             "standard_name": "northward_heat_flux_in_air_due_to_eddy_advection", 
             "units": "W m-2", 
+=======
+        "jo3": {
+            "modeling_realm": "atmos", 
+            "standard_name": "photolysis_rate_of_ozone", 
+            "units": "s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Northward heat flux due to eddies", 
@@ -2649,10 +2684,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "utendepfd": {
             "modeling_realm": "", 
             "standard_name": "tendency_of_eastward_wind_due_to_eliassen_palm_flux_divergence", 
             "units": "m s-2", 
+=======
+        "oxloss": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_mole_concentration_of_ozone_and_atomic_oxygen_and_1D_oxygen_atom_due_to_chemical_destruction", 
+            "units": "mol m-3 s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Tendency of eastward wind due to Eliassen-Palm Flux divergence", 
@@ -2666,16 +2708,26 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "jo2": {
             "modeling_realm": "", 
             "standard_name": "photolysis_rate_of_molecular_oxygen", 
             "units": "s-1", 
+=======
+        "oxprod": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_mole_concentration_of_ozone_and_atomic_oxygen_and_1D_oxygen_atom_due_to_chemical_production_and_photolysis", 
+            "units": "mol m-3 s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "photoloysis rate of O2", 
             "comment": "rate of o2 -> o1d+o", 
             "dimensions": "latitude plev39 time", 
+<<<<<<< Updated upstream
             "out_name": "jo2", 
+=======
+            "out_name": "oxprod", 
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2683,6 +2735,59 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+        "sltbasin": {
+            "modeling_realm": "ocean", 
+            "standard_name": "northward_ocean_salt_transport", 
+            "units": "kg s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "", 
+            "long_name": "Northward Ocean Salt Transport", 
+            "comment": "function of latitude, basin", 
+            "dimensions": "latitude basin time", 
+            "out_name": "sltbasin", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "sltnorth": {
+            "modeling_realm": "atmos", 
+            "standard_name": "northward_ocean_salt_transport", 
+            "units": "kg s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "", 
+            "long_name": "Northward Ocean Salt Transport", 
+            "comment": "", 
+            "dimensions": "latitude basin time", 
+            "out_name": "sltnorth", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "sltnortha": {
+            "modeling_realm": "atmos", 
+            "standard_name": "northward_ocean_salt_transport", 
+            "units": "kg s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "", 
+            "long_name": "Atlantic Northward Ocean Salt Transport", 
+            "comment": "", 
+            "dimensions": "latitude basin time", 
+            "out_name": "sltnortha", 
+>>>>>>> Stashed changes
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+<<<<<<< Updated upstream
         "vtem": {
             "modeling_realm": "", 
             "standard_name": "northward_transformed_eulerian_mean_air_velocity", 
@@ -2694,16 +2799,36 @@
             "dimensions": "latitude plev39 time", 
             "out_name": "vtem", 
             "type": "", 
+=======
+        "ta": {
+            "modeling_realm": "aerosol", 
+            "standard_name": "air_temperature", 
+            "units": "K", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Air Temperature", 
+            "comment": "Air Temperature", 
+            "dimensions": "latitude plev39 time", 
+            "out_name": "ta", 
+            "type": "float", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "oxloss": {
             "modeling_realm": "", 
             "standard_name": "tendency_of_mole_concentration_of_ozone_and_atomic_oxygen_and_1D_oxygen_atom_due_to_chemical_destruction", 
             "units": "mol m-3 s-1", 
+=======
+        "tntnogw": {
+            "modeling_realm": "atmos", 
+            "standard_name": "temperature_tendency_due_to_dissipation_nonorographic_gravity_wave_drag", 
+            "units": "K s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "total Ox loss rate", 
@@ -2717,9 +2842,15 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "zmtnt": {
             "modeling_realm": "", 
             "standard_name": "tendency_of_air_temperature_due_to_diabatic_processes", 
+=======
+        "tntogw": {
+            "modeling_realm": "atmos", 
+            "standard_name": "temperature_tendency_due_to_dissipation_orographic_gravity_wave_drag", 
+>>>>>>> Stashed changes
             "units": "K s-1", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
@@ -2734,6 +2865,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "oxprod": {
             "modeling_realm": "", 
             "standard_name": "tendency_of_mole_concentration_of_ozone_and_atomic_oxygen_and_1D_oxygen_atom_due_to_chemical_production_and_photolysis", 
@@ -2755,6 +2887,12 @@
             "modeling_realm": "", 
             "standard_name": "northward_eliassen_palm_flux_in_air", 
             "units": "m3 s-2", 
+=======
+        "ua": {
+            "modeling_realm": "aerosol", 
+            "standard_name": "eastward_wind", 
+            "units": "m s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Northward component of the Eliassen-Palm Flux", 
@@ -2768,10 +2906,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "jo3": {
             "modeling_realm": "", 
             "standard_name": "photolysis_rate_of_ozone", 
             "units": "s-1", 
+=======
+        "utendepfd": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_eastward_wind_due_to_eliassen_palm_flux_divergence", 
+            "units": "m s-2", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "photoloysis rate of O3", 
@@ -2803,7 +2948,7 @@
             "ok_max_mean_abs": ""
         }, 
         "vmrox": {
-            "modeling_realm": "", 
+            "modeling_realm": "atmos", 
             "standard_name": "mole_fraction_of_ozone_and_atomic_oxygen_and_1D_oxygen_atom", 
             "units": "mol mol-1", 
             "cell_methods": "time: mean", 
@@ -2853,9 +2998,15 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "wstarbar": {
             "modeling_realm": "atmos", 
             "standard_name": "", 
+=======
+        "vtem": {
+            "modeling_realm": "atmos", 
+            "standard_name": "northward_transformed_eulerian_mean_air_velocity", 
+>>>>>>> Stashed changes
             "units": "m s-1", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
@@ -2887,6 +3038,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "ynonoroggwdparam": {
             "modeling_realm": "atmos", 
             "standard_name": "", 
@@ -2907,6 +3059,11 @@
         "vstarbar": {
             "modeling_realm": "atmos", 
             "standard_name": "northward_transformed_eulerian_mean_air_velocity", 
+=======
+        "wtem": {
+            "modeling_realm": "atmos", 
+            "standard_name": "unset", 
+>>>>>>> Stashed changes
             "units": "m s-1", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
@@ -2921,6 +3078,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "xgwdparam": {
             "modeling_realm": "atmos", 
             "standard_name": "atmosphere_eastward_stress_due_to_gravity_wave_drag", 
@@ -2976,6 +3134,12 @@
             "modeling_realm": "", 
             "standard_name": "upward_eliassen_palm_flux_in_air", 
             "units": "m3 s-2", 
+=======
+        "xnonoroggwdparam": {
+            "modeling_realm": "atmos", 
+            "standard_name": "", 
+            "units": "m s-2", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Upward component of the Eliassen-Palm Flux", 
@@ -2989,6 +3153,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tntnogw": {
             "modeling_realm": "", 
             "standard_name": "temperature_tendency_due_to_dissipation_nonorographic_gravity_wave_drag", 
@@ -3010,6 +3175,12 @@
             "modeling_realm": "", 
             "standard_name": "temperature_tendency_due_to_dissipation_orographic_gravity_wave_drag", 
             "units": "K s-1", 
+=======
+        "ynonoroggwdparam": {
+            "modeling_realm": "atmos", 
+            "standard_name": "", 
+            "units": "m s-2", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "temperature tendency orographic gravity wave dissipation", 
@@ -3040,9 +3211,15 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tntsw": {
             "modeling_realm": "", 
             "standard_name": "tendency_of_air_temperature_due_to_shortwave_heating", 
+=======
+        "zmtnt": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_air_temperature_due_to_diabatic_processes", 
+>>>>>>> Stashed changes
             "units": "K s-1", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 

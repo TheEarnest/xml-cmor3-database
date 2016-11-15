@@ -2,10 +2,15 @@
     "Header": {
         "data_specs_version": "01.beta.38", 
         "table_id": "Table emDayZ", 
-        "realm": "", 
+        "realm": "atmos", 
         "frequency": "day", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "1.00000", 
@@ -13,6 +18,7 @@
         "mip_era": "CMIP6", 
         "Conventions": "CF-1.6 CMIP-6.0"
     }, 
+<<<<<<< Updated upstream
     "axis_entry": {
         "alev1": {
             "standard_name": "", 
@@ -23,6 +29,20 @@
             "formula": "", 
             "must_have_bounds": "yes", 
             "out_name": "lev", 
+=======
+    "variable_entry": {
+        "epfy": {
+            "modeling_realm": "atmos", 
+            "standard_name": "northward_eliassen_palm_flux_in_air", 
+            "units": "m3 s-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Northward component of the Eliassen-Palm Flux", 
+            "comment": "Transformed Eulerian Mean Diagnostics Meridional component Fy of Eliassen-Palm (EP) flux (Fy, Fz) derived from 6hr or higher frequency fields (use daily fields or 12 hr fields if the 6 hr are not available). Please use the definitions given by equation 3.5.3a of Andrews, Holton and Leovy text book, but scaled by density to have units m3 s-2.", 
+            "dimensions": "latitude plev39 time", 
+            "out_name": "epfy", 
+            "type": "", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -108,6 +128,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "alt40": {
             "standard_name": "altitude", 
             "units": "m", 
@@ -266,6 +287,18 @@
             "requested_bounds": "", 
             "stored_direction": "decreasing", 
             "tolerance": "", 
+=======
+        "epfz": {
+            "modeling_realm": "atmos", 
+            "standard_name": "upward_eliassen_palm_flux_in_air", 
+            "units": "m3 s-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Upward component of the Eliassen-Palm Flux", 
+            "comment": "Transformed Eulerian Mean Diagnostics Meridional component Fz of the Eliassen-Palm (EP) flux (Fy, Fz) derived from 6hr or higher frequency fields (use daily fields or 12 hr fields if the 6 hr are not available). Please use the definitions given by equation 3.5.3b of Andrews, Holton and Leovy text book, but scaled by density to have units m3 s-2.", 
+            "dimensions": "latitude plev39 time", 
+            "out_name": "epfz", 
+>>>>>>> Stashed changes
             "type": "", 
             "valid_max": "1.0", 
             "valid_min": "0.0", 
@@ -369,6 +402,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "depth0m": {
             "standard_name": "depth", 
             "units": "m", 
@@ -493,6 +527,18 @@
             "requested_bounds": "", 
             "stored_direction": "decreasing", 
             "tolerance": "", 
+=======
+        "hus": {
+            "modeling_realm": "atmos", 
+            "standard_name": "specific_humidity", 
+            "units": "1.0", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "", 
+            "long_name": "Specific Humidity", 
+            "comment": "", 
+            "dimensions": "latitude plev19 time", 
+            "out_name": "hus", 
+>>>>>>> Stashed changes
             "type": "", 
             "valid_max": "12000.0", 
             "valid_min": "0.0", 
@@ -545,6 +591,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "height10m": {
             "standard_name": "height", 
             "units": "m", 
@@ -603,6 +650,18 @@
             "requested_bounds": "", 
             "stored_direction": "increasing", 
             "tolerance": "", 
+=======
+        "psitem": {
+            "modeling_realm": "atmos", 
+            "standard_name": "meridional_streamfunction_transformed_eulerian_mean", 
+            "units": "kg s^-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Transformed Eulerian Mean mass stramfunction", 
+            "comment": "Residual mass streamfunction, computed from vstar and integrated from the top of the atmosphere (on the native model grid). Reference: Andrews et al (1987): Middle Atmospheric Dynamics. Accademic Press.", 
+            "dimensions": "latitude plev39 time", 
+            "out_name": "psitem", 
+>>>>>>> Stashed changes
             "type": "", 
             "valid_max": "", 
             "valid_min": "0.0", 
@@ -658,6 +717,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "landuse": {
             "standard_name": "area_type", 
             "units": "", 
@@ -667,6 +727,19 @@
             "formula": "", 
             "must_have_bounds": "no", 
             "out_name": "landuse", 
+=======
+        "ta": {
+            "modeling_realm": "atmos", 
+            "standard_name": "air_temperature", 
+            "units": "K", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "", 
+            "long_name": "Air Temperature", 
+            "comment": "Air Temperature", 
+            "dimensions": "latitude plev19 time", 
+            "out_name": "ta", 
+            "type": "", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": [
                 "natural", 
@@ -729,6 +802,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "longitude": {
             "standard_name": "longitude", 
             "units": "degrees_east", 
@@ -760,6 +834,19 @@
             "formula": "", 
             "must_have_bounds": "yes", 
             "out_name": "spectband", 
+=======
+        "ua": {
+            "modeling_realm": "atmos", 
+            "standard_name": "eastward_wind", 
+            "units": "m s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "", 
+            "long_name": "Eastward Wind", 
+            "comment": "", 
+            "dimensions": "latitude plev19 time", 
+            "out_name": "ua", 
+            "type": "", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -817,6 +904,7 @@
             "z_factors": "sigma: sigma depth: depth z1: z1 z2: z2 a: a_coeff href: href k_c: k_c", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "ocean_s": {
             "standard_name": "ocean_s_coordinate", 
             "units": "", 
@@ -853,6 +941,18 @@
             "requested_bounds": "", 
             "stored_direction": "decreasing", 
             "tolerance": "", 
+=======
+        "utendepfd": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_eastward_wind_due_to_eliassen_palm_flux_divergence", 
+            "units": "m s-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Tendency of eastward wind due to Eliassen-Palm Flux divergence", 
+            "comment": "Tendency of the zonal mean zonal wind due to the divergence of the Eliassen-Palm flux.", 
+            "dimensions": "latitude plev39 time", 
+            "out_name": "utendepfd", 
+>>>>>>> Stashed changes
             "type": "", 
             "valid_max": "0.0", 
             "valid_min": "-1.0", 
@@ -943,6 +1043,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "p1000": {
             "standard_name": "air_pressure", 
             "units": "Pa", 
@@ -1613,6 +1714,19 @@
             "formula": "", 
             "must_have_bounds": "yes", 
             "out_name": "scatratio", 
+=======
+        "utendnogw": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_eastward_wind_due_to_nonorographic_gravity_wave_drag", 
+            "units": "m s-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "u-tendency nonorographic gravity wave drag", 
+            "comment": "Tendency of the eastward wind by parameterized nonorographic gravity waves.  ", 
+            "dimensions": "latitude plev39 time", 
+            "out_name": "utendnogw", 
+            "type": "", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": [
                 "0.005", 
@@ -1748,6 +1862,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "site": {
             "standard_name": "", 
             "units": "", 
@@ -1784,6 +1899,18 @@
             "requested_bounds": "", 
             "stored_direction": "increasing", 
             "tolerance": "", 
+=======
+        "utendogw": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_eastward_wind_due_to_orographic_gravity_wave_drag", 
+            "units": "m s-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "u-tendency orographic gravity wave drag", 
+            "comment": "Tendency of the eastward wind by parameterized orographic gravity waves. ", 
+            "dimensions": "latitude plev39 time", 
+            "out_name": "utendogw", 
+>>>>>>> Stashed changes
             "type": "", 
             "valid_max": "800000.0", 
             "valid_min": "-200.0", 
@@ -1836,6 +1963,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "standard_hybrid_sigma": {
             "standard_name": "atmosphere_hybrid_sigma_pressure_coordinate", 
             "units": "1", 
@@ -1850,6 +1978,18 @@
             "requested_bounds": "", 
             "stored_direction": "decreasing", 
             "tolerance": "", 
+=======
+        "utendvtem": {
+            "modeling_realm": "atmos", 
+            "standard_name": "u-tendency_by_wstar_advection", 
+            "units": "m s-1 d-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Rendency of eastward wind due to TEM northward advection and Coriolis term", 
+            "comment": "Tendency of zonally averaged eastward wind, by the residual upward wind advection (on the native model grid). Reference: Andrews et al (1987): Middle Atmospheric Dynamics. Accademic Press.", 
+            "dimensions": "latitude plev39 time", 
+            "out_name": "utendvtem", 
+>>>>>>> Stashed changes
             "type": "", 
             "valid_max": "1.0", 
             "valid_min": "0.0", 
@@ -2173,6 +2313,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "typesever": {
             "standard_name": "area_type", 
             "units": "", 
@@ -2449,6 +2590,12 @@
             "modeling_realm": "", 
             "standard_name": "specific_humidity", 
             "units": "1.0", 
+=======
+        "utendwtem": {
+            "modeling_realm": "atmos", 
+            "standard_name": "u-tendency_by_vstar_advection", 
+            "units": "m s-1 d-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "", 
             "long_name": "Specific Humidity", 
@@ -2462,10 +2609,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "ta": {
             "modeling_realm": "", 
             "standard_name": "air_temperature", 
             "units": "K", 
+=======
+        "va": {
+            "modeling_realm": "atmos", 
+            "standard_name": "northward_wind", 
+            "units": "m s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "", 
             "long_name": "Air Temperature", 
@@ -2479,9 +2633,15 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "ua": {
             "modeling_realm": "", 
             "standard_name": "eastward_wind", 
+=======
+        "vtem": {
+            "modeling_realm": "atmos", 
+            "standard_name": "northward_transformed_eulerian_mean_air_velocity", 
+>>>>>>> Stashed changes
             "units": "m s-1", 
             "cell_methods": "time: mean", 
             "cell_measures": "", 
@@ -2496,9 +2656,15 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "va": {
             "modeling_realm": "", 
             "standard_name": "northward_wind", 
+=======
+        "wtem": {
+            "modeling_realm": "atmos", 
+            "standard_name": "unset", 
+>>>>>>> Stashed changes
             "units": "m s-1", 
             "cell_methods": "time: mean", 
             "cell_measures": "", 
@@ -2506,23 +2672,6 @@
             "comment": "", 
             "dimensions": "latitude plev19 time", 
             "out_name": "va", 
-            "type": "", 
-            "positive": "", 
-            "valid_min": "", 
-            "valid_max": "", 
-            "ok_min_mean_abs": "", 
-            "ok_max_mean_abs": ""
-        }, 
-        "zg": {
-            "modeling_realm": "", 
-            "standard_name": "geopotential_height", 
-            "units": "m", 
-            "cell_methods": "time: mean", 
-            "cell_measures": "area: areacella", 
-            "long_name": "Geopotential Height", 
-            "comment": "", 
-            "dimensions": "latitude plev39 time", 
-            "out_name": "zg", 
             "type": "", 
             "positive": "", 
             "valid_min": "", 

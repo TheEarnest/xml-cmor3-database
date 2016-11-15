@@ -4,8 +4,13 @@
         "table_id": "Table em3hrpt", 
         "realm": "", 
         "frequency": "3hr", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "0.125000", 
@@ -13,6 +18,7 @@
         "mip_era": "CMIP6", 
         "Conventions": "CF-1.6 CMIP-6.0"
     }, 
+<<<<<<< Updated upstream
     "axis_entry": {
         "alev1": {
             "standard_name": "", 
@@ -23,6 +29,20 @@
             "formula": "", 
             "must_have_bounds": "yes", 
             "out_name": "lev", 
+=======
+    "variable_entry": {
+        "cfadDbze94": {
+            "modeling_realm": "atmos", 
+            "standard_name": "histogram_of_equivalent_reflectivity_factor_over_height_above_reference_ellipsoid", 
+            "units": "1.0", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "CloudSat Radar Reflectivity", 
+            "comment": "CFAD (Cloud Frequency Altitude Diagrams) are frequency distributions of radar  reflectivity (or lidar scattering ratio) as a function of altitude. The variable cfadDbze94 is defined as the simulated relative frequency of occurrence of radar reflectivity in sampling volumes defined by altitude bins. The radar is observing at a frequency of 94GHz.", 
+            "dimensions": "longitude latitude alt40 dbze time1", 
+            "out_name": "cfadDbze94", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -108,6 +128,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "alt40": {
             "standard_name": "altitude", 
             "units": "m", 
@@ -283,6 +304,19 @@
             "formula": "", 
             "must_have_bounds": "no", 
             "out_name": "basin", 
+=======
+        "cfadLidarsr532": {
+            "modeling_realm": "atmos", 
+            "standard_name": "histogram_of_backscattering_ratio_over_height_above_reference_ellipsoid", 
+            "units": "1.0", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "CALIPSO Scattering Ratio", 
+            "comment": "CFAD (Cloud Frequency Altitude Diagrams) are frequency distributions of radar  reflectivity (or lidar scattering ratio) as a function of altitude. The variable cfadLidarsr532 is defined as the simulated relative frequency of lidar scattering ratio in sampling volumes defined by altitude bins. The lidar is observing at a wavelength of 532nm.", 
+            "dimensions": "longitude latitude alt40 scatratio time1", 
+            "out_name": "cfadLidarsr532", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": [
                 "atlantic_arctic_ocean", 
@@ -369,6 +403,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "depth0m": {
             "standard_name": "depth", 
             "units": "m", 
@@ -510,6 +545,19 @@
             "formula": "", 
             "must_have_bounds": "", 
             "out_name": "effectRadIc", 
+=======
+        "clcalipso": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_area_fraction_in_atmosphere_layer", 
+            "units": "%", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "CALIPSO Cloud Fraction", 
+            "comment": "Percentage cloud cover at CALIPSO standard heights.", 
+            "dimensions": "longitude latitude alt40 time1", 
+            "out_name": "clcalipso", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -545,6 +593,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "height10m": {
             "standard_name": "height", 
             "units": "m", 
@@ -620,6 +669,19 @@
             "formula": "", 
             "must_have_bounds": "yes", 
             "out_name": "iceband", 
+=======
+        "clcalipso2": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_area_fraction_in_atmosphere_layer", 
+            "units": "%", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "CALIPSO Cloud Fraction Undetected by CloudSat", 
+            "comment": "Clouds detected by CALIPSO but below the detectability threshold of CloudSat", 
+            "dimensions": "longitude latitude alt40 time1", 
+            "out_name": "clcalipso2", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -658,6 +720,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "landuse": {
             "standard_name": "area_type", 
             "units": "", 
@@ -760,6 +823,19 @@
             "formula": "", 
             "must_have_bounds": "yes", 
             "out_name": "spectband", 
+=======
+        "clhcalipso": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_area_fraction_in_atmosphere_layer", 
+            "units": "%", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "CALIPSO High Level Cloud Fraction", 
+            "comment": "Percentage cloud cover in layer centred on 220hPa", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "clhcalipso", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -817,6 +893,7 @@
             "z_factors": "sigma: sigma depth: depth z1: z1 z2: z2 a: a_coeff href: href k_c: k_c", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "ocean_s": {
             "standard_name": "ocean_s_coordinate", 
             "units": "", 
@@ -870,6 +947,19 @@
             "formula": "for k <= nsigma: z(n,k,j,i) = eta(n,j,i) + sigma(k)*(min(depth_c,depth(j,i))+eta(n,j,i)) ; for k > nsigma: z(n,k,j,i) = zlev(k)", 
             "must_have_bounds": "yes", 
             "out_name": "lev", 
+=======
+        "cllcalipso": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_area_fraction_in_atmosphere_layer", 
+            "units": "%", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "CALIPSO Low Level Cloud Fraction", 
+            "comment": "Percentage cloud cover in layer centred on 840hPa", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "cllcalipso", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -943,6 +1033,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "p1000": {
             "standard_name": "air_pressure", 
             "units": "Pa", 
@@ -1613,6 +1704,19 @@
             "formula": "", 
             "must_have_bounds": "yes", 
             "out_name": "scatratio", 
+=======
+        "clmcalipso": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_area_fraction_in_atmosphere_layer", 
+            "units": "%", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "CALIPSO Mid Level Cloud Fraction", 
+            "comment": "Percentage cloud cover in layer centred on 560hPa", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "clmcalipso", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": [
                 "0.005", 
@@ -1836,6 +1940,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "standard_hybrid_sigma": {
             "standard_name": "atmosphere_hybrid_sigma_pressure_coordinate", 
             "units": "1", 
@@ -1889,6 +1994,19 @@
             "formula": "", 
             "must_have_bounds": "no", 
             "out_name": "sza", 
+=======
+        "cltcalipso": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_area_fraction", 
+            "units": "%", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "CALIPSO Total Cloud Fraction", 
+            "comment": "", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "cltcalipso", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": [
                 "0.", 
@@ -1908,8 +2026,14 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "tau": {
             "standard_name": "atmosphere_optical_thickness_due_to_cloud", 
+=======
+        "hus7h": {
+            "modeling_realm": "atmos", 
+            "standard_name": "specific_humidity", 
+>>>>>>> Stashed changes
             "units": "1.0", 
             "axis": "", 
             "long_name": "cloud optical thickness", 
@@ -1975,6 +2099,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "time1": {
             "standard_name": "time", 
             "units": "days since ?", 
@@ -1984,6 +2109,19 @@
             "formula": "", 
             "must_have_bounds": "no", 
             "out_name": "time", 
+=======
+        "huss": {
+            "modeling_realm": "atmos", 
+            "standard_name": "specific_humidity", 
+            "units": "1.0", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Near-Surface Specific Humidity", 
+            "comment": "Near-surface (usually, 2 meter) specific humidity.", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "huss", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -2107,6 +2245,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "typepdec": {
             "standard_name": "area_type", 
             "units": "", 
@@ -2116,6 +2255,19 @@
             "formula": "", 
             "must_have_bounds": "no", 
             "out_name": "type", 
+=======
+        "parasolRefl": {
+            "modeling_realm": "atmos", 
+            "standard_name": "toa_bidirectional_reflectance", 
+            "units": "1.0", 
+            "cell_methods": "area: mean time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "PARASOL Reflectance", 
+            "comment": "Simulated reflectance from PARASOL as seen at the top of the atmosphere for 5 solar zenith angles. Valid only over ocean and for one viewing direction (viewing zenith angle of 30 degrees and relative azimuth angle 320 degrees).", 
+            "dimensions": "longitude latitude sza5 time1", 
+            "out_name": "parasolRefl", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -2151,6 +2303,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "typesdec": {
             "standard_name": "area_type", 
             "units": "", 
@@ -2160,6 +2313,19 @@
             "formula": "", 
             "must_have_bounds": "no", 
             "out_name": "type", 
+=======
+        "psl": {
+            "modeling_realm": "atmos", 
+            "standard_name": "air_pressure_at_sea_level", 
+            "units": "Pa", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Sea Level Pressure", 
+            "comment": "Sea Level Pressure", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "psl", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -2195,6 +2361,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "vegtype": {
             "standard_name": "area_type", 
             "units": "", 
@@ -2446,6 +2613,9 @@
             "type": "double"
         }, 
         "tas": {
+=======
+        "ta7h": {
+>>>>>>> Stashed changes
             "modeling_realm": "atmos", 
             "standard_name": "air_temperature", 
             "units": "K", 
@@ -2479,10 +2649,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "hus7h": {
             "modeling_realm": "", 
             "standard_name": "specific_humidity", 
             "units": "1.0", 
+=======
+        "ua7h": {
+            "modeling_realm": "atmos", 
+            "standard_name": "eastward_wind", 
+            "units": "m s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: point", 
             "cell_measures": "area: areacella", 
             "long_name": "Specific Humidity", 
@@ -2513,10 +2690,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "ta7h": {
             "modeling_realm": "", 
             "standard_name": "air_temperature", 
             "units": "K", 
+=======
+        "va7h": {
+            "modeling_realm": "atmos", 
+            "standard_name": "northward_wind", 
+            "units": "m s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: point", 
             "cell_measures": "area: areacella", 
             "long_name": "Air Temperature", 
@@ -2547,17 +2731,29 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "va7h": {
             "modeling_realm": "", 
             "standard_name": "northward_wind", 
             "units": "m s-1", 
+=======
+        "wap7h": {
+            "modeling_realm": "atmos", 
+            "standard_name": "lagrangian_tendency_of_air_pressure", 
+            "units": "Pa s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: point", 
             "cell_measures": "area: areacella", 
             "long_name": "Northward Wind", 
             "comment": "", 
             "dimensions": "longitude latitude plev7h time1", 
+<<<<<<< Updated upstream
             "out_name": "va7h", 
             "type": "", 
+=======
+            "out_name": "wap7h", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 

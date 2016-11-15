@@ -4,8 +4,13 @@
         "table_id": "Table LIfxant", 
         "realm": "", 
         "frequency": "fx", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "", 
@@ -13,6 +18,7 @@
         "mip_era": "CMIP6", 
         "Conventions": "CF-1.6 CMIP-6.0"
     }, 
+<<<<<<< Updated upstream
     "axis_entry": {
         "alev1": {
             "standard_name": "", 
@@ -266,6 +272,19 @@
             "requested_bounds": "", 
             "stored_direction": "decreasing", 
             "tolerance": "", 
+=======
+    "variable_entry": {
+        "areacellg": {
+            "modeling_realm": "", 
+            "standard_name": "cell_area", 
+            "units": "m2", 
+            "cell_methods": "", 
+            "cell_measures": "area: areacellg", 
+            "long_name": "Grid Cell Area for Interpolated Grids", 
+            "comment": "Area of the target grid (not the interpolated area of the source grid). ", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "areacellg", 
+>>>>>>> Stashed changes
             "type": "", 
             "valid_max": "1.0", 
             "valid_min": "0.0", 
@@ -369,6 +388,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "depth0m": {
             "standard_name": "depth", 
             "units": "m", 
@@ -493,6 +513,18 @@
             "requested_bounds": "", 
             "stored_direction": "decreasing", 
             "tolerance": "", 
+=======
+        "hfgeoubed": {
+            "modeling_realm": "", 
+            "standard_name": "upward_geothermal_heat_flux_at_ground_level", 
+            "units": "W m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacellg", 
+            "long_name": "Geothermal Heat flux beneath land ice", 
+            "comment": "Upward geothermal heat flux per unit area beneath land ice", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "hfgeoubed", 
+>>>>>>> Stashed changes
             "type": "", 
             "valid_max": "12000.0", 
             "valid_min": "0.0", 
@@ -2453,7 +2485,7 @@
             "cell_measures": "area: areacellg", 
             "long_name": "Ice Sheet Thickness", 
             "comment": "The thickness of the ice sheet", 
-            "dimensions": "xant yant time", 
+            "dimensions": "longitude latitude time", 
             "out_name": "lithk", 
             "type": "", 
             "positive": "", 
@@ -2487,7 +2519,7 @@
             "cell_measures": "area: areacellg", 
             "long_name": "Bedrock Altitude", 
             "comment": "The bedrock topography beneath the land ice", 
-            "dimensions": "xant yant time", 
+            "dimensions": "longitude latitude time", 
             "out_name": "topg", 
             "type": "", 
             "positive": "", 

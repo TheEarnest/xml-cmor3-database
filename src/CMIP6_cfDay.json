@@ -4,8 +4,13 @@
         "table_id": "Table cfDay", 
         "realm": "atmos", 
         "frequency": "day", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "1.00000", 
@@ -2813,6 +2818,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "pctisccp": {
             "modeling_realm": "atmos", 
             "standard_name": "air_pressure_at_cloud_top", 
@@ -2831,6 +2837,9 @@
             "ok_max_mean_abs": ""
         }, 
         "clwvi": {
+=======
+        "rlutcs": {
+>>>>>>> Stashed changes
             "modeling_realm": "atmos", 
             "standard_name": "atmosphere_cloud_condensed_water_content", 
             "units": "kg m-2", 
@@ -2847,6 +2856,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "rsds": {
             "modeling_realm": "atmos", 
             "standard_name": "surface_downwelling_shortwave_flux_in_air", 
@@ -2865,6 +2875,9 @@
             "ok_max_mean_abs": ""
         }, 
         "clmcalipso": {
+=======
+        "rsdscs": {
+>>>>>>> Stashed changes
             "modeling_realm": "atmos", 
             "standard_name": "cloud_area_fraction_in_atmosphere_layer", 
             "units": "%", 
@@ -2898,6 +2911,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "clcalipso": {
             "modeling_realm": "atmos", 
             "standard_name": "cloud_area_fraction_in_atmosphere_layer", 
@@ -2916,6 +2930,9 @@
             "ok_max_mean_abs": ""
         }, 
         "cl": {
+=======
+        "rsuscs": {
+>>>>>>> Stashed changes
             "modeling_realm": "atmos", 
             "standard_name": "cloud_area_fraction_in_atmosphere_layer", 
             "units": "%", 

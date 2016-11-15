@@ -2,10 +2,17 @@
     "Header": {
         "data_specs_version": "01.beta.38", 
         "table_id": "Table emDay", 
+<<<<<<< Updated upstream
         "realm": "land", 
         "frequency": "day", 
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "realm": "aerosol", 
+        "frequency": "day", 
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "1.00000", 
@@ -13,6 +20,7 @@
         "mip_era": "CMIP6", 
         "Conventions": "CF-1.6 CMIP-6.0"
     }, 
+<<<<<<< Updated upstream
     "axis_entry": {
         "alev1": {
             "standard_name": "", 
@@ -870,6 +878,20 @@
             "formula": "for k <= nsigma: z(n,k,j,i) = eta(n,j,i) + sigma(k)*(min(depth_c,depth(j,i))+eta(n,j,i)) ; for k > nsigma: z(n,k,j,i) = zlev(k)", 
             "must_have_bounds": "yes", 
             "out_name": "lev", 
+=======
+    "variable_entry": {
+        "agesno": {
+            "modeling_realm": "landIce land", 
+            "standard_name": "age_of_surface_snow", 
+            "units": "day", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Snow Age", 
+            "comment": "Age of Snow (when computing the time-mean here, the time samples, weighted by the mass of snow on the land portion of the grid cell, are accumulated and then divided by the sum of the weights.  Reported as missing data in regions free of snow on land.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "agesno", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -883,6 +905,7 @@
             "z_factors": "sigma: sigma eta: eta depth: depth depth_c: depth_c nsigma: nsigma zlev: zlev", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "olayer100m": {
             "standard_name": "depth", 
             "units": "m", 
@@ -1907,6 +1930,24 @@
             "z_bounds_factors": "", 
             "z_factors": "", 
             "bounds_values": ""
+=======
+        "albs": {
+            "modeling_realm": "aerosol", 
+            "standard_name": "planetary_albedo", 
+            "units": "1.0", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "planetary albedo", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "albs", 
+            "type": "float", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+>>>>>>> Stashed changes
         }, 
         "tau": {
             "standard_name": "atmosphere_optical_thickness_due_to_cloud", 
@@ -2768,35 +2809,61 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "prw": {
             "modeling_realm": "atmos", 
             "standard_name": "atmosphere_water_vapor_content", 
             "units": "kg m-2", 
+=======
+        "hfds": {
+            "modeling_realm": "ocean", 
+            "standard_name": "surface_downward_heat_flux_in_sea_water", 
+            "units": "W m-2", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Water Vapor Path", 
             "comment": "vertically integrated through the atmospheric column", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "prw", 
             "type": "", 
             "positive": "", 
+=======
+            "out_name": "hfds", 
+            "type": "real", 
+            "positive": "down", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "es": {
             "modeling_realm": "atmos", 
             "standard_name": "liquid_water_evaporation_flux_from_soil", 
             "units": "kg m-2 s-1", 
+=======
+        "hfdsn": {
+            "modeling_realm": "landIce land", 
+            "standard_name": "surface_downward_heat_flux_in_snow", 
+            "units": "W m-2", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Bare soil evaporation", 
             "comment": "", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "es", 
             "type": "", 
             "positive": "", 
+=======
+            "out_name": "hfdsn", 
+            "type": "real", 
+            "positive": "down", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
@@ -2853,24 +2920,40 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "dslw": {
+=======
+        "hurs": {
+>>>>>>> Stashed changes
             "modeling_realm": "atmos", 
             "standard_name": "change_over_time_in_water_content_of_soil_layer", 
             "units": "kg m-2", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "Change in soil moisture", 
             "comment": "", 
             "dimensions": "longitude latitude time", 
             "out_name": "dslw", 
             "type": "", 
+=======
+            "long_name": "Near-Surface Relative Humidity", 
+            "comment": "The relative humidity with respect to liquid water for T> 0 C, and with respect to ice for T<0 C.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "hurs", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "qgwr": {
+=======
+        "hursmax": {
+>>>>>>> Stashed changes
             "modeling_realm": "atmos", 
             "standard_name": "water_flux_from_soil_layer_to_groundwater", 
             "units": "kg m-2 s-1", 
@@ -2879,7 +2962,11 @@
             "long_name": "Groundwater recharge from soil layer", 
             "comment": "", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "qgwr", 
+=======
+            "out_name": "hursmax", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2887,7 +2974,11 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "dmlt": {
+=======
+        "hursmin": {
+>>>>>>> Stashed changes
             "modeling_realm": "atmos", 
             "standard_name": "depth_of_subsurface_melting", 
             "units": "m", 
@@ -2896,7 +2987,11 @@
             "long_name": "Depth to soil thaw", 
             "comment": "Depth from surface to the zero degree isotherm. Above this isotherm T > 0o, and below this line T < 0o.", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "dmlt", 
+=======
+            "out_name": "hursmin", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2904,10 +2999,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "eow": {
             "modeling_realm": "atmos", 
             "standard_name": "liquid_water_evaporation_flux_from_open_water", 
             "units": "kg m-2 s-1", 
+=======
+        "hus10": {
+            "modeling_realm": "atmos", 
+            "standard_name": "specific_humidity", 
+            "units": "1.0", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Open water evaporation", 
@@ -2921,9 +3023,15 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "albs": {
             "modeling_realm": "atmos", 
             "standard_name": "planetary_albedo", 
+=======
+        "hus19": {
+            "modeling_realm": "atmos", 
+            "standard_name": "specific_humidity", 
+>>>>>>> Stashed changes
             "units": "1.0", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
@@ -2938,10 +3046,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "snwc": {
             "modeling_realm": "atmos", 
             "standard_name": "canopy_snow_amount", 
             "units": "kg m-2", 
+=======
+        "hus23": {
+            "modeling_realm": "atmos", 
+            "standard_name": "specific_humidity", 
+            "units": "1.0", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "SWE intercepted by the vegetation", 
@@ -2972,7 +3087,28 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tsnl": {
+=======
+        "huss": {
+            "modeling_realm": "atmos", 
+            "standard_name": "specific_humidity", 
+            "units": "1.0", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Near-Surface Specific Humidity", 
+            "comment": "Near-surface (usually, 2 meter) specific humidity.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "huss", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "jpdftaureicemodis7c": {
+>>>>>>> Stashed changes
             "modeling_realm": "atmos", 
             "standard_name": "snow_temperature", 
             "units": "K", 
@@ -3193,6 +3329,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "sootsn": {
             "modeling_realm": "atmos", 
             "standard_name": "soot_content_of_surface_snow", 
@@ -3204,6 +3341,19 @@
             "dimensions": "longitude latitude time", 
             "out_name": "sootsn", 
             "type": "", 
+=======
+        "lwsnl": {
+            "modeling_realm": "landIce land", 
+            "standard_name": "liquid_water_content_of_snow_layer", 
+            "units": "kg m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Liquid Water Content of Snow Layer", 
+            "comment": "where land over land: this is computed as the total mass of liquid water contained interstitially within the snow layer of the land portion of a grid cell divided by the area of the land portion of the cell.", 
+            "dimensions": "longitude latitude alevel time", 
+            "out_name": "lwsnl", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -3244,6 +3394,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "hfrs": {
             "modeling_realm": "atmos", 
             "standard_name": "temperature_flux_due_to_rainfall_expressed_as_heat_flux_onto_snow_and_ice", 
@@ -3255,12 +3406,26 @@
             "dimensions": "longitude latitude time", 
             "out_name": "hfrs", 
             "type": "", 
+=======
+        "mrlsl": {
+            "modeling_realm": "land", 
+            "standard_name": "moisture_content_of_soil_layer", 
+            "units": "kg m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Water Content of Soil Layer", 
+            "comment": "The mass of water in all phases, including ice, in soil layers.  Report as missing for grid cells with no land.", 
+            "dimensions": "longitude latitude alevel time", 
+            "out_name": "mrlsl", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "prsnc": {
             "modeling_realm": "atmos", 
             "standard_name": "convective_snowfall_flux", 
@@ -3272,6 +3437,19 @@
             "dimensions": "longitude latitude time", 
             "out_name": "prsnc", 
             "type": "", 
+=======
+        "mrro": {
+            "modeling_realm": "land", 
+            "standard_name": "runoff_flux", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Total Runoff", 
+            "comment": "The total run-off (including drainage through the base of the soil model) per unit area leaving the land portion of the grid cell.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "mrro", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -3295,6 +3473,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "agesno": {
             "modeling_realm": "atmos", 
             "standard_name": "age_of_surface_snow", 
@@ -3306,6 +3485,19 @@
             "dimensions": "longitude latitude time", 
             "out_name": "agesno", 
             "type": "", 
+=======
+        "mrros": {
+            "modeling_realm": "land", 
+            "standard_name": "surface_runoff_flux", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Surface Runoff", 
+            "comment": "The total surface run off leaving the land portion of the grid cell (excluding drainage through the base of the soil model).", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "mrros", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -3363,17 +3555,29 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tcs": {
             "modeling_realm": "atmos", 
             "standard_name": "canopy_temperature", 
             "units": "K", 
+=======
+        "mrsos": {
+            "modeling_realm": "land", 
+            "standard_name": "moisture_content_of_soil_layer", 
+            "units": "kg m-2", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Vegetation Canopy Temperature", 
             "comment": "Vegetation temperature, averaged over all vegetation types", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "tcs", 
             "type": "", 
+=======
+            "out_name": "mrsos", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -3397,6 +3601,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "slbnosn": {
             "modeling_realm": "atmos", 
             "standard_name": "sublimation_amount_assuming_no_snow", 
@@ -3407,6 +3612,18 @@
             "comment": "", 
             "dimensions": "longitude latitude time", 
             "out_name": "slbnosn", 
+=======
+        "nudgincsm": {
+            "modeling_realm": "atmos", 
+            "standard_name": "nudging_increment_in_water_content_of_soil_layer", 
+            "units": "kg m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Nudging Increment of Water in Soil Mositure", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "nudgincsm", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -3414,6 +3631,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "rls": {
             "modeling_realm": "atmos", 
             "standard_name": "surface_net_downward_longwave_flux", 
@@ -3424,6 +3642,18 @@
             "comment": "Net longwave surface radiation", 
             "dimensions": "longitude latitude time", 
             "out_name": "rls", 
+=======
+        "nudgincswe": {
+            "modeling_realm": "atmos", 
+            "standard_name": "nudging_increment_in_surface_snow_and_ice_amount", 
+            "units": "kg m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Nudging Increment of Water in Snow", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "nudgincswe", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -3431,6 +3661,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "hurmin": {
             "modeling_realm": "atmos", 
             "standard_name": "relative_humidity", 
@@ -3441,6 +3672,35 @@
             "comment": "", 
             "dimensions": "longitude latitude time", 
             "out_name": "hurmin", 
+=======
+        "pflw": {
+            "modeling_realm": "landIce land", 
+            "standard_name": "liquid_water_content_of_permafrost_layer", 
+            "units": "kg m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Liquid Water Content of Permafrost Layer", 
+            "comment": "''where land over land'', i.e., this is the total mass of liquid water contained within the permafrost layer within the land portion of a grid cell divided by the area of the land portion of the cell.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "pflw", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "potet": {
+            "modeling_realm": "atmos", 
+            "standard_name": "water_potential_evapotranspiration_flux", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Potential Evapotranspiration", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "potet", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -3454,8 +3714,13 @@
             "units": "K", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "Snow Surface Temperature", 
             "comment": "Temperature of the snow surface as it interacts with the atmosphere, averaged over a grid cell.", 
+=======
+            "long_name": "Rainfall rate", 
+            "comment": "", 
+>>>>>>> Stashed changes
             "dimensions": "longitude latitude time", 
             "out_name": "tsns", 
             "type": "", 
@@ -3508,8 +3773,13 @@
             "long_name": "Sea Ice Area Fraction", 
             "comment": "fraction of grid cell covered by sea ice.", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "sic", 
             "type": "", 
+=======
+            "out_name": "prsnc", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -3533,6 +3803,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tran": {
             "modeling_realm": "atmos", 
             "standard_name": "transpiration_flux", 
@@ -3544,6 +3815,36 @@
             "dimensions": "longitude latitude time", 
             "out_name": "tran", 
             "type": "", 
+=======
+        "prveg": {
+            "modeling_realm": "land", 
+            "standard_name": "precipitation_flux_onto_canopy", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Precipitation onto Canopy", 
+            "comment": "The precipitation flux that is intercepted by the vegetation canopy (if present in model) before reaching the ground.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "prveg", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "prw": {
+            "modeling_realm": "atmos", 
+            "standard_name": "atmosphere_water_vapor_content", 
+            "units": "kg m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Water Vapor Path", 
+            "comment": "vertically integrated through the atmospheric column", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "prw", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -3720,7 +4021,28 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "hfdsn": {
+=======
+        "sfcWind": {
+            "modeling_realm": "atmos", 
+            "standard_name": "wind_speed", 
+            "units": "m s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Daily-Mean Near-Surface Wind Speed", 
+            "comment": "near-surface (usually, 10 meters) wind speed.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "sfcWind", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "sic": {
+>>>>>>> Stashed changes
             "modeling_realm": "atmos", 
             "standard_name": "surface_downward_heat_flux_in_snow", 
             "units": "W m-2", 
@@ -3771,34 +4093,58 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tr": {
             "modeling_realm": "atmos", 
             "standard_name": "surface_temperature", 
             "units": "K", 
             "cell_methods": "time: mean", 
+=======
+        "snd": {
+            "modeling_realm": "landIce land", 
+            "standard_name": "surface_snow_thickness", 
+            "units": "m", 
+            "cell_methods": "area: mean where land time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Surface Radiative Temperature", 
             "comment": "Effective radiative surface temperature, averaged over the grid cell", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "tr", 
             "type": "", 
+=======
+            "out_name": "snd", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "sbl": {
             "modeling_realm": "atmos", 
             "standard_name": "surface_snow_and_ice_sublimation_flux", 
+=======
+        "snm": {
+            "modeling_realm": "landIce land", 
+            "standard_name": "surface_snow_melt_flux", 
+>>>>>>> Stashed changes
             "units": "kg m-2 s-1", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Surface Snow and Ice Sublimation Flux", 
             "comment": "The snow and ice sublimation flux is the loss of snow and ice mass per unit area from the surface resulting from their direct conversion to water vapor that enters the atmosphere.", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "sbl", 
             "type": "", 
+=======
+            "out_name": "snm", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -3839,17 +4185,28 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "mrlsl": {
             "modeling_realm": "atmos", 
             "standard_name": "moisture_content_of_soil_layer", 
+=======
+        "snw": {
+            "modeling_realm": "landIce land", 
+            "standard_name": "surface_snow_amount", 
+>>>>>>> Stashed changes
             "units": "kg m-2", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Water Content per Unit Area of Soil Layers", 
             "comment": "The mass of water in all phases, including ice, in soil layers.  Report as missing for grid cells with no land.", 
             "dimensions": "longitude latitude alevel time", 
+<<<<<<< Updated upstream
             "out_name": "mrlsl", 
             "type": "", 
+=======
+            "out_name": "snw", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -3873,17 +4230,29 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "hfmlt": {
             "modeling_realm": "atmos", 
             "standard_name": "surface_snow_and_ice_melt_heat_flux", 
             "units": "W m-2 ", 
+=======
+        "sootsn": {
+            "modeling_realm": "landIce land", 
+            "standard_name": "soot_content_of_surface_snow", 
+            "units": "kg m-2", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Energy of fusion", 
             "comment": "Energy consumed or released during liquid/solid phase changes.", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "hfmlt", 
             "type": "", 
+=======
+            "out_name": "sootsn", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -3924,9 +4293,15 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "ts": {
             "modeling_realm": "atmos", 
             "standard_name": "surface_temperature", 
+=======
+        "ta10": {
+            "modeling_realm": "atmos", 
+            "standard_name": "air_temperature", 
+>>>>>>> Stashed changes
             "units": "K", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
@@ -3941,10 +4316,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "mrro": {
             "modeling_realm": "atmos", 
             "standard_name": "runoff_flux", 
             "units": "kg m-2 s-1", 
+=======
+        "ta19": {
+            "modeling_realm": "atmos", 
+            "standard_name": "air_temperature", 
+            "units": "K", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Total Run-off", 
@@ -3958,10 +4340,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "snrefr": {
             "modeling_realm": "atmos", 
             "standard_name": "surface_snow_and_ice_refreezing_flux", 
             "units": "kg m-2 s-1", 
+=======
+        "ta23": {
+            "modeling_realm": "atmos", 
+            "standard_name": "air_temperature", 
+            "units": "K", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Re-freezing of water in the snow", 
@@ -3994,9 +4383,15 @@
         }, 
         "dsn": {
             "modeling_realm": "atmos", 
+<<<<<<< Updated upstream
             "standard_name": "change_over_time_in_surface_snow_and_ice_amount", 
             "units": "kg m-2", 
             "cell_methods": "time: mean", 
+=======
+            "standard_name": "air_temperature", 
+            "units": "K", 
+            "cell_methods": "", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Change in snow water equivalent", 
             "comment": "", 
@@ -4009,6 +4404,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tpf": {
             "modeling_realm": "atmos", 
             "standard_name": "permafrost_layer_thickness", 
@@ -4061,17 +4457,29 @@
             "ok_max_mean_abs": ""
         }, 
         "lwsnl": {
+=======
+        "tauu": {
+>>>>>>> Stashed changes
             "modeling_realm": "atmos", 
             "standard_name": "liquid_water_content_of_snow_layer", 
             "units": "kg m-2", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "Liquid Water Content of Snow Layer", 
             "comment": "where land over land: this is computed as the total mass of liquid water contained interstitially within the snow layer of the land portion of a grid cell divided by the area of the land portion of the cell.", 
             "dimensions": "longitude latitude alevel time", 
             "out_name": "lwsnl", 
             "type": "", 
             "positive": "", 
+=======
+            "long_name": "Surface Downward Eastward Wind Stress", 
+            "comment": "Downward eastward wind stress at the surface", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "tauu", 
+            "type": "real", 
+            "positive": "down", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
@@ -4103,9 +4511,15 @@
             "long_name": "Subsurface runoff", 
             "comment": "", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "mrrob", 
             "type": "", 
             "positive": "", 
+=======
+            "out_name": "tauv", 
+            "type": "real", 
+            "positive": "down", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
@@ -4179,17 +4593,28 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "zmla": {
             "modeling_realm": "atmos", 
             "standard_name": "atmosphere_boundary_layer_thickness", 
+=======
+        "tpf": {
+            "modeling_realm": "landIce land", 
+            "standard_name": "permafrost_layer_thickness", 
+>>>>>>> Stashed changes
             "units": "m", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Height of Boundary Layer", 
             "comment": "", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "zmla", 
             "type": "", 
+=======
+            "out_name": "tpf", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -4213,6 +4638,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "va200": {
             "modeling_realm": "atmos", 
             "standard_name": "northward_wind", 
@@ -4225,6 +4651,20 @@
             "out_name": "va200", 
             "type": "", 
             "positive": "", 
+=======
+        "tran": {
+            "modeling_realm": "land", 
+            "standard_name": "transpiration_flux", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Transpiration", 
+            "comment": "Transpiration (may include dew formation as a negative flux).", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "tran", 
+            "type": "real", 
+            "positive": "up", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
@@ -4239,8 +4679,30 @@
             "long_name": "Daily Maximum Hourly Precipitation Rate", 
             "comment": "", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "prhmax", 
             "type": "", 
+=======
+            "out_name": "ts", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "tsl": {
+            "modeling_realm": "land", 
+            "standard_name": "soil_temperature", 
+            "units": "K", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Temperature of Soil", 
+            "comment": "Temperature of each soil layer. Reported as missing for grid cells with no land.", 
+            "dimensions": "longitude latitude alevel time", 
+            "out_name": "tsl", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -4298,9 +4760,15 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "va10": {
             "modeling_realm": "", 
             "standard_name": "northward_wind", 
+=======
+        "ua10": {
+            "modeling_realm": "atmos", 
+            "standard_name": "eastward_wind", 
+>>>>>>> Stashed changes
             "units": "m s-1", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
@@ -4315,10 +4783,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "hus23": {
             "modeling_realm": "", 
             "standard_name": "specific_humidity", 
             "units": "1.0", 
+=======
+        "ua19": {
+            "modeling_realm": "atmos", 
+            "standard_name": "eastward_wind", 
+            "units": "m s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Specific Humidity", 
@@ -4332,11 +4807,19 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "wap19": {
             "modeling_realm": "", 
             "standard_name": "lagrangian_tendency_of_air_pressure", 
             "units": "Pa s-1", 
             "cell_methods": "time: mean", 
+=======
+        "ua200": {
+            "modeling_realm": "atmos", 
+            "standard_name": "eastward_wind", 
+            "units": "m s-1", 
+            "cell_methods": "area: time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "omega (=dp/dt)", 
             "comment": "Omega (vertical velocity in pressure coordinates, positive downwards)", 
@@ -4349,10 +4832,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "zg23": {
             "modeling_realm": "", 
             "standard_name": "geopotential_height", 
             "units": "m", 
+=======
+        "ua23": {
+            "modeling_realm": "atmos", 
+            "standard_name": "eastward_wind", 
+            "units": "m s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Geopotential Height", 
@@ -4383,10 +4873,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "zg19": {
             "modeling_realm": "", 
             "standard_name": "geopotential_height", 
             "units": "m", 
+=======
+        "va10": {
+            "modeling_realm": "atmos", 
+            "standard_name": "northward_wind", 
+            "units": "m s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Geopotential Height", 
@@ -4400,10 +4897,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "hus19": {
             "modeling_realm": "", 
             "standard_name": "specific_humidity", 
             "units": "1.0", 
+=======
+        "va19": {
+            "modeling_realm": "atmos", 
+            "standard_name": "northward_wind", 
+            "units": "m s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Specific Humidity", 
@@ -4421,7 +4925,11 @@
             "modeling_realm": "", 
             "standard_name": "northward_wind", 
             "units": "m s-1", 
+<<<<<<< Updated upstream
             "cell_methods": "time: mean", 
+=======
+            "cell_methods": "area: time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Northward Wind", 
             "comment": "", 
@@ -4434,10 +4942,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "hus10": {
             "modeling_realm": "", 
             "standard_name": "specific_humidity", 
             "units": "1.0", 
+=======
+        "va23": {
+            "modeling_realm": "atmos", 
+            "standard_name": "northward_wind", 
+            "units": "m s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Specific Humidity", 
@@ -4468,6 +4983,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "ua23": {
             "modeling_realm": "", 
             "standard_name": "eastward_wind", 
@@ -4479,12 +4995,26 @@
             "dimensions": "longitude latitude plev23 time", 
             "out_name": "ua23", 
             "type": "", 
+=======
+        "wap10": {
+            "modeling_realm": "atmos", 
+            "standard_name": "lagrangian_tendency_of_air_pressure", 
+            "units": "Pa s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "omega (=dp/dt)", 
+            "comment": "Omega (vertical velocity in pressure coordinates, positive downwards)", 
+            "dimensions": "longitude latitude plev10 time", 
+            "out_name": "wap10", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "aod550volso4": {
             "modeling_realm": "atmos", 
             "standard_name": "aerosol_optical_depth_due_to_stratospheric_volcanic_aerosols_", 
@@ -4506,13 +5036,24 @@
             "modeling_realm": "", 
             "standard_name": "eastward_wind", 
             "units": "m s-1", 
+=======
+        "wap19": {
+            "modeling_realm": "atmos", 
+            "standard_name": "lagrangian_tendency_of_air_pressure", 
+            "units": "Pa s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Eastward Wind", 
             "comment": "", 
             "dimensions": "longitude latitude plev19 time", 
+<<<<<<< Updated upstream
             "out_name": "ua19", 
             "type": "", 
+=======
+            "out_name": "wap19", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -4520,7 +5061,7 @@
             "ok_max_mean_abs": ""
         }, 
         "wap23": {
-            "modeling_realm": "", 
+            "modeling_realm": "atmos", 
             "standard_name": "lagrangian_tendency_of_air_pressure", 
             "units": "Pa s-1", 
             "cell_methods": "time: mean", 
@@ -4529,7 +5070,7 @@
             "comment": "Omega (vertical velocity in pressure coordinates, positive downwards)", 
             "dimensions": "longitude latitude plev23 time", 
             "out_name": "wap23", 
-            "type": "", 
+            "type": "real", 
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -4553,16 +5094,28 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "va19": {
             "modeling_realm": "", 
             "standard_name": "northward_wind", 
             "units": "m s-1", 
+=======
+        "zg": {
+            "modeling_realm": "atmos", 
+            "standard_name": "geopotential_height", 
+            "units": "m", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Northward Wind", 
             "comment": "", 
+<<<<<<< Updated upstream
             "dimensions": "longitude latitude plev19 time", 
             "out_name": "va19", 
+=======
+            "dimensions": "longitude latitude plev8 time", 
+            "out_name": "zg", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4570,6 +5123,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "wap10": {
             "modeling_realm": "", 
             "standard_name": "lagrangian_tendency_of_air_pressure", 
@@ -4580,15 +5134,9 @@
             "comment": "Omega (vertical velocity in pressure coordinates, positive downwards)", 
             "dimensions": "longitude latitude plev10 time", 
             "out_name": "wap10", 
-            "type": "", 
-            "positive": "", 
-            "valid_min": "", 
-            "valid_max": "", 
-            "ok_min_mean_abs": "", 
-            "ok_max_mean_abs": ""
-        }, 
+=======
         "zg10": {
-            "modeling_realm": "", 
+            "modeling_realm": "atmos", 
             "standard_name": "geopotential_height", 
             "units": "m", 
             "cell_methods": "time: mean", 
@@ -4597,6 +5145,51 @@
             "comment": "", 
             "dimensions": "longitude latitude plev10 time", 
             "out_name": "zg10", 
+>>>>>>> Stashed changes
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+<<<<<<< Updated upstream
+        "zg10": {
+            "modeling_realm": "", 
+=======
+        "zg19": {
+            "modeling_realm": "atmos", 
+>>>>>>> Stashed changes
+            "standard_name": "geopotential_height", 
+            "units": "m", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Geopotential Height", 
+            "comment": "", 
+<<<<<<< Updated upstream
+            "dimensions": "longitude latitude plev10 time", 
+            "out_name": "zg10", 
+=======
+            "dimensions": "longitude latitude plev19 time", 
+            "out_name": "zg19", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "zg23": {
+            "modeling_realm": "atmos", 
+            "standard_name": "geopotential_height", 
+            "units": "m", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Geopotential Height", 
+            "comment": "", 
+            "dimensions": "longitude latitude plev23 time", 
+            "out_name": "zg23", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 

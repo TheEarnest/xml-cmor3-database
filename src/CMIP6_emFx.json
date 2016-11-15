@@ -2,10 +2,17 @@
     "Header": {
         "data_specs_version": "01.beta.38", 
         "table_id": "Table emFx", 
+<<<<<<< Updated upstream
         "realm": "landIce", 
         "frequency": "fx", 
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "realm": "atmos", 
+        "frequency": "fx", 
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "0.00000", 
@@ -13,6 +20,7 @@
         "mip_era": "CMIP6", 
         "Conventions": "CF-1.6 CMIP-6.0"
     }, 
+<<<<<<< Updated upstream
     "axis_entry": {
         "alev1": {
             "standard_name": "", 
@@ -517,6 +525,21 @@
             "tolerance": "", 
             "type": "double", 
             "valid_max": "", 
+=======
+    "variable_entry": {
+        "rld": {
+            "modeling_realm": "atmos", 
+            "standard_name": "downwelling_longwave_flux_in_air", 
+            "units": "W m-2", 
+            "cell_methods": "time: point", 
+            "cell_measures": "", 
+            "long_name": "Downwelling Longwave Radiation", 
+            "comment": "Downwelling Longwave Radiation (includes the fluxes at the surface and TOA)", 
+            "dimensions": "alevel spectband time1", 
+            "out_name": "rld", 
+            "type": "real", 
+            "positive": "down", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "value": "", 
             "z_bounds_factors": "", 
@@ -545,6 +568,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "height10m": {
             "standard_name": "height", 
             "units": "m", 
@@ -627,6 +651,20 @@
             "tolerance": "", 
             "type": "double", 
             "valid_max": "", 
+=======
+        "rlu": {
+            "modeling_realm": "atmos", 
+            "standard_name": "upwelling_longwave_flux_in_air", 
+            "units": "W m-2", 
+            "cell_methods": "time: point", 
+            "cell_measures": "", 
+            "long_name": "Upwelling Longwave Radiation", 
+            "comment": "Upwelling longwave radiation (includes the fluxes at the surface and TOA)", 
+            "dimensions": "alevel spectband time1", 
+            "out_name": "rlu", 
+            "type": "real", 
+            "positive": "up", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "value": "", 
             "z_bounds_factors": "", 
@@ -658,6 +696,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "landuse": {
             "standard_name": "area_type", 
             "units": "", 
@@ -877,6 +916,20 @@
             "tolerance": "", 
             "type": "", 
             "valid_max": "", 
+=======
+        "rsd": {
+            "modeling_realm": "atmos", 
+            "standard_name": "downwelling_shortwave_flux_in_air", 
+            "units": "W m-2", 
+            "cell_methods": "time: point", 
+            "cell_measures": "", 
+            "long_name": "Downwelling Shortwave Radiation", 
+            "comment": "Downwelling shortwave radiation (includes the fluxes at the surface and top-of-atmosphere)", 
+            "dimensions": "alevel spectband time1", 
+            "out_name": "rsd", 
+            "type": "real", 
+            "positive": "down", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "value": "", 
             "z_bounds_factors": "sigma: sigma_bnds eta: eta depth: depth depth_c: depth_c nsigma: nsigma zlev: zlev_bnds", 
@@ -943,6 +996,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "p1000": {
             "standard_name": "air_pressure", 
             "units": "Pa", 
@@ -1808,6 +1862,20 @@
             "tolerance": "", 
             "type": "double", 
             "valid_max": "", 
+=======
+        "rsu": {
+            "modeling_realm": "atmos", 
+            "standard_name": "upwelling_shortwave_flux_in_air", 
+            "units": "W m-2", 
+            "cell_methods": "time: point", 
+            "cell_measures": "", 
+            "long_name": "Upwelling Shortwave Radiation", 
+            "comment": "Upwelling shortwave radiation  (includes also the fluxes at the surface and top of atmosphere)", 
+            "dimensions": "alevel spectband time1", 
+            "out_name": "rsu", 
+            "type": "real", 
+            "positive": "up", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "value": "", 
             "z_bounds_factors": "", 
@@ -2446,19 +2514,19 @@
             "type": "double"
         }, 
         "sftgif": {
-            "modeling_realm": "landIce", 
+            "modeling_realm": "land", 
             "standard_name": "land_ice_area_fraction", 
             "units": "%", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
-            "long_name": "Land Ice Area Fraction", 
+            "long_name": "Fraction of Grid Cell Covered with Glacier", 
             "comment": "Fraction of grid cell covered by land ice (ice sheet, ice shelf, ice cap, glacier)", 
             "dimensions": "longitude latitude time", 
             "out_name": "sftgif", 
-            "type": "", 
+            "type": "real", 
             "positive": "", 
-            "valid_min": "", 
-            "valid_max": "", 
+            "valid_min": "0.0", 
+            "valid_max": "100.0", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
@@ -2479,6 +2547,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "sftflf": {
             "modeling_realm": "landIce", 
             "standard_name": "floating_ice_shelf_area_fraction", 
@@ -2523,6 +2592,18 @@
             "comment": "Downwelling Longwave Radiation (includes the fluxes at the surface and TOA)", 
             "dimensions": "alevel spectband time1", 
             "out_name": "rld", 
+=======
+        "spectlower": {
+            "modeling_realm": "atmos", 
+            "standard_name": "band_lower_bound", 
+            "units": "cm-1", 
+            "cell_methods": "time: point", 
+            "cell_measures": "", 
+            "long_name": "Lower frequency bound of band", 
+            "comment": "", 
+            "dimensions": "spectband time1", 
+            "out_name": "spectlower", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2553,10 +2634,17 @@
             "units": "W m-2", 
             "cell_methods": "time: point", 
             "cell_measures": "", 
+<<<<<<< Updated upstream
             "long_name": "Downwelling Shortwave Radiation", 
             "comment": "Downwelling shortwave radiation (includes the fluxes at the surface and top-of-atmosphere)", 
             "dimensions": "alevel spectband time1", 
             "out_name": "rsd", 
+=======
+            "long_name": "Upper frequency bound of band", 
+            "comment": "", 
+            "dimensions": "spectband time1", 
+            "out_name": "spectupper", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 

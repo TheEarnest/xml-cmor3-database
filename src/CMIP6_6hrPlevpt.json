@@ -4,8 +4,13 @@
         "table_id": "Table 6hrPlevpt", 
         "realm": "", 
         "frequency": "6hr", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "0.250000", 
@@ -2019,6 +2024,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "time3": {
             "standard_name": "time", 
             "units": "days since ?", 
@@ -2028,6 +2034,19 @@
             "formula": "", 
             "must_have_bounds": "yes", 
             "out_name": "time", 
+=======
+        "cldicemxrat27": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_ice_mixing_ratio", 
+            "units": "1.0", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Cloud Ice Mixing Ratio", 
+            "comment": "Cloud ice mixing ratio", 
+            "dimensions": "longitude latitude plev27 time1", 
+            "out_name": "cldicemxrat27", 
+            "type": "", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -2063,6 +2082,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "typec3pft": {
             "standard_name": "area_type", 
             "units": "", 
@@ -2072,6 +2092,19 @@
             "formula": "", 
             "must_have_bounds": "no", 
             "out_name": "type", 
+=======
+        "cldwatmxrat27": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_liquid_water_mixing_ratio", 
+            "units": "1.0", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Cloud Water Mixing Ratio", 
+            "comment": "Cloud water mixing ratio", 
+            "dimensions": "longitude latitude plev27 time1", 
+            "out_name": "cldwatmxrat27", 
+            "type": "", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -2107,6 +2140,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "typepdec": {
             "standard_name": "area_type", 
             "units": "", 
@@ -2116,6 +2150,19 @@
             "formula": "", 
             "must_have_bounds": "no", 
             "out_name": "type", 
+=======
+        "dtauc": {
+            "modeling_realm": "atmos", 
+            "standard_name": "atmosphere_optical_thickness_due_to_convective_cloud", 
+            "units": "1.0", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Convective Cloud Optical Depth", 
+            "comment": "This is the in-cloud optical depth obtained by considering only the cloudy portion of the grid cell", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "dtauc", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -2151,6 +2198,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "typesdec": {
             "standard_name": "area_type", 
             "units": "", 
@@ -2160,6 +2208,19 @@
             "formula": "", 
             "must_have_bounds": "no", 
             "out_name": "type", 
+=======
+        "dtaus": {
+            "modeling_realm": "atmos", 
+            "standard_name": "atmosphere_optical_thickness_due_to_stratiform_cloud", 
+            "units": "1.0", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Stratiform Cloud Optical Depth", 
+            "comment": "This is the in-cloud optical depth obtained by considering only the cloudy portion of the grid cell.", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "dtaus", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -2195,6 +2256,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "vegtype": {
             "standard_name": "area_type", 
             "units": "", 
@@ -2204,6 +2266,19 @@
             "formula": "", 
             "must_have_bounds": "no", 
             "out_name": "type", 
+=======
+        "grplmxrat27": {
+            "modeling_realm": "atmos", 
+            "standard_name": "mass_fraction_of_graupel_in_air", 
+            "units": "1.0", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "graupel_mixing_ratio", 
+            "comment": "Graupel mixing ratio", 
+            "dimensions": "longitude latitude plev27 time1", 
+            "out_name": "grplmxrat27", 
+            "type": "", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -2471,8 +2546,13 @@
             "long_name": "Sea Level Pressure", 
             "comment": "Sea Level Pressure", 
             "dimensions": "longitude latitude time1", 
+<<<<<<< Updated upstream
             "out_name": "psl", 
             "type": "", 
+=======
+            "out_name": "huss", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2513,6 +2593,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "hus27": {
             "modeling_realm": "atmos", 
             "standard_name": "specific_humidity", 
@@ -2524,12 +2605,26 @@
             "dimensions": "longitude latitude plev27 time1", 
             "out_name": "hus27", 
             "type": "", 
+=======
+        "mrlsl": {
+            "modeling_realm": "land", 
+            "standard_name": "moisture_content_of_soil_layer", 
+            "units": "kg m-2", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Water Content of Soil Layer", 
+            "comment": "The mass of water in all phases, including ice, in soil layers.  Report as missing for grid cells with no land.", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "mrlsl", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "rainmxrat27": {
             "modeling_realm": "atmos", 
             "standard_name": "mass_fraction_of_rain_in_air", 
@@ -2541,6 +2636,19 @@
             "dimensions": "longitude latitude plev27 time1", 
             "out_name": "rainmxrat27", 
             "type": "", 
+=======
+        "mrsos": {
+            "modeling_realm": "land", 
+            "standard_name": "moisture_content_of_soil_layer", 
+            "units": "kg m-2", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Moisture in Upper Portion of Soil Column", 
+            "comment": "The mass of water in all phases in the upper 10cm of the  soil layer.", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "mrsos", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2553,11 +2661,19 @@
             "units": "kg m-2", 
             "cell_methods": "time: point", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "Water Content per Unit Area of Soil Layers", 
             "comment": "The mass of water in all phases, including ice, in soil layers.  Report as missing for grid cells with no land.", 
             "dimensions": "longitude latitude time1", 
             "out_name": "mrlsl", 
             "type": "", 
+=======
+            "long_name": "Pressure at Model Full-Levels", 
+            "comment": "Air pressure on model levels", 
+            "dimensions": "longitude latitude plev27 time1", 
+            "out_name": "pfull27", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2590,8 +2706,13 @@
             "long_name": "Convective Cloud Optical Depth", 
             "comment": "This is the in-cloud optical depth obtained by considering only the cloudy portion of the grid cell", 
             "dimensions": "longitude latitude time1", 
+<<<<<<< Updated upstream
             "out_name": "dtauc", 
             "type": "", 
+=======
+            "out_name": "psl", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2600,8 +2721,13 @@
         }, 
         "cldicemxrat27": {
             "modeling_realm": "atmos", 
+<<<<<<< Updated upstream
             "standard_name": "cloud_ice_mixing_ratio", 
             "units": "", 
+=======
+            "standard_name": "mass_fraction_of_rain_in_air", 
+            "units": "1.0", 
+>>>>>>> Stashed changes
             "cell_methods": "time: point", 
             "cell_measures": "area: areacella", 
             "long_name": "Cloud Ice Mixing Ratio", 
@@ -2621,11 +2747,19 @@
             "units": "", 
             "cell_methods": "time: point", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "graupel_mixing_ratio", 
             "comment": "Graupel mixing ratio", 
             "dimensions": "longitude latitude plev27 time1", 
             "out_name": "grplmxrat27", 
             "type": "", 
+=======
+            "long_name": "Daily-Mean Near-Surface Wind Speed", 
+            "comment": "near-surface (usually, 10 meters) wind speed.", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "sfcWind", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2635,7 +2769,7 @@
         "snowmxrat27": {
             "modeling_realm": "atmos", 
             "standard_name": "mass_fraction_of_snow_in_air", 
-            "units": "", 
+            "units": "1.0", 
             "cell_methods": "time: point", 
             "cell_measures": "area: areacella", 
             "long_name": "snow_mixing_ratio", 
@@ -2667,7 +2801,7 @@
             "ok_max_mean_abs": ""
         }, 
         "snw": {
-            "modeling_realm": "atmos", 
+            "modeling_realm": "landIce land", 
             "standard_name": "surface_snow_amount", 
             "units": "kg m-2", 
             "cell_methods": "time: point", 
@@ -2676,7 +2810,7 @@
             "comment": "The mass of surface snow on the land portion of the grid cell divided by the land area in the grid cell; reported as missing where the land fraction is 0; excludes snow on vegetation canopy or on sea ice.", 
             "dimensions": "longitude latitude time1", 
             "out_name": "snw", 
-            "type": "", 
+            "type": "real", 
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2717,7 +2851,11 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tas": {
+=======
+        "ta": {
+>>>>>>> Stashed changes
             "modeling_realm": "atmos", 
             "standard_name": "air_temperature", 
             "units": "K", 
@@ -2795,34 +2933,53 @@
             "comment": "Temperature of the lower boundary of the atmosphere", 
             "dimensions": "longitude latitude time1", 
             "out_name": "ts", 
-            "type": "", 
+            "type": "real", 
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "huss": {
             "modeling_realm": "atmos", 
             "standard_name": "specific_humidity", 
             "units": "1.0", 
+=======
+        "tsl": {
+            "modeling_realm": "land", 
+            "standard_name": "soil_temperature", 
+            "units": "K", 
+>>>>>>> Stashed changes
             "cell_methods": "time: point", 
             "cell_measures": "area: areacella", 
             "long_name": "Near-Surface Specific Humidity", 
             "comment": "Near-surface (usually, 2 meter) specific humidity.", 
             "dimensions": "longitude latitude time1", 
+<<<<<<< Updated upstream
             "out_name": "huss", 
             "type": "", 
+=======
+            "out_name": "tsl", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "pfull27": {
             "modeling_realm": "atmos", 
             "standard_name": "air_pressure", 
             "units": "Pa", 
+=======
+        "ua": {
+            "modeling_realm": "atmos", 
+            "standard_name": "eastward_wind", 
+            "units": "m s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: point", 
             "cell_measures": "area: areacella", 
             "long_name": "Pressure on Model Levels", 
@@ -2846,14 +3003,18 @@
             "comment": "Eastward component of the near-surface (usually, 10 meters)  wind", 
             "dimensions": "longitude latitude time1", 
             "out_name": "uas", 
-            "type": "", 
+            "type": "real", 
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "vas": {
+=======
+        "va": {
+>>>>>>> Stashed changes
             "modeling_realm": "atmos", 
             "standard_name": "northward_wind", 
             "units": "m s-1", 
@@ -2896,8 +3057,13 @@
             "long_name": "Near-Surface Wind Speed", 
             "comment": "near-surface (usually, 10 meters) wind speed.", 
             "dimensions": "longitude latitude time1", 
+<<<<<<< Updated upstream
             "out_name": "sfcWind", 
             "type": "", 
+=======
+            "out_name": "vas", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 

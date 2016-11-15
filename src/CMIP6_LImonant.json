@@ -4,8 +4,13 @@
         "table_id": "Table LImonant", 
         "realm": "", 
         "frequency": "mon", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "", 
@@ -2355,10 +2360,17 @@
             "units": "m", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "surface altitude", 
             "comment": "The surface called 'surface' means the lower boundary of the atmosphere. Altitude is the (geometric) height above the geoid, which is the reference geopotential surface. The geoid is similar to mean sea level.", 
             "dimensions": "xant yant time", 
             "out_name": "orog", 
+=======
+            "long_name": "Surface Mass Balance flux", 
+            "comment": "Specific mass balance means the net rate at which ice is added per unit area at the land ice surface. Computed as the total surface mass balance on the land ice portion of the grid cell divided by land ice area in the grid cell. A negative value means loss of ice", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "acabf", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2462,10 +2474,17 @@
             "units": "K", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Snow Internal Temperature", 
             "comment": "This temperature is averaged over all the snow in the grid cell that rests on land or land ice.  When computing the time-mean here, the time samples, weighted by the mass of snow on the land portion of the grid cell, are accumulated and then divided by the sum of the weights.   Reported as missing in regions free of snow on land.", 
             "dimensions": "xant yant time", 
             "out_name": "tsn", 
+=======
+            "long_name": "Surface Upward Latent Heat Flux", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "hfls", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2479,10 +2498,17 @@
             "units": "kg m-2 s-1", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Land ice vertical front mass balance flux", 
             "comment": "Total mass balance at the ice front (or vertical margin). It includes both iceberg calving and melt on vertical ice front", 
             "dimensions": "xant yant time", 
             "out_name": "lifmassbf", 
+=======
+            "long_name": "Surface Upward Sensible Heat Flux", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "hfss", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2496,10 +2522,17 @@
             "units": "W m-2", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "surface upwelling shortwave radiation", 
             "comment": "", 
             "dimensions": "xant yant time", 
             "out_name": "rsus", 
+=======
+            "long_name": "Surface ice melt flux", 
+            "comment": "Loss of ice mass resulting from surface melting. Computed as the total surface melt water on the land ice portion of the grid cell divided by land ice area in the grid cell.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "icem", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2513,10 +2546,17 @@
             "units": "K", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Temperature at snow-ice interface over land ice", 
             "comment": "Surface Temperature that is used to force ice sheet models. It is the temperature at the base of the snowpack models, and does not vary with seasons. Report surface temperature of ice sheet where snow thickness is zero", 
             "dimensions": "xant yant time", 
             "out_name": "litempsnic", 
+=======
+            "long_name": "Land ice or snow albedo", 
+            "comment": "Mean surface albedo of entire land ice covered part of the grid cell", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "lialb", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2530,10 +2570,17 @@
             "units": "W m-2", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Surface Upward Sensible Heat Flux", 
             "comment": "", 
             "dimensions": "xant yant time", 
             "out_name": "hfss", 
+=======
+            "long_name": "Basal specific mass balance flux of floating ice shelf", 
+            "comment": "Specific mass balance means the net rate at which ice is added per unit area at the land ice base.  A negative value means loss of ice. Computed as the total basal mass balance on the floating land ice (floating ice shelf) portion of the grid cell divided by floating land ice (floating ice shelf) area in the grid cell. Cell_methods: area: mean where floating_ice_shelf", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "libmassbffl", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2547,10 +2594,17 @@
             "units": "kg m-2 s-1", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Snowfall Flux", 
             "comment": "at surface; includes precipitation of all forms of water in the solid phase", 
             "dimensions": "xant yant time", 
             "out_name": "prsn", 
+=======
+            "long_name": "Basal specific mass balance flux of grounded ice sheet", 
+            "comment": "Specific mass balance means the net rate at which ice is added per unit area at the land ice base.  A negative value means loss of ice. Computed as the total basal mass balance on the grounded land ice portion of the grid cell divided by grounded land ice area in the grid cell. Cell_methods: area: mean where grounded_ice_sheet", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "libmassbfgr", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2564,10 +2618,17 @@
             "units": "K", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Near-Surface Air Temperature", 
             "comment": "near-surface (usually, 2 meter) air temperature", 
             "dimensions": "xant yant time", 
             "out_name": "tas", 
+=======
+            "long_name": "Land ice calving flux", 
+            "comment": "Loss of ice mass resulting from iceberg calving. Computed as the rate of mass loss by the ice shelf (in kg s-1) divided by the horizontal area of the ice sheet (m2) in the grid box.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "licalvf", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2581,10 +2642,17 @@
             "units": "kg m-2 s-1", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Land Ice Runoff Flux", 
             "comment": "Runoff flux over land ice is the difference between any available liquid water in the snowpack less any refreezing. Computed as the sum of rainfall and melt of snow or ice less any refreezing or water retained in the snowpack", 
             "dimensions": "xant yant time", 
             "out_name": "mrroLi", 
+=======
+            "long_name": "Land ice vertical front mass balance flux", 
+            "comment": "Total mass balance at the ice front (or vertical margin). It includes both iceberg calving and melt on vertical ice front", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "lifmassbf", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2598,10 +2666,17 @@
             "units": "W m-2", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Surface Upward Latent Heat Flux", 
             "comment": "", 
             "dimensions": "xant yant time", 
             "out_name": "hfls", 
+=======
+            "long_name": "Basal temperature of floating ice shelf", 
+            "comment": "Basal temperature that is used to force the ice sheet models, it is the temperature AT ice shelf-ocean interface.  Cell_methods: area: mean where floating_ice_shelf", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "litempbotfl", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2615,10 +2690,17 @@
             "units": "W m-2", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "surface downwelling longwave radiation", 
             "comment": "", 
             "dimensions": "xant yant time", 
             "out_name": "rlds", 
+=======
+            "long_name": "Basal temperature of grounded ice sheet", 
+            "comment": "Basal temperature that is used to force the ice sheet models, it is the temperature AT ice sheet - bedrock interface. Cell_methods: area: mean where grounded_ice_sheet", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "litempbotgr", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2632,10 +2714,17 @@
             "units": "kg m-2 s-1", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Land ice calving flux", 
             "comment": "Loss of ice mass resulting from iceberg calving. Computed as the rate of mass loss by the ice shelf (in kg s-1) divided by the horizontal area of the ice sheet (m2) in the grid box.", 
             "dimensions": "xant yant time", 
             "out_name": "licalvf", 
+=======
+            "long_name": "Temperature at snow-ice interface over land ice", 
+            "comment": "Surface Temperature that is used to force ice sheet models. It is the temperature at the base of the snowpack models, and does not vary with seasons. Report surface temperature of ice sheet where snow thickness is zero", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "litempsnic", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2649,10 +2738,17 @@
             "units": "K", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Surface Temperature", 
             "comment": "Temperature of the lower boundary of the atmosphere", 
             "dimensions": "xant yant time", 
             "out_name": "ts", 
+=======
+            "long_name": "Land Ice Runoff Flux", 
+            "comment": "Runoff flux over land ice is the difference between any available liquid water in the snowpack less any refreezing. Computed as the sum of rainfall and melt of snow or ice less any refreezing or water retained in the snowpack", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "mrroLi", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2666,10 +2762,17 @@
             "units": "kg m-2 s-1", 
             "cell_methods": "area: time: mean where floating_ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Basal specific mass balance flux of floating ice shelf", 
             "comment": "Specific mass balance means the net rate at which ice is added per unit area at the land ice base.  A negative value means loss of ice. Computed as the total basal mass balance on the floating land ice (floating ice shelf) portion of the grid cell divided by floating land ice (floating ice shelf) area in the grid cell. Cell_methods: area: mean where floating_ice_shelf", 
             "dimensions": "xant yant time", 
             "out_name": "libmassbffl", 
+=======
+            "long_name": "surface altitude", 
+            "comment": "The surface called 'surface' means the lower boundary of the atmosphere. Altitude is the (geometric) height above the geoid, which is the reference geopotential surface. The geoid is similar to mean sea level.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "orog", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2683,10 +2786,17 @@
             "units": "kg m-2 s-1", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Surface Mass Balance flux", 
             "comment": "Specific mass balance means the net rate at which ice is added per unit area at the land ice surface. Computed as the total surface mass balance on the land ice portion of the grid cell divided by land ice area in the grid cell. A negative value means loss of ice", 
             "dimensions": "xant yant time", 
             "out_name": "acabf", 
+=======
+            "long_name": "Precipitation over Land Ice", 
+            "comment": "includes both liquid and solid phases", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "pr", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2702,8 +2812,13 @@
             "cell_measures": "area: areacellg", 
             "long_name": "surface upwelling longwave radiation", 
             "comment": "", 
+<<<<<<< Updated upstream
             "dimensions": "xant yant time", 
             "out_name": "rlus", 
+=======
+            "dimensions": "longitude latitude time", 
+            "out_name": "prra", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2717,10 +2832,17 @@
             "units": "kg m-2 s-1", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Surface snow and ice refreeze flux", 
             "comment": "Mass flux of surface meltwater which refreezes within the snowpack. Computed as the total refreezing on the land ice portion of the grid cell divided by land ice area in the grid cell.", 
             "dimensions": "xant yant time", 
             "out_name": "snicefreez", 
+=======
+            "long_name": "Snowfall Flux", 
+            "comment": "at surface; includes precipitation of all forms of water in the solid phase", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "prsn", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2734,10 +2856,17 @@
             "units": "W m-2", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Surface Downwelling Shortwave Radiation", 
             "comment": "surface solar irradiance for UV calculations", 
             "dimensions": "xant yant time", 
             "out_name": "rsds", 
+=======
+            "long_name": "surface downwelling longwave radiation", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "rlds", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2751,10 +2880,17 @@
             "units": "1.0", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Land ice or snow albedo", 
             "comment": "Mean surface albedo of entire land ice covered part of the grid cell", 
             "dimensions": "xant yant time", 
             "out_name": "lialb", 
+=======
+            "long_name": "surface upwelling longwave radiation", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "rlus", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2768,10 +2904,17 @@
             "units": "kg m-2 s-1", 
             "cell_methods": "area: time: mean where grounded_ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Basal specific mass balance flux of grounded ice sheet", 
             "comment": "Specific mass balance means the net rate at which ice is added per unit area at the land ice base.  A negative value means loss of ice. Computed as the total basal mass balance on the grounded land ice portion of the grid cell divided by grounded land ice area in the grid cell. Cell_methods: area: mean where grounded_ice_sheet", 
             "dimensions": "xant yant time", 
             "out_name": "libmassbfgr", 
+=======
+            "long_name": "Surface Downwelling Shortwave Radiation", 
+            "comment": "surface solar irradiance for UV calculations", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "rsds", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2785,10 +2928,17 @@
             "units": "kg m-2 s-1", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Surface Snow Melt", 
             "comment": "The total surface snow melt rate on the land portion of the grid cell divided by the land area in the grid cell; report as zero for snow-free land regions and missing where there is no land.", 
             "dimensions": "xant yant time", 
             "out_name": "snm", 
+=======
+            "long_name": "surface upwelling shortwave radiation", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "rsus", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2802,10 +2952,17 @@
             "units": "kg m-2 s-1", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Surface snow and ice melt flux", 
             "comment": "Loss of snow and ice mass resulting from surface melting. Computed as the total surface melt on the land ice portion of the grid cell divided by land ice area in the grid cell.", 
             "dimensions": "xant yant time", 
             "out_name": "snicem", 
+=======
+            "long_name": "Surface Snow and Ice Sublimation Flux", 
+            "comment": "The snow and ice sublimation flux is the loss of snow and ice mass per unit area from the surface resulting from their direct conversion to water vapor that enters the atmosphere.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "sbl", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2821,7 +2978,7 @@
             "cell_measures": "area: areacellg", 
             "long_name": "Snow Area Fraction", 
             "comment": "Fraction of each grid cell that is occupied by snow that rests on land portion of cell.", 
-            "dimensions": "xant yant time", 
+            "dimensions": "longitude latitude time", 
             "out_name": "snc", 
             "type": "", 
             "positive": "", 
@@ -2836,10 +2993,17 @@
             "units": "kg m-2 s-1", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Surface ice melt flux", 
             "comment": "Loss of ice mass resulting from surface melting. Computed as the total surface melt water on the land ice portion of the grid cell divided by land ice area in the grid cell.", 
             "dimensions": "xant yant time", 
             "out_name": "icem", 
+=======
+            "long_name": "Surface snow and ice refreeze flux", 
+            "comment": "Mass flux of surface meltwater which refreezes within the snowpack. Computed as the total refreezing on the land ice portion of the grid cell divided by land ice area in the grid cell.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "snicefreez", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2853,10 +3017,17 @@
             "units": "kg m-2 s-1", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Rainfall rate over Land Ice", 
             "comment": "", 
             "dimensions": "xant yant time", 
             "out_name": "prra", 
+=======
+            "long_name": "Surface snow and ice melt flux", 
+            "comment": "Loss of snow and ice mass resulting from surface melting. Computed as the total surface melt on the land ice portion of the grid cell divided by land ice area in the grid cell.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "snicem", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2864,6 +3035,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "litempbotgr": {
             "modeling_realm": "", 
             "standard_name": "land_ice_basal_temperature", 
@@ -2875,6 +3047,19 @@
             "dimensions": "xant yant time", 
             "out_name": "litempbotgr", 
             "type": "", 
+=======
+        "snm": {
+            "modeling_realm": "landIce land", 
+            "standard_name": "surface_snow_melt_flux", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "area: time: mean where ice_shelf", 
+            "cell_measures": "area: areacellg", 
+            "long_name": "Surface Snow Melt", 
+            "comment": "The total surface snow melt rate on the land portion of the grid cell divided by the land area in the grid cell; report as zero for snow-free land regions and missing where there is no land.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "snm", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2887,10 +3072,17 @@
             "units": "K", 
             "cell_methods": "area: time: mean where floating_ice_shelf", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Basal temperature of floating ice shelf", 
             "comment": "Basal temperature that is used to force the ice sheet models, it is the temperature AT ice shelf-ocean interface.  Cell_methods: area: mean where floating_ice_shelf", 
             "dimensions": "xant yant time", 
             "out_name": "litempbotfl", 
+=======
+            "long_name": "Near-Surface Air Temperature", 
+            "comment": "near-surface (usually, 2 meter) air temperature", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "tas", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2898,6 +3090,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "pr": {
             "modeling_realm": "", 
             "standard_name": "precipitation_flux", 
@@ -2909,12 +3102,26 @@
             "dimensions": "xant yant time", 
             "out_name": "pr", 
             "type": "", 
+=======
+        "ts": {
+            "modeling_realm": "atmos", 
+            "standard_name": "surface_temperature", 
+            "units": "K", 
+            "cell_methods": "area: time: mean where ice_shelf", 
+            "cell_measures": "area: areacellg", 
+            "long_name": "Surface Temperature", 
+            "comment": "Temperature of the lower boundary of the atmosphere", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "ts", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "sbl": {
             "modeling_realm": "", 
             "standard_name": "surface_snow_and_ice_sublimation_flux", 
@@ -2926,6 +3133,19 @@
             "dimensions": "xant yant time", 
             "out_name": "sbl", 
             "type": "", 
+=======
+        "tsn": {
+            "modeling_realm": "landIce land", 
+            "standard_name": "temperature_in_surface_snow", 
+            "units": "K", 
+            "cell_methods": "area: time: mean where ice_shelf", 
+            "cell_measures": "area: areacellg", 
+            "long_name": "Snow Internal Temperature", 
+            "comment": "This temperature is averaged over all the snow in the grid cell that rests on land or land ice.  When computing the time-mean here, the time samples, weighted by the mass of snow on the land portion of the grid cell, are accumulated and then divided by the sum of the weights.   Reported as missing in regions free of snow on land.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "tsn", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 

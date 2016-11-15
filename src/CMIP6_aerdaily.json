@@ -4,8 +4,13 @@
         "table_id": "Table aerdaily", 
         "realm": "aerosol", 
         "frequency": "day", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "1.00000", 
@@ -2315,9 +2320,15 @@
         }, 
         "ps": {
             "modeling_realm": "aerosol", 
+<<<<<<< Updated upstream
             "standard_name": "surface_air_pressure", 
             "units": "Pa", 
             "cell_methods": "time: mean", 
+=======
+            "standard_name": "", 
+            "units": "m", 
+            "cell_methods": "time: maximum", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Surface Air Pressure", 
             "comment": "surface pressure (not mean sea-level pressure), 2-D field to calculate the 3-D pressure field from hybrid coordinates", 
@@ -2435,6 +2446,7 @@
         "depth": {
             "long_name": "Sea Floor Depth: formula term: thetao", 
             "units": "m", 
+<<<<<<< Updated upstream
             "dimensions": "longitude latitude", 
             "type": "real"
         }, 
@@ -2461,6 +2473,9 @@
             "standard_name": "atmosphere_optical_thickness_due_to_ambient_aerosol", 
             "units": "1.0", 
             "cell_methods": "time: mean", 
+=======
+            "cell_methods": "time: minimum", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "ambient aerosol optical thickness at 550 nm", 
             "comment": "AOD from the ambient aerosls (i.e., includes aerosol water).  Does not include AOD from stratospheric aerosols if these are prescribed but includes other possible background aerosol types. Needs a comment attribute 'wavelength: 550 nm'", 
@@ -2490,6 +2505,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "rlds": {
             "modeling_realm": "aerosol", 
             "standard_name": "surface_downwelling_longwave_flux_in_air", 
@@ -2593,6 +2609,9 @@
             "ok_max_mean_abs": ""
         }, 
         "zg10": {
+=======
+        "tas": {
+>>>>>>> Stashed changes
             "modeling_realm": "aerosol", 
             "standard_name": "geopotential_height", 
             "units": "m", 

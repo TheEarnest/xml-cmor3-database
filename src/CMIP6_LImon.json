@@ -4,8 +4,13 @@
         "table_id": "Table LImon", 
         "realm": "landIce land", 
         "frequency": "mon", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "30.00000", 
@@ -2802,15 +2807,22 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "prraLi": {
             "modeling_realm": "landIce", 
             "standard_name": "rainfall_flux", 
+=======
+        "sblLi": {
+            "modeling_realm": "landIce land", 
+            "standard_name": "surface_snow_and_ice_sublimation_flux", 
+>>>>>>> Stashed changes
             "units": "kg m-2 s-1", 
             "cell_methods": "area: time: mean where ice_shelf", 
             "cell_measures": "area: areacella", 
             "long_name": "Rainfall rate", 
             "comment": "", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "prraLi", 
             "type": "", 
             "positive": "", 
@@ -2830,6 +2842,10 @@
             "dimensions": "longitude latitude time", 
             "out_name": "mrroLi", 
             "type": "", 
+=======
+            "out_name": "sblLi", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2854,19 +2870,19 @@
             "ok_max_mean_abs": ""
         }, 
         "sftgif": {
-            "modeling_realm": "landIce", 
+            "modeling_realm": "land", 
             "standard_name": "land_ice_area_fraction", 
             "units": "%", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
-            "long_name": "Land Ice Area Fraction", 
+            "long_name": "Fraction of Grid Cell Covered with Glacier", 
             "comment": "Fraction of grid cell covered by land ice (ice sheet, ice shelf, ice cap, glacier)", 
             "dimensions": "longitude latitude time", 
             "out_name": "sftgif", 
-            "type": "", 
+            "type": "real", 
             "positive": "", 
-            "valid_min": "", 
-            "valid_max": "", 
+            "valid_min": "0.0", 
+            "valid_max": "100.0", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
@@ -2887,15 +2903,24 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "sblLi": {
             "modeling_realm": "landIce", 
             "standard_name": "surface_snow_and_ice_sublimation_flux", 
             "units": "kg m-2 s-1", 
             "cell_methods": "area: time: mean where ice_shelf", 
+=======
+        "sncLi": {
+            "modeling_realm": "landIce land", 
+            "standard_name": "surface_snow_area_fraction", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Surface Snow and Ice Sublimation Flux", 
             "comment": "The snow and ice sublimation flux is the loss of snow and ice mass per unit area from the surface resulting from their direct conversion to water vapor that enters the atmosphere.", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "sblLi", 
             "type": "", 
             "positive": "", 
@@ -2915,6 +2940,10 @@
             "dimensions": "longitude latitude time", 
             "out_name": "rldsLi", 
             "type": "", 
+=======
+            "out_name": "sncLi", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2972,15 +3001,24 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "rsusLi": {
             "modeling_realm": "landIce", 
             "standard_name": "surface_upwelling_shortwave_flux_in_air", 
             "units": "W m-2", 
             "cell_methods": "area: time: mean where ice_shelf", 
+=======
+        "snmLi": {
+            "modeling_realm": "landIce land", 
+            "standard_name": "surface_snow_melt_flux", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "area: mean where land time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "surface upwelling shortwave radiation", 
             "comment": "", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "rsusLi", 
             "type": "", 
             "positive": "", 
@@ -3000,6 +3038,10 @@
             "dimensions": "longitude latitude time", 
             "out_name": "tsLi", 
             "type": "", 
+=======
+            "out_name": "snmLi", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -3057,34 +3099,76 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "snicefreezLi": {
             "modeling_realm": "landIce", 
             "standard_name": "surface_snow_and_ice_refreezing_flux", 
             "units": "kg m-2 s-1", 
-            "cell_methods": "area: time: mean where ice_shelf", 
+=======
+        "tpf": {
+            "modeling_realm": "landIce land", 
+            "standard_name": "permafrost_layer_thickness", 
+            "units": "m", 
+            "cell_methods": "area: mean where land time: mean", 
             "cell_measures": "area: areacella", 
-            "long_name": "Surface snow and ice refreeze flux", 
-            "comment": "Mass flux of surface meltwater which refreezes within the snowpack. Computed as the total refreezing on the land ice portion of the grid cell divided by land ice area in the grid cell.", 
+            "long_name": "Permafrost Layer Thickness", 
+            "comment": "The mean thickness of the permafrost layer in the land portion of the grid cell.  Reported as zero in permafrost-free regions.", 
             "dimensions": "longitude latitude time", 
-            "out_name": "snicefreezLi", 
-            "type": "", 
+            "out_name": "tpf", 
+            "type": "real", 
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+        "tsLi": {
+            "modeling_realm": "atmos", 
+            "standard_name": "surface_temperature", 
+            "units": "K", 
+>>>>>>> Stashed changes
+            "cell_methods": "area: time: mean where ice_shelf", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Surface snow and ice refreeze flux", 
+            "comment": "Mass flux of surface meltwater which refreezes within the snowpack. Computed as the total refreezing on the land ice portion of the grid cell divided by land ice area in the grid cell.", 
+            "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
+            "out_name": "snicefreezLi", 
+            "type": "", 
+=======
+            "out_name": "tsLi", 
+            "type": "real", 
+>>>>>>> Stashed changes
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+<<<<<<< Updated upstream
         "prLi": {
             "modeling_realm": "landIce", 
             "standard_name": "precipitation_flux", 
             "units": "kg m-2 s-1", 
             "cell_methods": "area: time: mean where ice_shelf", 
+=======
+        "tsnLi": {
+            "modeling_realm": "landIce land", 
+            "standard_name": "temperature_in_surface_snow", 
+            "units": "K", 
+            "cell_methods": "area: mean where land time: mean (with samples weighted by snow mass)", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Precipitation", 
             "comment": "includes both liquid and solid phases", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "prLi", 
             "type": "", 
+=======
+            "out_name": "tsnLi", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 

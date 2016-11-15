@@ -4,8 +4,13 @@
         "table_id": "Table cfSites", 
         "realm": "atmos", 
         "frequency": "subhr", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "", 
@@ -2517,7 +2522,7 @@
             "modeling_realm": "atmos", 
             "standard_name": "latitude", 
             "units": "degrees_north", 
-            "cell_methods": "", 
+            "cell_methods": "area: point", 
             "cell_measures": "", 
             "long_name": "Latitude", 
             "comment": "", 
@@ -2532,6 +2537,7 @@
         }, 
         "hur": {
             "modeling_realm": "atmos", 
+<<<<<<< Updated upstream
             "standard_name": "relative_humidity", 
             "units": "%", 
             "cell_methods": "time: point", 
@@ -2554,6 +2560,13 @@
             "cell_methods": "time: point", 
             "cell_measures": "area: areacella", 
             "long_name": "Geopotential Height", 
+=======
+            "standard_name": "longitude", 
+            "units": "degrees_east", 
+            "cell_methods": "area: point", 
+            "cell_measures": "", 
+            "long_name": "Longitude", 
+>>>>>>> Stashed changes
             "comment": "", 
             "dimensions": "alevel site time1", 
             "out_name": "zg", 

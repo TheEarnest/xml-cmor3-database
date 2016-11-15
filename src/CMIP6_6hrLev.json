@@ -4,8 +4,13 @@
         "table_id": "Table 6hrLev", 
         "realm": "atmos", 
         "frequency": "6hr", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "0.250000", 
@@ -2461,7 +2466,7 @@
             "standard_name": "eastward_wind", 
             "units": "m s-1", 
             "cell_methods": "time: point", 
-            "cell_measures": "@OPT", 
+            "cell_measures": "--OPT", 
             "long_name": "Eastward Wind", 
             "comment": "", 
             "dimensions": "longitude latitude alevel time1", 
@@ -2478,7 +2483,7 @@
             "standard_name": "northward_wind", 
             "units": "m s-1", 
             "cell_methods": "time: point", 
-            "cell_measures": "@OPT", 
+            "cell_measures": "--OPT", 
             "long_name": "Northward Wind", 
             "comment": "", 
             "dimensions": "longitude latitude alevel time1", 

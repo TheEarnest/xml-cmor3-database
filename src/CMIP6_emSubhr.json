@@ -4,8 +4,13 @@
         "table_id": "Table emSubhr", 
         "realm": "atmos", 
         "frequency": "subhr", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "", 
@@ -2518,12 +2523,21 @@
             "standard_name": "tendency_of_specific_humidity_due_to_stratiform_clouds_and_precipitation", 
             "units": "s-1", 
             "cell_methods": "time: point", 
+<<<<<<< Updated upstream
             "cell_measures": "", 
             "long_name": "Tendency of Specific Humidity Due to Stratiform Clouds and Precipitation", 
             "comment": "", 
             "dimensions": "alevel site time1", 
             "out_name": "tnhusscp", 
             "type": "", 
+=======
+            "cell_measures": "area: areacella", 
+            "long_name": "Near-Surface Specific Humidity", 
+            "comment": "Near-surface (usually, 2 meter) specific humidity.", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "huss", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2535,6 +2549,7 @@
             "standard_name": "tendency_of_air_temperature_due_to_longwave_heating_assuming_clear_sky", 
             "units": "K s-1", 
             "cell_methods": "time: point", 
+<<<<<<< Updated upstream
             "cell_measures": "", 
             "long_name": "Tendency of Air Temperature due to Clear Sky Longwave Radiative Heating", 
             "comment": "Tendency of Air Temperature due to Clear Sky Longwave Radiative Heating", 
@@ -2542,6 +2557,15 @@
             "out_name": "tntrlcs", 
             "type": "", 
             "positive": "", 
+=======
+            "cell_measures": "area: areacella", 
+            "long_name": "Convective Mass Flux", 
+            "comment": "The net mass flux should represent the difference between the updraft and downdraft components.  The flux is computed as the mass divided by the area of the grid cell.", 
+            "dimensions": "longitude latitude alevel time1", 
+            "out_name": "mc", 
+            "type": "real", 
+            "positive": "up", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
@@ -2569,12 +2593,21 @@
             "standard_name": "tendency_of_specific_humidity_due_to_boundary_layer_mixing", 
             "units": "s-1", 
             "cell_methods": "time: point", 
+<<<<<<< Updated upstream
             "cell_measures": "", 
             "long_name": "Tendency of Specific Humidity Due to Boundary Layer Mixing", 
             "comment": "Includes all boundary layer terms including diffusive terms.", 
             "dimensions": "alevel site time1", 
             "out_name": "tnhuspbl", 
             "type": "", 
+=======
+            "cell_measures": "area: areacella", 
+            "long_name": "Convective Precipitation", 
+            "comment": "Convective precipitation at surface; includes both liquid and solid phases.", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "prc", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2586,12 +2619,21 @@
             "standard_name": "effective_radius_of_stratiform_cloud_liquid_water_particle", 
             "units": "m", 
             "cell_methods": "time: point", 
+<<<<<<< Updated upstream
             "cell_measures": "", 
             "long_name": "Stratiform Cloud Droplet Effective Radius", 
             "comment": "Droplets are liquid.  The effective radius is defined as the ratio of the third moment over the second moment of the particle size distribution and the time-mean should be calculated, weighting the individual samples by the cloudy fraction of the grid cell.", 
             "dimensions": "alevel site time1", 
             "out_name": "reffclws", 
             "type": "", 
+=======
+            "cell_measures": "area: areacella", 
+            "long_name": "Water Vapor Path", 
+            "comment": "vertically integrated through the atmospheric column", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "prw", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2607,8 +2649,13 @@
             "long_name": "tendency_of_air_temperature_due_to_shortwave_heating", 
             "comment": "Tendency of air temperature due to shortwave radiative heating", 
             "dimensions": "alevel site time1", 
+<<<<<<< Updated upstream
             "out_name": "tntrs", 
             "type": "", 
+=======
+            "out_name": "reffclic", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2624,8 +2671,13 @@
             "long_name": "Tendency of Air Temperature Due to Stratiform Clouds and Precipitation", 
             "comment": "", 
             "dimensions": "alevel site time1", 
+<<<<<<< Updated upstream
             "out_name": "tntscp", 
             "type": "", 
+=======
+            "out_name": "reffclis", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2638,11 +2690,19 @@
             "units": "m", 
             "cell_methods": "time: point", 
             "cell_measures": "", 
+<<<<<<< Updated upstream
             "long_name": "Hydrometeor Effective Radius of Convective Cloud Ice", 
             "comment": "This is defined as the in-cloud ratio of the third moment over the second moment of the particle size distribution (obtained by considering only the cloudy portion of the grid cell).", 
             "dimensions": "alevel site time1", 
             "out_name": "reffclic", 
             "type": "", 
+=======
+            "long_name": "Hydrometeor Effective Radius of Convective Cloud Liquid Water", 
+            "comment": "Droplets are liquid.  The effective radius is defined as the ratio of the third moment over the second moment of the particle size distribution and the time-mean should be calculated, weighting the individual samples by the cloudy fraction of the grid cell.", 
+            "dimensions": "alevel site time1", 
+            "out_name": "reffclwc", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2655,11 +2715,19 @@
             "units": "K s-1", 
             "cell_methods": "time: point", 
             "cell_measures": "", 
+<<<<<<< Updated upstream
             "long_name": "Tendency of Air Temperature due to Numerical Diffusion", 
             "comment": "This includes any horizontal or vertical numerical temperature diffusion not associated with the parametrized moist physics or the resolved dynamics.  For example, any vertical diffusion which is part of the boundary layer mixing scheme should be excluded, as should any diffusion which is included in the terms from the resolved dynamics.   This term is required to check the closure of the temperature budget.", 
             "dimensions": "alevel site time1", 
             "out_name": "tntd", 
             "type": "", 
+=======
+            "long_name": "Hydrometeor Effective Radius of Stratiform Cloud Liquid Water", 
+            "comment": "Droplets are liquid.  The effective radius is defined as the ratio of the third moment over the second moment of the particle size distribution and the time-mean should be calculated, weighting the individual samples by the cloudy fraction of the grid cell.", 
+            "dimensions": "alevel site time1", 
+            "out_name": "reffclws", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2672,8 +2740,13 @@
             "units": "m", 
             "cell_methods": "time: point", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "boundary_layer_depth", 
             "comment": "Boundary layer depth", 
+=======
+            "long_name": "TOA Outgoing Longwave Radiatio", 
+            "comment": "at the top of the atmosphere (to be compared with satellite measurements)", 
+>>>>>>> Stashed changes
             "dimensions": "longitude latitude time1", 
             "out_name": "bldep", 
             "type": "", 
@@ -2692,9 +2765,15 @@
             "long_name": "Surface Upward Sensible Heat Flux", 
             "comment": "", 
             "dimensions": "longitude latitude time1", 
+<<<<<<< Updated upstream
             "out_name": "hfss", 
             "type": "", 
             "positive": "", 
+=======
+            "out_name": "rsdt", 
+            "type": "real", 
+            "positive": "down", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
@@ -2757,11 +2836,19 @@
             "units": "kg m-2", 
             "cell_methods": "time: point", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "Water Vapor Path", 
             "comment": "vertically integrated through the atmospheric column", 
             "dimensions": "longitude latitude time1", 
             "out_name": "prw", 
             "type": "", 
+=======
+            "long_name": "Tendency of Specific Humidity", 
+            "comment": "Tendency of Specific Humidity", 
+            "dimensions": "longitude latitude alevel time1", 
+            "out_name": "tnhus", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2808,11 +2895,19 @@
             "units": "W m-2", 
             "cell_methods": "time: point", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "TOA Incident Shortwave Radiation", 
             "comment": "Shortwave radiation incident at the top of the atmosphere", 
             "dimensions": "longitude latitude time1", 
             "out_name": "rsdt", 
             "type": "", 
+=======
+            "long_name": "Tendency of Air Temperature", 
+            "comment": "Tendency of Air Temperature", 
+            "dimensions": "longitude latitude alevel time1", 
+            "out_name": "tnt", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2978,11 +3073,19 @@
             "units": "K", 
             "cell_methods": "time: point", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "Near-Surface Air Temperature", 
             "comment": "near-surface (usually, 2 meter) air temperature", 
             "dimensions": "longitude latitude time1", 
             "out_name": "tas", 
             "type": "", 
+=======
+            "long_name": "omega (=dp/dt)", 
+            "comment": "Omega (vertical velocity in pressure coordinates, positive downwards)", 
+            "dimensions": "longitude latitude alevel time1", 
+            "out_name": "wap", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 

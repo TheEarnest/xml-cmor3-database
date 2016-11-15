@@ -4,8 +4,13 @@
         "table_id": "Table Ofx", 
         "realm": "ocean", 
         "frequency": "fx", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "", 
@@ -2479,11 +2484,33 @@
             "ok_min_mean_abs": "0.0", 
             "ok_max_mean_abs": "1e+12"
         }, 
+<<<<<<< Updated upstream
+=======
+        "basin": {
+            "modeling_realm": "ocean", 
+            "standard_name": "region", 
+            "units": "1.0", 
+            "cell_methods": "area: point", 
+            "cell_measures": "area: areacello", 
+            "long_name": "Region Selection Index", 
+            "comment": "", 
+            "dimensions": "longitude latitude", 
+            "out_name": "basin", 
+            "type": "integer", 
+            "positive": "", 
+            "valid_min": "0.0", 
+            "valid_max": "10.0", 
+            "flag_values": "0 1 2 3 4 5 6 7 8 9 10", 
+            "flag_meanings": "global_land southern_ocean atlantic_ocean pacific_ocean arctic_ocean indian_ocean mediterranean_sea black_sea hudson_bay baltic_sea red_sea", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+>>>>>>> Stashed changes
         "deptho": {
             "modeling_realm": "ocean", 
             "standard_name": "sea_floor_depth_below_geoid", 
             "units": "m", 
-            "cell_methods": "", 
+            "cell_methods": "area: mean", 
             "cell_measures": "area: areacello", 
             "long_name": "Sea Floor Depth Below Geoid", 
             "comment": "Ocean bathymetry.   Reported here is the sea floor depth for present day relative to z=0 geoid. Reported as missing for land grid cells.", 

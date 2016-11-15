@@ -4,8 +4,13 @@
         "table_id": "Table em1hr", 
         "realm": "atmos", 
         "frequency": "1hr", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "0.017361", 
@@ -369,6 +374,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "depth0m": {
             "standard_name": "depth", 
             "units": "m", 
@@ -2226,6 +2232,19 @@
             "formula": "", 
             "must_have_bounds": "", 
             "out_name": "xant", 
+=======
+        "prc": {
+            "modeling_realm": "atmos", 
+            "standard_name": "convective_precipitation_flux", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Convective Precipitation", 
+            "comment": "Convective precipitation at surface; includes both liquid and solid phases.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "prc", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -2261,6 +2280,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "yant": {
             "standard_name": "projection_y_coordinate", 
             "units": "km", 
@@ -2270,6 +2290,19 @@
             "formula": "", 
             "must_have_bounds": "", 
             "out_name": "yant", 
+=======
+        "psl": {
+            "modeling_realm": "atmos", 
+            "standard_name": "air_pressure_at_sea_level", 
+            "units": "Pa", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Sea Level Pressure", 
+            "comment": "Sea Level Pressure", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "psl", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "requested": "", 
             "requested_bounds": "", 
@@ -2451,10 +2484,17 @@
             "units": "m s-1", 
             "cell_methods": "time: point", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "Northward Wind", 
             "comment": "", 
             "dimensions": "longitude latitude plev27 time1", 
             "out_name": "va27", 
+=======
+            "long_name": "TOA Outgoing Longwave Radiatio", 
+            "comment": "at the top of the atmosphere (to be compared with satellite measurements)", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "rlut", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2462,6 +2502,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "wap": {
             "modeling_realm": "", 
             "standard_name": "lagrangian_tendency_of_air_pressure", 
@@ -2472,6 +2513,18 @@
             "comment": "Omega (vertical velocity in pressure coordinates, positive downwards)", 
             "dimensions": "longitude latitude plev3h time1", 
             "out_name": "wap", 
+=======
+        "ta": {
+            "modeling_realm": "atmos", 
+            "standard_name": "air_temperature", 
+            "units": "K", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Air Temperature", 
+            "comment": "Air Temperature", 
+            "dimensions": "longitude latitude plev3 time1", 
+            "out_name": "ta", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2506,13 +2559,14 @@
             "comment": "Tendency of Air Temperature due to Radiative Heating", 
             "dimensions": "longitude latitude plev27 time1", 
             "out_name": "tntr27", 
-            "type": "", 
+            "type": "real", 
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "wap27": {
             "modeling_realm": "atmos", 
             "standard_name": "lagrangian_tendency_of_air_pressure", 
@@ -2540,6 +2594,18 @@
             "comment": "at the top of the atmosphere (to be compared with satellite measurements)", 
             "dimensions": "longitude latitude time1", 
             "out_name": "rlut", 
+=======
+        "ua": {
+            "modeling_realm": "atmos", 
+            "standard_name": "eastward_wind", 
+            "units": "m s-1", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Eastward Wind", 
+            "comment": "", 
+            "dimensions": "longitude latitude plev3 time1", 
+            "out_name": "ua", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2564,6 +2630,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "xnonoroggwdparam27": {
             "modeling_realm": "atmos", 
             "standard_name": "", 
@@ -2574,6 +2641,18 @@
             "comment": "Parameterised x-component of non-orographic gravity wave drag", 
             "dimensions": "longitude latitude plev27 time1", 
             "out_name": "xnonoroggwdparam27", 
+=======
+        "va": {
+            "modeling_realm": "atmos", 
+            "standard_name": "northward_wind", 
+            "units": "m s-1", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Northward Wind", 
+            "comment": "", 
+            "dimensions": "longitude latitude plev3 time1", 
+            "out_name": "va", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2598,6 +2677,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "psl": {
             "modeling_realm": "atmos", 
             "standard_name": "air_pressure_at_sea_level", 
@@ -2609,6 +2689,19 @@
             "dimensions": "longitude latitude time1", 
             "out_name": "psl", 
             "type": "", 
+=======
+        "wap": {
+            "modeling_realm": "atmos", 
+            "standard_name": "lagrangian_tendency_of_air_pressure", 
+            "units": "Pa s-1", 
+            "cell_methods": "time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "omega (=dp/dt)", 
+            "comment": "Omega (vertical velocity in pressure coordinates, positive downwards)", 
+            "dimensions": "longitude latitude plev3 time1", 
+            "out_name": "wap", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2621,11 +2714,19 @@
             "units": "kg m-2 s-1", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "Convective Precipitation", 
             "comment": "Convective precipitation at surface; includes both liquid and solid phases.", 
             "dimensions": "longitude latitude time", 
             "out_name": "prc", 
             "type": "", 
+=======
+            "long_name": "omega (=dp/dt)", 
+            "comment": "Omega (vertical velocity in pressure coordinates, positive downwards)", 
+            "dimensions": "longitude latitude plev27 time1", 
+            "out_name": "wap27", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 

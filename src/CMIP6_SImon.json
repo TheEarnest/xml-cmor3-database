@@ -4,8 +4,13 @@
         "table_id": "Table SImon", 
         "realm": "seaIce", 
         "frequency": "mon", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "30.00000", 
@@ -3584,6 +3589,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "sidmasssi": {
             "modeling_realm": "seaIce", 
             "standard_name": "tendency_of_sea_ice_amount_due_to_snow_conversion", 
@@ -3594,6 +3600,35 @@
             "comment": "The rate of change of sea ice mass due to transformation of snow to sea ice divided by grid-cell area", 
             "dimensions": "longitude latitude time", 
             "out_name": "sidmasssi", 
+=======
+        "sistremax": {
+            "modeling_realm": "seaIce", 
+            "standard_name": "maximum_shear_stress", 
+            "units": "N m-1", 
+            "cell_methods": "area: mean where sea_ice time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Maximum shear stress in sea ice", 
+            "comment": "Maximum shear stress in sea ice (second stress invariant)", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "sistremax", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "sistresave": {
+            "modeling_realm": "seaIce", 
+            "standard_name": "average_normal_stress", 
+            "units": "N m-1", 
+            "cell_methods": "area: mean where sea_ice time: point", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Average normal stress in sea ice", 
+            "comment": "Average normal stress in sea ice (first stress invariant)", 
+            "dimensions": "longitude latitude time1", 
+            "out_name": "sistresave", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -3720,6 +3755,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "siarean": {
             "modeling_realm": "seaIce", 
             "standard_name": "sea_ice_area", 
@@ -3738,6 +3774,9 @@
             "ok_max_mean_abs": ""
         }, 
         "sirdgconc": {
+=======
+        "sitimefrac": {
+>>>>>>> Stashed changes
             "modeling_realm": "seaIce", 
             "standard_name": "fraction_of_ridged_sea_ice", 
             "units": "1.0", 
@@ -3754,6 +3793,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "sishevel": {
             "modeling_realm": "seaIce", 
             "standard_name": "maximum_shear_of_sea_ice_velocity", 
@@ -3772,6 +3812,9 @@
             "ok_max_mean_abs": ""
         }, 
         "sidmasstranx": {
+=======
+        "siv": {
+>>>>>>> Stashed changes
             "modeling_realm": "seaIce", 
             "standard_name": "sea_ice_x_transport", 
             "units": "kg s-1", 

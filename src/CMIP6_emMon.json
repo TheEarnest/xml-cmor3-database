@@ -4,8 +4,13 @@
         "table_id": "Table emMon", 
         "realm": "land", 
         "frequency": "mon", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "30.00000", 
@@ -2391,11 +2396,234 @@
             "dimensions": "", 
             "type": "double"
         }, 
+<<<<<<< Updated upstream
         "zlev": {
             "long_name": "vertical coordinate formula term: zlev(k)", 
             "units": "", 
             "dimensions": "olevel", 
             "type": "double"
+=======
+        "al": {
+            "modeling_realm": "atmos", 
+            "standard_name": "surface_albedo", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Albedo", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "al", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "alb": {
+            "modeling_realm": "atmos", 
+            "standard_name": "surface_albedo", 
+            "units": "1.0", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Surface Albedo", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "alb", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "albisccp": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_albedo", 
+            "units": "1.0", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "ISCCP Mean Cloud Albedo", 
+            "comment": "ISCCP Mean Cloud Albedo. Time-means are weighted by the ISCCP Total Cloud Fraction {:cltisccp} - see  http://cfmip.metoffice.com/COSP.html", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "albisccp", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "baresoilFrac": {
+            "modeling_realm": "land", 
+            "standard_name": "area_fraction", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Bare Soil Fraction", 
+            "comment": "Percentage of entire grid cell  that is covered by bare soil.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "baresoilFrac", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "burntFractionAll": {
+            "modeling_realm": "land", 
+            "standard_name": "burned_area_fraction_OR_area_fraction", 
+            "units": "fraction", 
+            "cell_methods": "area: mean where land time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Fraction of grid cell burned due to all fires including natural and anthropogenic fires and those associated with anthropogenic land use change", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "burntFractionAll", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "c13Land": {
+            "modeling_realm": "land", 
+            "standard_name": "total_land_c13", 
+            "units": "kg m-2", 
+            "cell_methods": "area: mean where land time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Mass of 13C in all terrestrial carbon pools", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "c13Land", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "c13Litter": {
+            "modeling_realm": "land", 
+            "standard_name": "litter_c13_content", 
+            "units": "kg m-2", 
+            "cell_methods": "area: mean where land time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Mass of 13C in Litter Pool", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "c13Litter", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "c13Soil": {
+            "modeling_realm": "land", 
+            "standard_name": "soil_c13_content", 
+            "units": "kg m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Mass of 13C in Soil Pool", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "c13Soil", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "c13Veg": {
+            "modeling_realm": "land", 
+            "standard_name": "vegetation_c13_content", 
+            "units": "kg m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Mass of 13C in Vegetation", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "c13Veg", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "c14Land": {
+            "modeling_realm": "land", 
+            "standard_name": "total_land_c14", 
+            "units": "kg m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Mass of 14C in all terrestrial carbon pools", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "c14Land", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "c14Litter": {
+            "modeling_realm": "land", 
+            "standard_name": "litter_c14_content", 
+            "units": "kg m-2", 
+            "cell_methods": "area: mean where land time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Mass of 14C in Litter Pool", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "c14Litter", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "c14Soil": {
+            "modeling_realm": "land", 
+            "standard_name": "soil_c14_content", 
+            "units": "kg m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Mass of 14C in Soil Pool", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "c14Soil", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "c14Veg": {
+            "modeling_realm": "land", 
+            "standard_name": "vegetation_c14_content", 
+            "units": "kg m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Mass of 14C in Vegetation", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "c14Veg", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+>>>>>>> Stashed changes
         }, 
         "zlev_bnds": {
             "long_name": "vertical coordinate formula term: zlev(k+1/2)", 
@@ -2403,6 +2631,7 @@
             "dimensions": "olevel", 
             "type": "double"
         }, 
+<<<<<<< Updated upstream
         "z1": {
             "long_name": "vertical coordinate formula term: z1", 
             "units": "", 
@@ -2420,6 +2649,24 @@
             "units": "", 
             "dimensions": "olevel", 
             "type": "double"
+=======
+        "cLitterCwd": {
+            "modeling_realm": "land", 
+            "standard_name": "litter_wood_debris_carbon_content", 
+            "units": "kg m-2", 
+            "cell_methods": "area: mean where land time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Carbon Mass in Coarse Woody Debris", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "cLitterCwd", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+>>>>>>> Stashed changes
         }, 
         "depth": {
             "long_name": "Sea Floor Depth: formula term: thetao", 
@@ -2467,12 +2714,21 @@
             "standard_name": "iron_limitation_of_picophytoplankton", 
             "units": "1.0", 
             "cell_methods": "time: mean", 
+<<<<<<< Updated upstream
             "cell_measures": "area: areacello volume: volcello", 
             "long_name": "Iron limitation of Picophytoplankton", 
             "comment": "", 
             "dimensions": "longitude latitude olevel time", 
             "out_name": "limfepico", 
             "type": "", 
+=======
+            "cell_measures": "area: areacella", 
+            "long_name": "Carbon Mass in Other Living Compartments on Land", 
+            "comment": "e.g., labile, fruits, reserves, etc.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "cMisc", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2496,6 +2752,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "epn100": {
             "modeling_realm": "ocean", 
             "standard_name": "sinking_mole_flux_of_particulate_nitrogen_in_sea_water", 
@@ -2531,11 +2788,15 @@
             "ok_max_mean_abs": ""
         }, 
         "burntFractionAll": {
+=======
+        "cSoil": {
+>>>>>>> Stashed changes
             "modeling_realm": "land", 
             "standard_name": "burned_area_fraction_OR_area_fraction", 
             "units": "fraction", 
             "cell_methods": "area: mean where land time: mean", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "Fraction of grid cell burned due to all fires including natural and anthropogenic fires and those associated with anthropogenic land use change", 
             "comment": "", 
             "dimensions": "longitude latitude time", 
@@ -2558,6 +2819,13 @@
             "dimensions": "longitude latitude time", 
             "out_name": "fNgasFire", 
             "type": "", 
+=======
+            "long_name": "Carbon Mass in Soil Pool", 
+            "comment": "Carbon mass in the full depth of the soil model.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "cSoil", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -2602,12 +2870,173 @@
             "modeling_realm": "land", 
             "standard_name": "fire_CO2_emissions_from_all_sources", 
             "units": "kg m-2 s-1", 
+<<<<<<< Updated upstream
             "cell_methods": "area: mean where land time: mean", 
+=======
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "total carbon loss from natural and managed fire on land use tile, including deforestation fires", 
+            "comment": "Different from LMON this flux should include all fires occurring on the land use tile, including natural, man-made and deforestation fires", 
+            "dimensions": "longitude latitude landUse time", 
+            "out_name": "cTotFireLut", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "cVeg": {
+            "modeling_realm": "land", 
+            "standard_name": "vegetation_carbon_content", 
+            "units": "kg m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Carbon Mass in Vegetation", 
+            "comment": "Carbon mass per unit area in vegetation.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "cVeg", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "cWood": {
+            "modeling_realm": "land", 
+            "standard_name": "wood_carbon_content", 
+            "units": "kg m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Carbon Mass in Wood", 
+            "comment": "Carbon mass per unit area in wood, including sapwood and hardwood.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "cWood", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "cfadDbze94": {
+            "modeling_realm": "atmos", 
+            "standard_name": "histogram_of_equivalent_reflectivity_factor_over_height_above_reference_ellipsoid", 
+            "units": "1.0", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "CloudSat Radar Reflectivity", 
+            "comment": "CFAD (Cloud Frequency Altitude Diagrams) are frequency distributions of radar  reflectivity (or lidar scattering ratio) as a function of altitude. The variable cfadDbze94 is defined as the simulated relative frequency of occurrence of radar reflectivity in sampling volumes defined by altitude bins. The radar is observing at a frequency of 94GHz.", 
+            "dimensions": "longitude latitude alt40 dbze time", 
+            "out_name": "cfadDbze94", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "cfadLidarsr532": {
+            "modeling_realm": "atmos", 
+            "standard_name": "histogram_of_backscattering_ratio_over_height_above_reference_ellipsoid", 
+            "units": "1.0", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "CALIPSO Scattering Ratio", 
+            "comment": "CFAD (Cloud Frequency Altitude Diagrams) are frequency distributions of radar  reflectivity (or lidar scattering ratio) as a function of altitude. The variable cfadLidarsr532 is defined as the simulated relative frequency of lidar scattering ratio in sampling volumes defined by altitude bins. The lidar is observing at a wavelength of 532nm.", 
+            "dimensions": "longitude latitude alt40 scatratio time", 
+            "out_name": "cfadLidarsr532", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "chlos": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "mass_concentration_of_phytoplankton_expressed_as_chlorophyll_in_sea_water", 
+            "units": "kg m-3", 
+            "cell_methods": "time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Carbon Mass Flux into Atmosphere due to CO2 emissions from Fire resulting from all sources including natural, anthropogenic and land use change.", 
             "comment": "Only total fire emissions can be compared to observations.", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "fFireAll", 
+=======
+            "out_name": "chlos", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "clcalipso": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_area_fraction_in_atmosphere_layer", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "CALIPSO Cloud Fraction", 
+            "comment": "Percentage cloud cover at CALIPSO standard heights.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "clcalipso", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "clcalipsoice": {
+            "modeling_realm": "atmos", 
+            "standard_name": "ice_cloud_area_fraction_in_atmosphere_layer", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "CALIPSO ice cloud Fraction", 
+            "comment": "", 
+            "dimensions": "longitude latitude alt40 time", 
+            "out_name": "clcalipsoice", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "clcalipsoliq": {
+            "modeling_realm": "atmos", 
+            "standard_name": "liquid_cloud_area_fraction_in_atmosphere_layer", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "CALIPSO liquid cloud Fraction", 
+            "comment": "", 
+            "dimensions": "longitude latitude alt40 time", 
+            "out_name": "clcalipsoliq", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "cldicemxrat27": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_ice_mixing_ratio", 
+            "units": "1.0", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Cloud Ice Mixing Ratio", 
+            "comment": "Cloud ice mixing ratio", 
+            "dimensions": "longitude latitude plev27 time", 
+            "out_name": "cldicemxrat27", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2666,11 +3095,19 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "fVegLitterMortality": {
             "modeling_realm": "land", 
             "standard_name": "mortality_litter_carbon_flux", 
             "units": "kg m-2 s-1", 
             "cell_methods": "area: mean where land time: mean", 
+=======
+        "cldwatmxrat27": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_liquid_water_mixing_ratio", 
+            "units": "1.0", 
+            "cell_methods": "time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Total Carbon Mass Flux from Vegetation to Litter as a result of mortality", 
             "comment": "needed to separate changing vegetation C turnover times resulting from changing allocation versus changing mortality", 
@@ -2683,11 +3120,36 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "fHarvestToAtmos": {
             "modeling_realm": "land", 
             "standard_name": "surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_crop_harvesting", 
             "units": "kg m-2 s-1", 
             "cell_methods": "area: mean where land time: mean", 
+=======
+        "clhcalipso": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_area_fraction_in_atmosphere_layer", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "CALIPSO High Level Cloud Fraction", 
+            "comment": "Percentage cloud cover in layer centred on 220hPa", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "clhcalipso", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "climodis": {
+            "modeling_realm": "atmos", 
+            "standard_name": "ice_cloud_area_fraction", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Harvested biomass that goes straight into atmosphere", 
             "comment": "any harvested carbon that is assumed to decompose immediately into the atmosphere is reported here", 
@@ -2700,11 +3162,70 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "wetlandCH4cons": {
             "modeling_realm": "land", 
             "standard_name": "wetland_methane_consumption", 
             "units": "kg m-2 s-1", 
             "cell_methods": "area: mean where land time: mean", 
+=======
+        "clisccp": {
+            "modeling_realm": "atmos", 
+            "standard_name": "isccp_cloud_area_fraction", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "ISCCP Cloud Area Fraction", 
+            "comment": "Percentage cloud cover in optical depth categories.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "clisccp", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "cllcalipso": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_area_fraction_in_atmosphere_layer", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "CALIPSO Low Level Cloud Fraction", 
+            "comment": "Percentage cloud cover in layer centred on 840hPa", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "cllcalipso", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "clmcalipso": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_area_fraction_in_atmosphere_layer", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "CALIPSO Mid Level Cloud Fraction", 
+            "comment": "Percentage cloud cover in layer centred on 560hPa", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "clmcalipso", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "clmisr": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_area_fraction_in_atmosphere_layer", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Grid averaged methane consuption (methanotrophy) from wetlands", 
             "comment": "", 
@@ -2751,10 +3272,34 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "limnmisc": {
             "modeling_realm": "ocean", 
             "standard_name": "nitrogen_limitation_of_miscellaneous_phytoplankton", 
             "units": "1.0", 
+=======
+        "clwvic": {
+            "modeling_realm": "atmos", 
+            "standard_name": "atmosphere_convective_cloud_condensed_water_content", 
+            "units": "kg m-2 ", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Convective Condensed Water Path", 
+            "comment": "calculate mass of convective condensed (liquid + ice) water in the column divided by the area of the column (not just the area of the cloudy portion of the column). This includes precipitating hydrometeors ONLY if the precipitating hydrometeors affect the calculation of radiative transfer in model.  ", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "clwvic", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "co2s": {
+            "modeling_realm": "atmos", 
+            "standard_name": "mass_fraction_of_carbon_dioxide_in_air_OR_mole_fraction_of_carbon_dioxide_in_air_OR_mole_concentration_of_carbon_dioxide_in_air", 
+            "units": "1e-06", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacello volume: volcello", 
             "long_name": "Nitrogen Limitation of Other Phytoplankton", 
@@ -2819,6 +3364,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "fDeforestToProduct": {
             "modeling_realm": "land", 
             "standard_name": "deforested_biomass_into_product_pool_due_to_anthorpogenic_land_use_change", 
@@ -2829,6 +3375,18 @@
             "comment": "When land use change results in deforestation of natural vegetation (trees or grasslands) then natural biomass is removed. The treatment of deforested biomass differs significantly across models, but it should be straight-forward to compare deforested biomass across models.", 
             "dimensions": "longitude latitude time", 
             "out_name": "fDeforestToProduct", 
+=======
+        "concdust": {
+            "modeling_realm": "atmos", 
+            "standard_name": "mass_concentration_of_dust_dry_aerosol_in_air", 
+            "units": "kg m-3", 
+            "cell_methods": "", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Concentration of Dust", 
+            "comment": "", 
+            "dimensions": "longitude latitude alevel time", 
+            "out_name": "concdust", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2836,6 +3394,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "nRoot": {
             "modeling_realm": "land", 
             "standard_name": "root_nitrogen_content", 
@@ -2846,6 +3405,18 @@
             "comment": "including fine and coarse roots.", 
             "dimensions": "longitude latitude time", 
             "out_name": "nRoot", 
+=======
+        "concnmcn": {
+            "modeling_realm": "atmos", 
+            "standard_name": "number_concentration_of_nucleation_mode_ambient_aerosol_in_air", 
+            "units": "m-3", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Number Concentration of Nucleation Mode Aerosol", 
+            "comment": "includes all particles with diameter smaller than 3 nm", 
+            "dimensions": "longitude latitude alevel time", 
+            "out_name": "concnmcn", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2855,9 +3426,15 @@
         }, 
         "fProductDecomp": {
             "modeling_realm": "land", 
+<<<<<<< Updated upstream
             "standard_name": "Carbon_flux_out_of_storage_product_pools_into_atmos", 
             "units": "kg m-2 s-1", 
             "cell_methods": "area: mean where land time: mean", 
+=======
+            "standard_name": "crop_fraction_c3", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "decomposition out of product pools to CO2 in atmos", 
             "comment": "", 
@@ -2870,6 +3447,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "limirrcalc": {
             "modeling_realm": "ocean", 
             "standard_name": "irradiance_limitation_of_calcareous_phytoplankton", 
@@ -2880,6 +3458,18 @@
             "comment": "", 
             "dimensions": "longitude latitude olevel time", 
             "out_name": "limirrcalc", 
+=======
+        "cropFracC4": {
+            "modeling_realm": "land", 
+            "standard_name": "crop_fraction_c4", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "C4 crop fraction", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "cropFracC4", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2904,11 +3494,19 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "nLeaf": {
             "modeling_realm": "land", 
             "standard_name": "leaf_nitrogen_content", 
             "units": "kg m-2", 
             "cell_methods": "area: mean where land time: mean", 
+=======
+        "diabdrag": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_eastward_wind_due_to_numerical_artefacts", 
+            "units": "m s-2", 
+            "cell_methods": "time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Nitrogen Mass in Leaves", 
             "comment": "", 
@@ -2921,6 +3519,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "fFireNat": {
             "modeling_realm": "land", 
             "standard_name": "fire_CO2_emissions_from_wildfire", 
@@ -2931,6 +3530,18 @@
             "comment": "CO2 emissions from natural fires", 
             "dimensions": "longitude latitude time", 
             "out_name": "fFireNat", 
+=======
+        "dissi13c": {
+            "modeling_realm": "ocean", 
+            "standard_name": "mole_concentration_of_dissolved_inorganic_c13_in_sea_water", 
+            "units": "mol m-3", 
+            "cell_methods": "", 
+            "cell_measures": "area: areacello", 
+            "long_name": "Concentration of DI13C", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "dissi13c", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -3074,6 +3685,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "fAnthDisturb": {
             "modeling_realm": "land", 
             "standard_name": "surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_anthrogpogenic_emission", 
@@ -3094,6 +3706,11 @@
         "raStem": {
             "modeling_realm": "land", 
             "standard_name": "autotrophic_respiration_from_stem", 
+=======
+        "evspsblpot": {
+            "modeling_realm": "atmos", 
+            "standard_name": "water_potential_evaporation_flux", 
+>>>>>>> Stashed changes
             "units": "kg m-2 s-1", 
             "cell_methods": "area: mean where land time: mean", 
             "cell_measures": "area: areacella", 
@@ -3108,6 +3725,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "nMineralNH4": {
             "modeling_realm": "land", 
             "standard_name": "mineral_nh4_soil_nitrogen_content", 
@@ -3120,11 +3738,26 @@
             "out_name": "nMineralNH4", 
             "type": "", 
             "positive": "", 
+=======
+        "exparag": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "sinking_mole_flux_of_aragonite_expressed_as_carbon_in_sea_water", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Sinking Aragonite Flux", 
+            "comment": "Downward flux of Aragonite", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "exparag", 
+            "type": "real", 
+            "positive": "down", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "fNgasNonFire": {
             "modeling_realm": "land", 
             "standard_name": "land_nitrogen_lost_to_atmosphere_not_due_to_fire", 
@@ -3137,11 +3770,26 @@
             "out_name": "fNgasNonFire", 
             "type": "", 
             "positive": "", 
+=======
+        "expcalc": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "sinking_mole_flux_of_calcite_expressed_as_carbon_in_sea_water", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Sinking Calcite Flux", 
+            "comment": "Downward flux of Calcite", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "expcalc", 
+            "type": "real", 
+            "positive": "down", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "limirrpico": {
             "modeling_realm": "ocean", 
             "standard_name": "irradiance_limitation_of_picophytoplankton", 
@@ -3149,6 +3797,117 @@
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacello volume: volcello", 
             "long_name": "Irradiance limitation of Picophytoplankton", 
+=======
+        "expcfe": {
+            "modeling_realm": "ocean", 
+            "standard_name": "sinking_mole_flux_of_particulate_iron_in_sea_water", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Sinking Particulate Iron Flux", 
+            "comment": "", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "expcfe", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "expn": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "sinking_mole_flux_of_particulate_organic_nitrogen_in_sea_water", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Sinking Particulate Organic Nitrogen Flux", 
+            "comment": "", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "expn", 
+            "type": "real", 
+            "positive": "down", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "expp": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "sinking_mole_flux_of_particulate_organic_phosphorus_in_sea_water", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Sinking Particulate Organic Phosphorus Flux", 
+            "comment": "", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "expp", 
+            "type": "real", 
+            "positive": "down", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "expsi": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "sinking_mole_flux_of_particulate_silicon_in_sea_water", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Sinking Particulate Silica Flux", 
+            "comment": "", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "expsi", 
+            "type": "real", 
+            "positive": "down", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "fAntAtmLut": {
+            "modeling_realm": "land", 
+            "standard_name": "", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "If a model has separate anthropogenic pools by land use tile, flux from anthropogenic pools on land use tile into atmosphere", 
+            "comment": "", 
+            "dimensions": "longitude latitude landUse time", 
+            "out_name": "fAntAtmLut", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "fAnthDisturb": {
+            "modeling_realm": "land", 
+            "standard_name": "surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_anthrogpogenic_emission", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "area: mean where land time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "carbon mass flux into atmosphere due to any human activity", 
+            "comment": "will require some careful definition to make sure we capture everything - any human activity that releases carbon to the atmosphere instead of into product pool goes here. E.g. Deforestation fire, harvest assumed to decompose straight away, grazing...", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "fAnthDisturb", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "fBNF": {
+            "modeling_realm": "land", 
+            "standard_name": "biological_nitrogen_fixation", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "area: mean where land time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "biological nitrogen fixation", 
+>>>>>>> Stashed changes
             "comment": "", 
             "dimensions": "longitude latitude olevel time", 
             "out_name": "limirrpico", 
@@ -3448,6 +4207,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "limfediat": {
             "modeling_realm": "ocean", 
             "standard_name": "iron_limitation_of_diatoms", 
@@ -3477,6 +4237,20 @@
             "out_name": "limnpico", 
             "type": "", 
             "positive": "", 
+=======
+        "fLuc": {
+            "modeling_realm": "land", 
+            "standard_name": "surface_net_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_anthropogenic_land_use_change", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Net Carbon Mass Flux into Atmosphere due to Land Use Change", 
+            "comment": "Carbon mass flux per unit area into atmosphere due to human changes to land (excluding forest regrowth) accounting possibly for different time-scales related to fate of the wood, for example.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "fLuc", 
+            "type": "real", 
+            "positive": "up", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
@@ -3486,7 +4260,7 @@
             "modeling_realm": "land", 
             "standard_name": "surface_net_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_anthropogenic_land_use_change", 
             "units": "kg m-2 s-1", 
-            "cell_methods": "area: mean where land time: mean", 
+            "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Deforested biomass that goes into atmosphere as a result of anthropogenic land use change", 
             "comment": "When land use change results in deforestation of natural vegetation (trees or grasslands) then natural biomass is removed. The treatment of deforested biomass differs significantly across models, but it should be straight-forward to compare deforested biomass across models.", 
@@ -3805,6 +4579,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tasLut": {
             "modeling_realm": "land", 
             "standard_name": "air_temperature", 
@@ -3823,6 +4598,9 @@
             "ok_max_mean_abs": ""
         }, 
         "dms": {
+=======
+        "fVegLitterMortality": {
+>>>>>>> Stashed changes
             "modeling_realm": "land", 
             "standard_name": "mole_fraction_of_dimethyl_sulfide_in_air", 
             "units": "mol mol-1", 
@@ -3856,6 +4634,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "rlusLut": {
             "modeling_realm": "land", 
             "standard_name": "surface_upwelling_longwave_flux_in_air", 
@@ -3874,6 +4653,9 @@
             "ok_max_mean_abs": ""
         }, 
         "fHarvAntLut": {
+=======
+        "fahUrb": {
+>>>>>>> Stashed changes
             "modeling_realm": "land", 
             "standard_name": "", 
             "units": "kg m-2 s-1", 
@@ -3890,6 +4672,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "fHarvAtmLut": {
             "modeling_realm": "land", 
             "standard_name": "", 
@@ -3901,12 +4684,26 @@
             "dimensions": "longitude latitude landUse time", 
             "out_name": "fHarvAtmLut", 
             "type": "", 
+=======
+        "fbddtalk": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "integral_wrt_depth_of_tendency_of_sea_water_alkalinity_expressed_as_mole_equivalent_due_to_biological_processes", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Rate of Change of Biological Alkalinity due to Biological Activity", 
+            "comment": "vertical integral of net biological terms in time rate of change of alkalinity", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "fbddtalk", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tslsiLut": {
             "modeling_realm": "land", 
             "standard_name": "surface_temperature", 
@@ -3918,12 +4715,26 @@
             "dimensions": "longitude latitude landUse time", 
             "out_name": "tslsiLut", 
             "type": "", 
+=======
+        "fbddtdic": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "tendency_of_ocean_mole_content_of_dissolved_inorganic_carbon_due_to_biological_processes", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Rate of Change of Dissolved Inorganic Carbon due to Biological Activity", 
+            "comment": "vertical integral of net biological terms in time rate of change of dissolved inorganic carbon", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "fbddtdic", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "laiLut": {
             "modeling_realm": "land", 
             "standard_name": "", 
@@ -3935,12 +4746,26 @@
             "dimensions": "longitude latitude landUse time", 
             "out_name": "laiLut", 
             "type": "", 
+=======
+        "fbddtdife": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "tendency_of_ocean_mole_content_of_dissolved_inorganic_iron_due_to_biological_processes", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Rate of Change of Dissolved Inorganic Iron due to Biological Activity", 
+            "comment": "vertical integral of net biological terms in time rate of change of dissolved inorganic iron", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "fbddtdife", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "raLut": {
             "modeling_realm": "land", 
             "standard_name": "plant_respiration_carbon_flux", 
@@ -3952,12 +4777,26 @@
             "dimensions": "longitude latitude landUse time", 
             "out_name": "raLut", 
             "type": "", 
+=======
+        "fbddtdin": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "tendency_of_ocean_mole_content_of_dissolved_inorganic_nitrogen_due_to_biological_processes", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Rate of Change of Dissolved Inorganic Nitrogen due to Biological Activity", 
+            "comment": "vertical integral of net biological terms in time rate of change of nitrogen nutrients (e.g. NO3+NH4)", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "fbddtdin", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "fHarvResLut": {
             "modeling_realm": "land", 
             "standard_name": "", 
@@ -3969,29 +4808,43 @@
             "dimensions": "longitude latitude landUse time", 
             "out_name": "fHarvResLut", 
             "type": "", 
-            "positive": "", 
-            "valid_min": "", 
-            "valid_max": "", 
-            "ok_min_mean_abs": "", 
-            "ok_max_mean_abs": ""
-        }, 
-        "fgsf6": {
-            "modeling_realm": "land", 
-            "standard_name": "surface_downward_mole_flux_of_sf6", 
-            "units": "mol sec-1 m-2", 
+=======
+        "fbddtdip": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "tendency_of_ocean_mole_content_of_dissolved_inorganic_phosphorus_due_to_biological_processes", 
+            "units": "mol m-2 s-1", 
             "cell_methods": "time: mean", 
-            "cell_measures": "area: areacello", 
-            "long_name": "Surface Downward SF6 flux", 
-            "comment": "gas exchange flux of SF6", 
-            "dimensions": "longitude latitude time", 
-            "out_name": "fgsf6", 
-            "type": "", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Rate of Change of Dissolved Inorganic Phosphate due to Biological Activity", 
+            "comment": "vertical integral of net biological terms in time rate of change of phosphate", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "fbddtdip", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+        "fbddtdisi": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "tendency_of_ocean_mole_content_of_dissolved_inorganic_silicon_due_to_biological_processes", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Rate of Change of Dissolved Inorganic Silicate due to Biological Activity", 
+            "comment": "vertical integral of net biological terms in time rate of change of dissolved inorganic silicate", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "fbddtdisi", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+<<<<<<< Updated upstream
         "hflsLut": {
             "modeling_realm": "land", 
             "standard_name": "surface_upward_latent_heat_flux", 
@@ -4003,12 +4856,60 @@
             "dimensions": "longitude latitude landUse time", 
             "out_name": "hflsLut", 
             "type": "", 
+=======
+        "fddtalk": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "integral_wrt_depth_of_tendency_of_sea_water_alkalinity_expressed_as_mole_equivalent", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Rate of Change of Alkalinity", 
+            "comment": "vertical integral of net time rate of change of alkalinity", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "fddtalk", 
+            "type": "real", 
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+        "fddtdic": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "tendency_of_ocean_mole_content_of_dissolved_inorganic_carbon", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Rate of Change of Net Dissolved Inorganic Carbon", 
+            "comment": "", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "fddtdic", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "fddtdife": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "tendency_of_ocean_mole_content_of_dissolved_inorganic_iron", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Rate of Change of Net Dissolved Inorganic Iron", 
+            "comment": "vertical integral of net time rate of change of dissolved inorganic iron", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "fddtdife", 
+            "type": "real", 
+>>>>>>> Stashed changes
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+<<<<<<< Updated upstream
         "mrs1mLut": {
             "modeling_realm": "land", 
             "standard_name": "", 
@@ -4020,12 +4921,26 @@
             "dimensions": "longitude latitude landUse time", 
             "out_name": "mrs1mLut", 
             "type": "", 
+=======
+        "fddtdin": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "tendency_of_ocean_mole_content_of_dissolved_inorganic_nitrogen", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Rate of Change of Net Dissolved Inorganic Nitrogen", 
+            "comment": "Net time rate of change of nitrogen nutrients (e.g. NO3+NH4)", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "fddtdin", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "mrsoLut": {
             "modeling_realm": "land", 
             "standard_name": "soil_moisture_content", 
@@ -4037,12 +4952,26 @@
             "dimensions": "longitude latitude landUse time", 
             "out_name": "mrsoLut", 
             "type": "", 
+=======
+        "fddtdip": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "tendency_of_ocean_mole_content_of_dissolved_inorganic_phosphorus", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Rate of Change of Net Dissolved Inorganic Phosphate", 
+            "comment": "vertical integral of net  time rate of change of phosphate", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "fddtdip", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "hussLut": {
             "modeling_realm": "land", 
             "standard_name": "specific_humidity", 
@@ -4054,12 +4983,26 @@
             "dimensions": "longitude latitude landUse time", 
             "out_name": "hussLut", 
             "type": "", 
+=======
+        "fddtdisi": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "tendency_of_ocean_mole_content_of_dissolved_inorganic_silicon", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Rate of Change of Net Dissolved Inorganic Silicate", 
+            "comment": "vertical integral of net time rate of change of dissolved inorganic silicate", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "fddtdisi", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "fgcfc12": {
             "modeling_realm": "land", 
             "standard_name": "surface_downward_mole_flux_of_cfc12", 
@@ -4070,6 +5013,18 @@
             "comment": "gas exchange flux of CFC12", 
             "dimensions": "longitude latitude time", 
             "out_name": "fgcfc12", 
+=======
+        "fg13co2": {
+            "modeling_realm": "ocean", 
+            "standard_name": "air_sea_flux_of_13CO2", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello", 
+            "long_name": "Total air-sea flux of 13CO2", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "fg13co2", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4077,6 +5032,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "hfssLut": {
             "modeling_realm": "land", 
             "standard_name": "surface_upward_sensible_heat_flux", 
@@ -4087,6 +5043,18 @@
             "comment": "", 
             "dimensions": "longitude latitude landUse time", 
             "out_name": "hfssLut", 
+=======
+        "fg14co2": {
+            "modeling_realm": "land", 
+            "standard_name": "air_sea_flux_of_14CO2", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello", 
+            "long_name": "Total air-sea flux of 14CO2", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "fg14co2", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4094,6 +5062,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "cTotFireLut": {
             "modeling_realm": "land", 
             "standard_name": "", 
@@ -4106,11 +5075,26 @@
             "out_name": "cTotFireLut", 
             "type": "", 
             "positive": "", 
+=======
+        "fg14co2abio": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "surface_downward_mass_flux_of_abiotic_14_carbon_dioxide_expressed_as_carbon", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Surface Downward abiotic 14CO2 Flux", 
+            "comment": "Gas exchange flux of abiotic 14CO2 (positive into ocean)", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "fg14co2abio", 
+            "type": "real", 
+            "positive": "down", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "gppLut": {
             "modeling_realm": "land", 
             "standard_name": "gross_primary_land_productivity_of_carbon", 
@@ -4123,11 +5107,26 @@
             "out_name": "gppLut", 
             "type": "", 
             "positive": "", 
+=======
+        "fgco2abio": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "surface_downward_mass_flux_of_abiotic_carbon_dioxide_expressed_as_carbon", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Surface Downward abiotic CO2 Flux", 
+            "comment": "Gas exchange flux of abiotic CO2 (positive into ocean)", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "fgco2abio", 
+            "type": "real", 
+            "positive": "down", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "fahUrb": {
             "modeling_realm": "land", 
             "standard_name": "", 
@@ -4140,11 +5139,26 @@
             "out_name": "fahUrb", 
             "type": "", 
             "positive": "", 
+=======
+        "fgco2nat": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "surface_downward_mass_flux_of_natural_carbon_dioxide_expressed_as_carbon", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Surface Downward natural CO2 Flux", 
+            "comment": "Gas exchange flux of natural CO2 (positive into ocean)", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "fgco2nat", 
+            "type": "real", 
+            "positive": "down", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "rsusLut": {
             "modeling_realm": "land", 
             "standard_name": "surface_upwelling_shortwave_flux_in_air", 
@@ -4157,11 +5171,26 @@
             "out_name": "rsusLut", 
             "type": "", 
             "positive": "", 
+=======
+        "fgdms": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "surface_upward_mole_flux_of_dimethyl_sulfide", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Surface Upward DMS Flux", 
+            "comment": "Gas exchange flux of DMS (positive into atmosphere)", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "fgdms", 
+            "type": "real", 
+            "positive": "up", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "fAntAtmLut": {
             "modeling_realm": "land", 
             "standard_name": "", 
@@ -4172,6 +5201,18 @@
             "comment": "", 
             "dimensions": "longitude latitude landUse time", 
             "out_name": "fAntAtmLut", 
+=======
+        "flandice": {
+            "modeling_realm": "ocean", 
+            "standard_name": "water_flux_into_sea_water_from_land_ice", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello", 
+            "long_name": "Water flux into Sea Water from Land Ice", 
+            "comment": "Computed as the water flux into the ocean due to land ice (runoff water from surface and base of land ice or melt from base of ice shelf or vertical ice front) into the ocean divided by the area ocean portion of the grid cell", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "flandice", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4179,6 +5220,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "nwdFracLut": {
             "modeling_realm": "land", 
             "standard_name": "", 
@@ -4189,6 +5231,18 @@
             "comment": "", 
             "dimensions": "longitude latitude landUse time", 
             "out_name": "nwdFracLut", 
+=======
+        "flashrate": {
+            "modeling_realm": "atmos", 
+            "standard_name": "lightning_flash_rate", 
+            "units": "km-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "lightning flash rate", 
+            "comment": "proposed name: lightning_flash_rate (units to be interpreted as 'counts km-2 s-1)", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "flashrate", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4196,6 +5250,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tntrl": {
             "modeling_realm": "atmos", 
             "standard_name": "tendency_of_air_temperature_due_to_longwave_heating", 
@@ -4206,6 +5261,18 @@
             "comment": "Tendency of air temperature due to longwave radiative heating", 
             "dimensions": "longitude latitude alevel time", 
             "out_name": "tntrl", 
+=======
+        "gppLut": {
+            "modeling_realm": "land", 
+            "standard_name": "gross_primary_land_productivity_of_carbon", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "gross primary productivity on land use tile", 
+            "comment": "", 
+            "dimensions": "longitude latitude landUse time", 
+            "out_name": "gppLut", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4213,6 +5280,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tntrs": {
             "modeling_realm": "atmos", 
             "standard_name": "tendency_of_air_temperature_due_to_shortwave_heating", 
@@ -4223,6 +5291,18 @@
             "comment": "Tendency of air temperature due to shortwave radiative heating", 
             "dimensions": "longitude latitude alevel time", 
             "out_name": "tntrs", 
+=======
+        "gppc13": {
+            "modeling_realm": "land", 
+            "standard_name": "gross_primary_productivity_of_c13", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Mass Flux of 13C out of Atmosphere due to Gross Primary Production on Land", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "gppc13", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4230,6 +5310,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tntrlcs": {
             "modeling_realm": "atmos", 
             "standard_name": "tendency_of_air_temperature_due_to_longwave_heating_assuming_clear_sky", 
@@ -4240,6 +5321,18 @@
             "comment": "Tendency of Air Temperature due to Clear Sky Longwave Radiative Heating", 
             "dimensions": "longitude latitude alevel time", 
             "out_name": "tntrlcs", 
+=======
+        "gppc14": {
+            "modeling_realm": "land", 
+            "standard_name": "gross_primary_productivity_of_c14", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "area: mean where land time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Mass Flux of 14C out of Atmosphere due to Gross Primary Production on Land", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "gppc14", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4247,6 +5340,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tnhusscp": {
             "modeling_realm": "atmos", 
             "standard_name": "tendency_of_specific_humidity_due_to_stratiform_clouds_and_precipitation", 
@@ -4258,12 +5352,26 @@
             "dimensions": "longitude latitude alevel time", 
             "out_name": "tnhusscp", 
             "type": "", 
+=======
+        "grassFrac": {
+            "modeling_realm": "land", 
+            "standard_name": "area_fraction", 
+            "units": "%", 
+            "cell_methods": "area: mean where land time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Natural Grass Fraction", 
+            "comment": "Percentage of entire grid cell that is covered by natural grass.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "grassFrac", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tntpbl": {
             "modeling_realm": "atmos", 
             "standard_name": "tendency_of_air_temperature_due_to_boundary_layer_mixing", 
@@ -4274,6 +5382,18 @@
             "comment": "Includes all boundary layer terms including diffusive terms.", 
             "dimensions": "longitude latitude alevel time", 
             "out_name": "tntpbl", 
+=======
+        "grassFracC3": {
+            "modeling_realm": "land", 
+            "standard_name": "grass_fraction_c3", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "C3 grass fraction", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "grassFracC3", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4281,6 +5401,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tntscp": {
             "modeling_realm": "atmos", 
             "standard_name": "tendency_of_air_temperature_due_to_stratiform_clouds_and_precipitation", 
@@ -4291,6 +5412,18 @@
             "comment": "", 
             "dimensions": "longitude latitude alevel time", 
             "out_name": "tntscp", 
+=======
+        "grassFracC4": {
+            "modeling_realm": "land", 
+            "standard_name": "grass_fraction_c4", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "C4 grass fraction", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "grassFracC4", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4298,6 +5431,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tnhuspbl": {
             "modeling_realm": "atmos", 
             "standard_name": "tendency_of_specific_humidity_due_to_boundary_layer_mixing", 
@@ -4308,6 +5442,18 @@
             "comment": "Includes all boundary layer terms including diffusive terms.", 
             "dimensions": "longitude latitude alevel time", 
             "out_name": "tnhuspbl", 
+=======
+        "grplmxrat27": {
+            "modeling_realm": "atmos", 
+            "standard_name": "mass_fraction_of_graupel_in_air", 
+            "units": "1.0", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "graupel_mixing_ratio", 
+            "comment": "Graupel mixing ratio", 
+            "dimensions": "longitude latitude plev27 time", 
+            "out_name": "grplmxrat27", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4315,6 +5461,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tntrscs": {
             "modeling_realm": "atmos", 
             "standard_name": "tendency_of_air_temperature_due_to_shortwave_heating_assuming_clear_sky", 
@@ -4325,6 +5472,18 @@
             "comment": "Tendency of Air Temperature due to Clear Sky Shortwave Radiative Heating", 
             "dimensions": "longitude latitude alevel time", 
             "out_name": "tntrscs", 
+=======
+        "hcont300": {
+            "modeling_realm": "ocean", 
+            "standard_name": "heat_content_of_ocean_layer", 
+            "units": "m K", 
+            "cell_methods": "", 
+            "cell_measures": "area: areacello", 
+            "long_name": "Heat content of upper 300 meters", 
+            "comment": "Used in PMIP2", 
+            "dimensions": "longitude latitude time depth300m", 
+            "out_name": "hcont300", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4332,6 +5491,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "reffclic": {
             "modeling_realm": "atmos", 
             "standard_name": "effective_radius_of_convective_cloud_ice_particle", 
@@ -4342,6 +5502,18 @@
             "comment": "This is defined as the in-cloud ratio of the third moment over the second moment of the particle size distribution (obtained by considering only the cloudy portion of the grid cell).", 
             "dimensions": "longitude latitude alevel time", 
             "out_name": "reffclic", 
+=======
+        "hflsLut": {
+            "modeling_realm": "land", 
+            "standard_name": "surface_upward_latent_heat_flux", 
+            "units": "W m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "latent heat flux on land use tile", 
+            "comment": "", 
+            "dimensions": "longitude latitude landUse time", 
+            "out_name": "hflsLut", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4349,6 +5521,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tntd": {
             "modeling_realm": "atmos", 
             "standard_name": "tendency_of_air_temperature_due_to_numerical_diffusion", 
@@ -4359,6 +5532,18 @@
             "comment": "This includes any horizontal or vertical numerical temperature diffusion not associated with the parametrized moist physics or the resolved dynamics.  For example, any vertical diffusion which is part of the boundary layer mixing scheme should be excluded, as should any diffusion which is included in the terms from the resolved dynamics.   This term is required to check the closure of the temperature budget.", 
             "dimensions": "longitude latitude alevel time", 
             "out_name": "tntd", 
+=======
+        "hfssLut": {
+            "modeling_realm": "land", 
+            "standard_name": "surface_upward_sensible_heat_flux", 
+            "units": "W m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "sensible heat flux on land use tile", 
+            "comment": "", 
+            "dimensions": "longitude latitude landUse time", 
+            "out_name": "hfssLut", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4366,6 +5551,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "reffclis": {
             "modeling_realm": "atmos", 
             "standard_name": "effective_radius_of_stratiform_cloud_ice_particle", 
@@ -4376,6 +5562,18 @@
             "comment": "This is defined as the in-cloud ratio of the third moment over the second moment of the particle size distribution (obtained by considering only the cloudy portion of the grid cell).", 
             "dimensions": "longitude latitude alevel time", 
             "out_name": "reffclis", 
+=======
+        "hus27": {
+            "modeling_realm": "atmos", 
+            "standard_name": "specific_humidity", 
+            "units": "1.0", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Specific Humidity", 
+            "comment": "", 
+            "dimensions": "longitude latitude plev27 time", 
+            "out_name": "hus27", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4383,6 +5581,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "fgcfc11": {
             "modeling_realm": "ocean", 
             "standard_name": "surface_downward_mole_flux_of_cfc11", 
@@ -4427,6 +5626,18 @@
             "comment": "Gas exchange flux of O2 (positive into ocean)", 
             "dimensions": "longitude latitude time", 
             "out_name": "fgo2", 
+=======
+        "hus7h": {
+            "modeling_realm": "atmos", 
+            "standard_name": "specific_humidity", 
+            "units": "1.0", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Specific Humidity", 
+            "comment": "", 
+            "dimensions": "longitude latitude plev7h time", 
+            "out_name": "hus7h", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4434,6 +5645,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "o3": {
             "modeling_realm": "", 
             "standard_name": "mole_fraction_of_ozone_in_air", 
@@ -4444,6 +5656,18 @@
             "comment": "", 
             "dimensions": "longitude latitude plev23 time", 
             "out_name": "o3", 
+=======
+        "hussLut": {
+            "modeling_realm": "land", 
+            "standard_name": "specific_humidity", 
+            "units": "1.0", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "near-surface specific humidity on land use tile", 
+            "comment": "Normally, the specific humidity should be reported at the 2 meter height", 
+            "dimensions": "longitude latitude landUse time", 
+            "out_name": "hussLut", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4451,6 +5675,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "spco2": {
             "modeling_realm": "ocean", 
             "standard_name": "surface_partial_pressure_of_carbon_dioxide_in_sea_water", 
@@ -4461,6 +5686,18 @@
             "comment": "", 
             "dimensions": "longitude latitude time", 
             "out_name": "spco2", 
+=======
+        "intdoc": {
+            "modeling_realm": "ocean", 
+            "standard_name": "ocean_mass_content_of_dissolved_organic_carbon", 
+            "units": "kg m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello", 
+            "long_name": "Dissolved Organic Carbon Content", 
+            "comment": "Vertically integrated DOC (explicit pools only)", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "intdoc", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4468,6 +5705,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "epc100": {
             "modeling_realm": "ocean", 
             "standard_name": "sinking_mole_flux_of_particulate_organic_matter_expressed_as_carbon_in_sea_water", 
@@ -4479,12 +5717,26 @@
             "dimensions": "longitude latitude time", 
             "out_name": "epc100", 
             "type": "", 
+=======
+        "intppcalc": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "net_primary_mole_productivity_of_carbon_by_calcareous_phytoplankton", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello", 
+            "long_name": "Net Primary Mole Productivity of Carbon by Calcareous Phytoplankton", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "intppcalc", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tntlw23": {
             "modeling_realm": "", 
             "standard_name": "tendency_of_air_temperature_due_to_longwave_heating", 
@@ -4496,12 +5748,26 @@
             "dimensions": "longitude latitude plev23 time", 
             "out_name": "tntlw23", 
             "type": "", 
+=======
+        "intppdiat": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "net_primary_mole_productivity_of_carbon_by_diatoms", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello", 
+            "long_name": "Primary Organic Carbon Production by Diatoms", 
+            "comment": "Vertically integrated primary (organic carbon) production by the diatom phytoplankton component alone", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "intppdiat", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "utendogw": {
             "modeling_realm": "", 
             "standard_name": "tendency_of_eastward_wind_due_to_orographic_gravity_wave_drag", 
@@ -4513,12 +5779,26 @@
             "dimensions": "longitude latitude plev23 time", 
             "out_name": "utendogw", 
             "type": "", 
+=======
+        "intppdiaz": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "net_primary_mole_productivity_of_carbon_by_diazotrophs", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello", 
+            "long_name": "Net Primary Mole Productivity of Carbon by Diazotrophs", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "intppdiaz", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tntsw": {
             "modeling_realm": "", 
             "standard_name": "tendency_of_air_temperature_due_to_shortwave_heating", 
@@ -4530,12 +5810,26 @@
             "dimensions": "longitude latitude plev23 time", 
             "out_name": "tntsw", 
             "type": "", 
+=======
+        "intppmisc": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "net_primary_mole_productivity_of_carbon_by_miscellaneous_phytoplankton", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello", 
+            "long_name": "Primary Organic Carbon Production by Other Phytoplankton", 
+            "comment": "Vertically integrated total primary (organic carbon) production by other phytoplankton components alone", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "intppmisc", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "diabdrag": {
             "modeling_realm": "", 
             "standard_name": "tendency_of_eastward_wind_due_to_numerical_artefacts", 
@@ -4547,12 +5841,26 @@
             "dimensions": "longitude latitude plev23 time", 
             "out_name": "diabdrag", 
             "type": "", 
+=======
+        "intpppico": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "net_primary_mole_productivity_of_carbon_by_picophytoplankton", 
+            "units": "mol m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello", 
+            "long_name": "Net Primary Mole Productivity of Carbon by Picophytoplankton", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "intpppico", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "utendnogw": {
             "modeling_realm": "", 
             "standard_name": "tendency_of_eastward_wind_due_to_nonorographic_gravity_wave_drag", 
@@ -4563,6 +5871,18 @@
             "comment": "Tendency of the eastward wind by parameterized nonorographic gravity waves.  ", 
             "dimensions": "longitude latitude plev23 time", 
             "out_name": "utendnogw", 
+=======
+        "intuadse": {
+            "modeling_realm": "atmos", 
+            "standard_name": "vertical_integral_eastward_wind_by_dry_static_energy", 
+            "units": "1.e6 J m-1 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Vertically integrated Eastward dry transport (cp.T +zg).u (Mass_weighted_vertical integral of the product of northward wind by dry static_energy per mass unit)", 
+            "comment": "Used in PMIP2", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "intuadse", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4570,6 +5890,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "eparag100": {
             "modeling_realm": "ocean", 
             "standard_name": "sinking_mole_flux_of_aragonite_expressed_as_carbon_in_sea_water", 
@@ -4580,6 +5901,18 @@
             "comment": "", 
             "dimensions": "longitude latitude time", 
             "out_name": "eparag100", 
+=======
+        "intuaw": {
+            "modeling_realm": "atmos", 
+            "standard_name": "vertical_integral_eastward_wind_by_total_water", 
+            "units": "kg m-1 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Vertically integrated Eastward moisture transport (Mass_weighted_vertical integral of the product of eastward wind by total water mass per unit mass)", 
+            "comment": "Used in PMIP2", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "intuaw", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4587,6 +5920,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "epcalc100": {
             "modeling_realm": "ocean", 
             "standard_name": "sinking_mole_flux_of_calcite_expressed_as_carbon_in_sea_water", 
@@ -4597,6 +5931,18 @@
             "comment": "", 
             "dimensions": "longitude latitude time", 
             "out_name": "epcalc100", 
+=======
+        "intvadse": {
+            "modeling_realm": "atmos", 
+            "standard_name": "vertical_integral_northward_wind_by_dry_static_energy", 
+            "units": "1.e6 J m-1 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Vertically integrated Northward dry transport (cp.T +zg).v (Mass_weighted_vertical integral of the product of northward wind by dry static_energy per mass unit)", 
+            "comment": "Used in PMIP2", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "intvadse", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4604,6 +5950,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "opottemprmadvect": {
             "modeling_realm": "ocean", 
             "standard_name": "tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_residual_mean_advection", 
@@ -4614,6 +5961,18 @@
             "comment": "", 
             "dimensions": "longitude latitude olevel time", 
             "out_name": "opottemprmadvect", 
+=======
+        "intvaw": {
+            "modeling_realm": "atmos", 
+            "standard_name": "vertical_integral_northward_wind_by_total_water", 
+            "units": "kg m-1 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Vertically integrated Northward moisture transport (Mass_weighted_vertical integral of the product of northward wind by total water mass per unit mass)", 
+            "comment": "Used in PMIP2", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "intvaw", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4621,6 +5980,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "osaltpsmadvect": {
             "modeling_realm": "ocean", 
             "standard_name": "tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_submesoscale_advection", 
@@ -4631,6 +5991,18 @@
             "comment": "Tendency of salt content for a grid cell from parameterized submesoscale eddy advection.", 
             "dimensions": "longitude latitude olevel time", 
             "out_name": "osaltpsmadvect", 
+=======
+        "irrCrp": {
+            "modeling_realm": "land", 
+            "standard_name": "", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "cropland irrigation flux", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "irrCrp", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4638,6 +6010,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "osaltrmadvect": {
             "modeling_realm": "ocean", 
             "standard_name": "tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_residual_mean_advection", 
@@ -4648,6 +6021,18 @@
             "comment": "", 
             "dimensions": "longitude latitude olevel time", 
             "out_name": "osaltrmadvect", 
+=======
+        "jpdftaureicemodis7c": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_area_fraction_in_atmosphere_layer", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "MODIS Optical Thickness-Particle Size joint  distribution, ice", 
+            "comment": "", 
+            "dimensions": "longitude latitude plev7c effectRadIc|tau time", 
+            "out_name": "jpdftaureicemodis7c", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4655,6 +6040,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "opottempmint": {
             "modeling_realm": "ocean", 
             "standard_name": "integral_wrt_depth_of_product_of_sea_water_density_and_potential_temperature", 
@@ -4665,6 +6051,18 @@
             "comment": "", 
             "dimensions": "longitude latitude time", 
             "out_name": "opottempmint", 
+=======
+        "jpdftaureliqmodis7c": {
+            "modeling_realm": "atmos", 
+            "standard_name": "cloud_area_fraction_in_atmosphere_layer", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "MODIS Optical Thickness-Particle Size joint  distribution, liquid", 
+            "comment": "", 
+            "dimensions": "longitude latitude plev7c effectRadLi|tau time", 
+            "out_name": "jpdftaureliqmodis7c", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4672,6 +6070,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "ocontemprmadvect": {
             "modeling_realm": "ocean", 
             "standard_name": "tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_residual_mean_advection", 
@@ -4682,6 +6081,18 @@
             "comment": "", 
             "dimensions": "longitude latitude olevel time", 
             "out_name": "ocontemprmadvect", 
+=======
+        "laiLut": {
+            "modeling_realm": "land", 
+            "standard_name": "", 
+            "units": "1.0", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "leaf area index on land use tile", 
+            "comment": "Note that if tile does not model lai, for example, on the urban tile, then should be reported as missing value", 
+            "dimensions": "longitude latitude landUse time", 
+            "out_name": "laiLut", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4689,6 +6100,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "osaltpmdiff": {
             "modeling_realm": "ocean", 
             "standard_name": "tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_mesoscale_diffusion", 
@@ -4699,6 +6111,18 @@
             "comment": "Tendency of salt content for a grid cell from parameterized mesoscale eddy diffusion.", 
             "dimensions": "longitude latitude olevel time", 
             "out_name": "osaltpmdiff", 
+=======
+        "lateralCtransfer": {
+            "modeling_realm": "land", 
+            "standard_name": "lateral_carbon_transfer_over_land", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Lateral transfer of carbon into (positive) or out of (negative) a grid cell.", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "lateralCtransfer", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4706,6 +6130,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "ocontemptend": {
             "modeling_realm": "ocean", 
             "standard_name": "tendency_of_sea_water_conservative_temperature_expressed_as_heat_content", 
@@ -4716,6 +6141,18 @@
             "comment": "Tendency of heat content for a grid cell from all processes. Reported only for models that use conservative temperature as prognostic field.", 
             "dimensions": "longitude latitude olevel time", 
             "out_name": "ocontemptend", 
+=======
+        "loaddust": {
+            "modeling_realm": "atmos", 
+            "standard_name": "atmosphere_mass_content_of_dust_dry_aerosol", 
+            "units": "kg m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Load of Dust", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "loaddust", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -4774,6 +6211,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "pathetao": {
             "modeling_realm": "ocean", 
             "standard_name": "sea_water_additional_potential_temperature", 
@@ -4794,6 +6232,11 @@
         "opottempdiff": {
             "modeling_realm": "ocean", 
             "standard_name": "tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_dianeutral_mixing", 
+=======
+        "lwsrfasdust": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_all_sky_surface_longwave_flux_to_dust_ambient_aerosol_particles", 
+>>>>>>> Stashed changes
             "units": "W m-2", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacello volume: volcello", 
@@ -4825,6 +6268,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "opottemptend": {
             "modeling_realm": "ocean", 
             "standard_name": "tendency_of_sea_water_potential_temperature_expressed_as_heat_content", 
@@ -4845,6 +6289,11 @@
         "opottemppadvect": {
             "modeling_realm": "ocean", 
             "standard_name": "tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_eddy_advection", 
+=======
+        "lwtoacs": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_clear_sky_top_of_atmosphere_longwave_flux_to_dust_ambient_aerosol_particles___2D_field_radiative_properties", 
+>>>>>>> Stashed changes
             "units": "W m-2", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacello volume: volcello", 
@@ -4859,6 +6308,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "ocontemppsmadvect": {
             "modeling_realm": "ocean", 
             "standard_name": "tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_submesoscale_advection", 
@@ -4888,11 +6338,26 @@
             "out_name": "osalttend", 
             "type": "", 
             "positive": "", 
+=======
+        "mcd": {
+            "modeling_realm": "atmos", 
+            "standard_name": "atmosphere_downdraft_convective_mass_flux", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Downdraft Convective Mass Flux", 
+            "comment": "Calculated as the convective mass flux divided by the area of the whole grid cell (not just the area of the cloud).", 
+            "dimensions": "longitude latitude alevel time", 
+            "out_name": "mcd", 
+            "type": "real", 
+            "positive": "down", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "prbigthetao": {
             "modeling_realm": "ocean", 
             "standard_name": "sea_water_redistributed_conservative_temperature", 
@@ -4904,6 +6369,36 @@
             "dimensions": "longitude latitude olevel time", 
             "out_name": "prbigthetao", 
             "type": "", 
+=======
+        "md": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_emission", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Wet diameter mode coarse insoluble", 
+            "comment": "Balkanski - LSCE", 
+            "dimensions": "longitude latitude alevel time", 
+            "out_name": "md", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "mmraerh2o": {
+            "modeling_realm": "aerosol", 
+            "standard_name": "mass_fraction_of_water_in_ambient_aerosol_in_air", 
+            "units": "kg kg-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Aerosol water mass mixing ratio", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "mmraerh2o", 
+            "type": "float", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -4927,6 +6422,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "ocontemppadvect": {
             "modeling_realm": "ocean", 
             "standard_name": "tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_eddy_advection", 
@@ -4938,12 +6434,26 @@
             "dimensions": "longitude latitude olevel time", 
             "out_name": "ocontemppadvect", 
             "type": "", 
+=======
+        "mmrbc": {
+            "modeling_realm": "aerosol", 
+            "standard_name": "mass_fraction_of_black_carbon_dry_aerosol_in_air", 
+            "units": "kg kg-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Elemental carbon mass mixing ratio", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "mmrbc", 
+            "type": "float", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "ocontemppmdiff": {
             "modeling_realm": "ocean", 
             "standard_name": "tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_diffusion", 
@@ -4955,12 +6465,26 @@
             "dimensions": "longitude latitude olevel time", 
             "out_name": "ocontemppmdiff", 
             "type": "", 
+=======
+        "mmrdust": {
+            "modeling_realm": "aerosol", 
+            "standard_name": "mass_fraction_of_dust_dry_aerosol_in_air", 
+            "units": "kg kg-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Dust aerosol mass mixing ratio", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "mmrdust", 
+            "type": "float", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "osaltdiff": {
             "modeling_realm": "ocean", 
             "standard_name": "tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_dianeutral_mixing", 
@@ -4972,12 +6496,77 @@
             "dimensions": "longitude latitude olevel time", 
             "out_name": "osaltdiff", 
             "type": "", 
+=======
+        "mmrno3": {
+            "modeling_realm": "aerosol", 
+            "standard_name": "mass_fraction_of_nitrate_dry_aerosol_in_air", 
+            "units": "kg kg-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "NO3 aerosol mass mixing ratio", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "mmrno3", 
+            "type": "float", 
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+        "mmroa": {
+            "modeling_realm": "aerosol", 
+            "standard_name": "mass_fraction_of_particulate_organic_matter_dry_aerosol_in_air", 
+            "units": "kg kg-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Total organic aerosol mass mixing ratio", 
+            "comment": "We recommend a scale factor of POM=1.4*OC, unless your model has more detailed info available.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "mmroa", 
+            "type": "float", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "mmrso4": {
+            "modeling_realm": "aerosol", 
+            "standard_name": "mass_fraction_of_sulfate_dry_aerosol_in_air", 
+            "units": "kg kg-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Aerosol sulfate mass mixing ratio", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "mmrso4", 
+            "type": "float", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "mmrsoa": {
+            "modeling_realm": "aerosol", 
+            "standard_name": "mass_fraction_of_secondary_particulate_organic_matter_dry_aerosol_in_air", 
+            "units": "kg kg-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Secondary organic aerosol mass mixing ratio", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "mmrsoa", 
+            "type": "float", 
+>>>>>>> Stashed changes
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+<<<<<<< Updated upstream
         "opottemppmdiff": {
             "modeling_realm": "ocean", 
             "standard_name": "tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_diffusion", 
@@ -4989,12 +6578,26 @@
             "dimensions": "longitude latitude olevel time", 
             "out_name": "opottemppmdiff", 
             "type": "", 
+=======
+        "mmrss": {
+            "modeling_realm": "aerosol", 
+            "standard_name": "mass_fraction_of_seasalt_dry_aerosol_in_air", 
+            "units": "kg kg-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Sea Salt mass mixing ratio", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "mmrss", 
+            "type": "float", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "ocontempdiff": {
             "modeling_realm": "ocean", 
             "standard_name": "tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_dianeutral_mixing", 
@@ -5005,6 +6608,18 @@
             "comment": "Tendency of heat content for a grid cell from parameterized dianeutral mixing. Reported only for models that use conservative temperature as prognostic field.", 
             "dimensions": "longitude latitude olevel time", 
             "out_name": "ocontempdiff", 
+=======
+        "mrlso": {
+            "modeling_realm": "land", 
+            "standard_name": "soil_liquid_water_content", 
+            "units": "kg m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Soil Liquid Water Content ", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "mrlso", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -5052,10 +6667,17 @@
             "units": "kg m-2", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "Load of Seasalt", 
             "comment": "", 
             "dimensions": "longitude latitude time", 
             "out_name": "loadss", 
+=======
+            "long_name": "Frozen water content of soil layer", 
+            "comment": "as specified by C4MIP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "mrsfl", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -5120,11 +6742,19 @@
             "units": "W m-2", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "TOA Outgoing Clean-Sky Clear-Sky Shortwave Radiation", 
             "comment": "Based on Ghan (2013, ACP)", 
             "dimensions": "longitude latitude time", 
             "out_name": "rsutnacs", 
             "type": "", 
+=======
+            "long_name": "Moisture in Upper Portion of Soil Column", 
+            "comment": "The mass of water in all phases in the upper 10cm of the  soil layer.", 
+            "dimensions": "longitude latitude sdepth time", 
+            "out_name": "mrsos", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -5148,10 +6778,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "od550aerstrat": {
             "modeling_realm": "atmos", 
             "standard_name": "strat_aerosol_optical_depth", 
             "units": "1.0", 
+=======
+        "mrtws": {
+            "modeling_realm": "land", 
+            "standard_name": "total_water_storage", 
+            "units": "kg m-2", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Stratospheric Aerosol Optical Depth at 550nm", 
@@ -5199,10 +6836,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "reffclws": {
             "modeling_realm": "atmos", 
             "standard_name": "effective_radius_of_stratiform_cloud_liquid_water_particle", 
             "units": "m", 
+=======
+        "nLitter": {
+            "modeling_realm": "land", 
+            "standard_name": "litter_nitrogen_content", 
+            "units": "kg m-2", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Stratiform Cloud Droplet Effective Radius", 
@@ -5233,6 +6877,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "loadso4": {
             "modeling_realm": "atmos", 
             "standard_name": "atmosphere_mass_content_of_sulfate_dry_aerosol", 
@@ -5255,6 +6900,13 @@
             "standard_name": "toa_outgoing_shortwave_flux_no_aerosol", 
             "units": "W m-2", 
             "cell_methods": "time: mean", 
+=======
+        "nMineral": {
+            "modeling_realm": "land", 
+            "standard_name": "mineral_soil_nitrogen_content", 
+            "units": "kg m-2", 
+            "cell_methods": "area: mean where land time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "TOA Outgoing Clean-Sky Shortwave Radiation", 
             "comment": "Based on Ghan (2013, ACP)", 
@@ -5386,10 +7038,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "cldicemxrat27": {
             "modeling_realm": "atmos", 
             "standard_name": "cloud_ice_mixing_ratio", 
             "units": "", 
+=======
+        "nVeg": {
+            "modeling_realm": "land", 
+            "standard_name": "vegetation_nitrogen_content", 
+            "units": "kg m-2", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Cloud Ice Mixing Ratio", 
@@ -5426,21 +7085,37 @@
             "units": "Pa m s-2", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "northward_wind_times_omega", 
             "comment": "v*omega", 
             "dimensions": "longitude latitude alevel time", 
             "out_name": "vwap", 
             "type": "", 
             "positive": "", 
+=======
+            "long_name": "Net Carbon Mass Flux out of Atmophere due to Net Ecosystem Productivity on Land.", 
+            "comment": "Natural flux of CO2 (expressed as a mass flux of carbon) from the atmosphere to the land calculated as the difference between uptake associated will photosynthesis and the release of CO2 from the sum of plant and soil respiration and fire.  Positive flux is into the land.  emissions from natural fires and human ignition fires as calculated by the fire module of the dynamic vegetation model, but excluding any CO2 flux from fire included in fLuc (CO2 Flux to Atmosphere from Land Use Change).", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "nep", 
+            "type": "real", 
+            "positive": "down", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "ygwdparam": {
             "modeling_realm": "atmos", 
             "standard_name": "atmosphere_northward_stress_due_to_gravity_wave_drag", 
             "units": "Pa", 
+=======
+        "netAtmosLandC13Flux": {
+            "modeling_realm": "land", 
+            "standard_name": "net_atmos_to_land_C13_flux", 
+            "units": "kg m-2 s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "y_gravity_wave_drag_param", 
@@ -5488,6 +7163,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "vt": {
             "modeling_realm": "atmos", 
             "standard_name": "product_of_northward_wind_and_air_temperature", 
@@ -5500,6 +7176,20 @@
             "out_name": "vt", 
             "type": "", 
             "positive": "", 
+=======
+        "nppLeaf": {
+            "modeling_realm": "land", 
+            "standard_name": "net_primary_productivity_of_carbon_accumulated_in_leaves", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "area: mean where land time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Carbon Mass Flux due to NPP Allocation to Leaf", 
+            "comment": "This is the rate of carbon uptake by leaves due to NPP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "nppLeaf", 
+            "type": "real", 
+            "positive": "down", 
+>>>>>>> Stashed changes
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
@@ -5522,10 +7212,34 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "v2": {
             "modeling_realm": "atmos", 
             "standard_name": "square_of_northward_wind", 
             "units": "m2 s-2", 
+=======
+        "nppRoot": {
+            "modeling_realm": "land", 
+            "standard_name": "net_primary_productivity_of_carbon_accumulated_in_roots", 
+            "units": "kg m-2 s-1", 
+            "cell_methods": "area: mean where land time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Carbon Mass Flux due to NPP Allocation to Roots", 
+            "comment": "This is the rate of carbon uptake by roots due to NPP", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "nppRoot", 
+            "type": "real", 
+            "positive": "down", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "nwdFracLut": {
+            "modeling_realm": "land", 
+            "standard_name": "", 
+            "units": "fraction", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "square_of_northwardwind", 
@@ -5539,6 +7253,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "snowmxrat27": {
             "modeling_realm": "atmos", 
             "standard_name": "mass_fraction_of_snow_in_air", 
@@ -5550,6 +7265,36 @@
             "dimensions": "longitude latitude plev27 time", 
             "out_name": "snowmxrat27", 
             "type": "", 
+=======
+        "o2sat": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "mole_concentration_of_molecular_oxygen_in_sea_water_at_saturation", 
+            "units": "mol m-3", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Dissolved Oxygen Concentration at Saturation", 
+            "comment": "", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "o2sat", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "o3": {
+            "modeling_realm": "aerosol", 
+            "standard_name": "mole_fraction_of_ozone_in_air", 
+            "units": "mol mol-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Ozone volume mixing ratio", 
+            "comment": "", 
+            "dimensions": "longitude latitude plev23 time", 
+            "out_name": "o3", 
+            "type": "float", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -5561,12 +7306,21 @@
             "standard_name": "northward_wind", 
             "units": "m s-1", 
             "cell_methods": "time: mean", 
+<<<<<<< Updated upstream
             "cell_measures": "area: areacella", 
             "long_name": "Northward Wind", 
             "comment": "", 
             "dimensions": "longitude latitude plev27 time", 
             "out_name": "va27", 
             "type": "", 
+=======
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "tendency of sea water conservative temperature expressed as heat content due to parameterized dianeutral mixing", 
+            "comment": "Tendency of heat content for a grid cell from parameterized dianeutral mixing. Reported only for models that use conservative temperature as prognostic field.", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "ocontempdiff", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -5595,12 +7349,21 @@
             "standard_name": "geopotential_height", 
             "units": "m", 
             "cell_methods": "time: mean", 
+<<<<<<< Updated upstream
             "cell_measures": "area: areacella", 
             "long_name": "Geopotential Height", 
             "comment": "", 
             "dimensions": "longitude latitude plev27 time", 
             "out_name": "zg27", 
             "type": "", 
+=======
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "tendency of sea water conservative temperature expressed as heat content due to parameterized eddy advection", 
+            "comment": "Tendency of heat content for a grid cell from parameterized eddy advection (any form of eddy advection). Reported only for models that use conservative temperature as prognostic field.", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "ocontemppadvect", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -5612,12 +7375,21 @@
             "standard_name": "tendency_of_air_temperature_due_to_longwave_heating", 
             "units": "K s-1", 
             "cell_methods": "time: mean", 
+<<<<<<< Updated upstream
             "cell_measures": "area: areacella", 
             "long_name": "tendency_of_air_temperature_due_to_longwave_heating", 
             "comment": "Tendency of air temperature due to longwave radiative heating", 
             "dimensions": "longitude latitude plev27 time", 
             "out_name": "tntrl27", 
             "type": "", 
+=======
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "tendency of sea water conservative temperature expressed as heat content due to parameterized mesoscale diffusion", 
+            "comment": "Tendency of heat content for a grid cell from parameterized mesoscale eddy diffusion. Reported only for models that use conservative temperature as prognostic field.", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "ocontemppmdiff", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -5629,12 +7401,21 @@
             "standard_name": "eastward_wind", 
             "units": "m s-1", 
             "cell_methods": "time: mean", 
+<<<<<<< Updated upstream
             "cell_measures": "area: areacella", 
             "long_name": "Eastward Wind", 
             "comment": "", 
             "dimensions": "longitude latitude plev27 time", 
             "out_name": "ua27", 
             "type": "", 
+=======
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "tendency of sea water conservative temperature expressed as heat content due to parameterized submesoscale advection", 
+            "comment": "Tendency of heat content for a grid cell from parameterized submesoscale eddy advection. Reported only for models that use conservative temperature as prognostic field.", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "ocontemppsmadvect", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -5663,12 +7444,21 @@
             "standard_name": "square_of_air_temperature", 
             "units": "K2", 
             "cell_methods": "time: mean", 
+<<<<<<< Updated upstream
             "cell_measures": "area: areacella", 
             "long_name": "square_of_air_temperature", 
             "comment": "Air temperature squared", 
             "dimensions": "longitude latitude alevel time", 
             "out_name": "t2", 
             "type": "", 
+=======
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "tendency of sea water conservative temperature expressed as heat content", 
+            "comment": "Tendency of heat content for a grid cell from all processes. Reported only for models that use conservative temperature as prognostic field.", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "ocontemptend", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -5692,6 +7482,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "u2": {
             "modeling_realm": "atmos", 
             "standard_name": "square_of_eastward_wind", 
@@ -5710,6 +7501,9 @@
             "ok_max_mean_abs": ""
         }, 
         "twap": {
+=======
+        "od550aerso": {
+>>>>>>> Stashed changes
             "modeling_realm": "atmos", 
             "standard_name": "product_of_omega_and_air_temperature", 
             "units": "K Pa s-1", 
@@ -5732,6 +7526,7 @@
             "units": "m s-1", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "Eastward Wind", 
             "comment": "", 
             "dimensions": "longitude latitude alevel time", 
@@ -5770,6 +7565,12 @@
             "comment": "Omega (vertical velocity in pressure coordinates, positive downwards)", 
             "dimensions": "longitude latitude alevel time", 
             "out_name": "wap", 
+=======
+            "long_name": "Stratospheric Aerosol Optical Depth at 550nm", 
+            "comment": "From tropopause to stratopause as defined by the model", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "od550aerstrat", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -5794,7 +7595,28 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "grplmxrat27": {
+=======
+        "od550soa": {
+            "modeling_realm": "aerosol", 
+            "standard_name": "atmosphere_optical_thickness_due_to_secondary_particulate_organic_matter_ambient_aerosol", 
+            "units": "1.0", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "soa aod@550nm", 
+            "comment": "proposed name: atmosphere_optical_thickness_due_to_secondary_particulate_organic_matter_ambient_aerosol", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "od550soa", 
+            "type": "float", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "od865dust": {
+>>>>>>> Stashed changes
             "modeling_realm": "atmos", 
             "standard_name": "mass_fraction_of_graupel_in_air", 
             "units": "", 
@@ -5816,12 +7638,21 @@
             "standard_name": "water_flux_into_sea_water_from_land_ice", 
             "units": "kg m-2 s-1", 
             "cell_methods": "time: mean", 
+<<<<<<< Updated upstream
             "cell_measures": "area: areacello", 
             "long_name": "Water flux into Sea Water from Land Ice", 
             "comment": "Computed as the water flux into the ocean due to land ice (runoff water from surface and base of land ice or melt from base of ice shelf or vertical ice front) into the ocean divided by the area ocean portion of the grid cell", 
             "dimensions": "longitude latitude time", 
             "out_name": "flandice", 
             "type": "", 
+=======
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "tendency of sea water potential temperature expressed as heat content due to parameterized dianeutral mixing", 
+            "comment": "Tendency of heat content for a grid cell from parameterized dianeutral mixing. Reported only for models that use potential temperature as prognostic field.", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "opottempdiff", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -5850,12 +7681,21 @@
             "standard_name": "carbon_content_of_products_of_anthropogenic_land_use_change", 
             "units": "kg m-2", 
             "cell_methods": "time: mean", 
+<<<<<<< Updated upstream
             "cell_measures": "area: areacella", 
             "long_name": "Carbon Mass in Products of Landuse Change", 
             "comment": "Carbon mass per unit area in that has been removed from the environment through  landuse change.", 
             "dimensions": "longitude latitude time", 
             "out_name": "cProduct", 
             "type": "", 
+=======
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "tendency of sea water potential temperature expressed as heat content due to parameterized eddy advection", 
+            "comment": "Tendency of heat content for a grid cell from parameterized eddy advection (any form of eddy advection). Reported only for models that use potential temperature as prognostic field.", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "opottemppadvect", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -5884,12 +7724,21 @@
             "standard_name": "leaf_carbon_content", 
             "units": "kg m-2", 
             "cell_methods": "time: mean", 
+<<<<<<< Updated upstream
             "cell_measures": "area: areacella", 
             "long_name": "Carbon Mass in Leaves", 
             "comment": "Carbon mass per unit area in leaves.", 
             "dimensions": "longitude latitude time", 
             "out_name": "cLeaf", 
             "type": "", 
+=======
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "tendency of sea water potential temperature expressed as heat content due to parameterized mesoscale diffusion", 
+            "comment": "Tendency of heat content for a grid cell from parameterized mesoscale eddy diffusion. Reported only for models that use potential temperature as prognostic field.", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "opottemppmdiff", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -5901,12 +7750,21 @@
             "standard_name": "root_carbon_content", 
             "units": "kg m-2", 
             "cell_methods": "time: mean", 
+<<<<<<< Updated upstream
             "cell_measures": "area: areacella", 
             "long_name": "Carbon Mass in Roots", 
             "comment": "Carbon mass per unit area in roots, including fine and coarse roots.", 
             "dimensions": "longitude latitude time", 
             "out_name": "cRoot", 
             "type": "", 
+=======
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "tendency of sea water potential temperature expressed as heat content due to parameterized submesoscale advection", 
+            "comment": "Tendency of heat content for a grid cell from parameterized submesoscale eddy advection. Reported only for models that use potential temperature as prognostic field.", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "opottemppsmadvect", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -5935,12 +7793,21 @@
             "standard_name": "gross_primary_productivity_of_carbon", 
             "units": "kg m-2 s-1", 
             "cell_methods": "time: mean", 
+<<<<<<< Updated upstream
             "cell_measures": "area: areacella", 
             "long_name": "Carbon Mass Flux out of Atmosphere due to Gross Primary Production on Land", 
             "comment": "", 
             "dimensions": "longitude latitude time", 
             "out_name": "gpp", 
             "type": "", 
+=======
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "tendency of sea water potential temperature expressed as heat content", 
+            "comment": "Tendency of heat content for a grid cell from all processes. Reported only for models that use potential temperature as prognostic field.", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "opottemptend", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -5952,12 +7819,21 @@
             "standard_name": "surface_net_downward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_all_land_processes_excluding_anthropogenic_land_use_change", 
             "units": "kg m-2 s-1", 
             "cell_methods": "time: mean", 
+<<<<<<< Updated upstream
             "cell_measures": "area: areacella", 
             "long_name": "Net Carbon Mass Flux out of Atmosphere due to Net Ecosystem Productivity on Land.", 
             "comment": "Natural flux of CO2 (expressed as a mass flux of carbon) from the atmosphere to the land calculated as the difference between uptake associated will photosynthesis and the release of CO2 from the sum of plant and soil respiration and fire.  Positive flux is into the land.  emissions from natural fires and human ignition fires as calculated by the fire module of the dynamic vegetation model, but excluding any CO2 flux from fire included in fLuc (CO2 Flux to Atmosphere from Land Use Change).", 
             "dimensions": "longitude latitude time", 
             "out_name": "nep", 
             "type": "", 
+=======
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "tendency of sea water salinity expressed as salt content due to parameterized dianeutral mixing", 
+            "comment": "Tendency of salt content for a grid cell from parameterized dianeutral mixing.", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "osaltdiff", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -5969,12 +7845,21 @@
             "standard_name": "heterotrophic_respiration_carbon_flux", 
             "units": "kg m-2 s-1", 
             "cell_methods": "time: mean", 
+<<<<<<< Updated upstream
             "cell_measures": "area: areacella", 
             "long_name": "Carbon Mass Flux into Atmosphere due to Heterotrophic Respiration on Land", 
             "comment": "Carbon mass flux per unit area into atmosphere due to heterotrophic respiration on land (respiration by consumers)", 
             "dimensions": "longitude latitude time", 
             "out_name": "rh", 
             "type": "", 
+=======
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "tendency of sea water salinity expressed as salt content due to parameterized eddy advection", 
+            "comment": "Tendency of salt content for a grid cell from parameterized eddy advection (any form of eddy advection).", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "osaltpadvect", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -5986,12 +7871,21 @@
             "standard_name": "carbon_mass_flux_into_soil_from_litter", 
             "units": "kg m-2 s-1", 
             "cell_methods": "time: mean", 
+<<<<<<< Updated upstream
             "cell_measures": "area: areacella", 
             "long_name": "Total Carbon Mass Flux from Litter to Soil", 
             "comment": "Carbon mass flux per unit area into soil from litter (dead plant material in or above the soil).", 
             "dimensions": "longitude latitude time", 
             "out_name": "fLitterSoil", 
             "type": "", 
+=======
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "tendency of sea water salinity expressed as salt content due to parameterized mesoscale diffusion", 
+            "comment": "Tendency of salt content for a grid cell from parameterized mesoscale eddy diffusion.", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "osaltpmdiff", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -6003,12 +7897,21 @@
             "standard_name": "vegetation_carbon_content", 
             "units": "kg m-2", 
             "cell_methods": "time: mean", 
+<<<<<<< Updated upstream
             "cell_measures": "area: areacella", 
             "long_name": "Carbon Mass in Vegetation", 
             "comment": "Carbon mass per unit area in vegetation.", 
             "dimensions": "longitude latitude time", 
             "out_name": "cVeg", 
             "type": "", 
+=======
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "tendency of sea water salinity expressed as salt content due to parameterized submesoscale advection", 
+            "comment": "Tendency of salt content for a grid cell from parameterized submesoscale eddy advection.", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "osaltpsmadvect", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -6037,12 +7940,21 @@
             "standard_name": "miscellaneous_living_matter_carbon_content", 
             "units": "kg m-2", 
             "cell_methods": "time: mean", 
+<<<<<<< Updated upstream
             "cell_measures": "area: areacella", 
             "long_name": "Carbon Mass in Other Living Compartments on Land", 
             "comment": "e.g., labile, fruits, reserves, etc.", 
             "dimensions": "longitude latitude time", 
             "out_name": "cMisc", 
             "type": "", 
+=======
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "tendency of sea water salinity expressed as salt content", 
+            "comment": "Tendency of salt content for a grid cell from all processes.", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "osalttend", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -6100,6 +8012,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "cWood": {
             "modeling_realm": "land", 
             "standard_name": "wood_carbon_content", 
@@ -6111,6 +8024,36 @@
             "dimensions": "longitude latitude time", 
             "out_name": "cWood", 
             "type": "", 
+=======
+        "pctisccp": {
+            "modeling_realm": "atmos", 
+            "standard_name": "air_pressure_at_cloud_top", 
+            "units": "Pa", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "ISCCP Mean Cloud Top Pressure", 
+            "comment": "ISCCP Mean Cloud Top Pressure. Time-means are weighted by the ISCCP Total Cloud Fraction {:cltisccp} - see  http://cfmip.metoffice.com/COSP.html", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "pctisccp", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "pfull": {
+            "modeling_realm": "atmos", 
+            "standard_name": "air_pressure", 
+            "units": "Pa", 
+            "cell_methods": "", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Pressure at Model Full-Levels", 
+            "comment": "Air pressure on model levels", 
+            "dimensions": "longitude latitude alevel time", 
+            "out_name": "pfull", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -6123,28 +8066,133 @@
             "units": "%", 
             "cell_methods": "area: mean where land time: mean", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "Bare Soil Percentage", 
             "comment": "Percentage of entire grid cell  that is covered by bare soil.", 
             "dimensions": "longitude latitude time", 
             "out_name": "baresoilFrac", 
             "type": "", 
+=======
+            "long_name": "Pressure on Model Half-Levels", 
+            "comment": "Air pressure on model half-levels", 
+            "dimensions": "longitude latitude alevel time", 
+            "out_name": "phalf", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "cLitter": {
             "modeling_realm": "land", 
             "standard_name": "litter_carbon_content", 
             "units": "kg m-2", 
+=======
+        "phycos": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "mole_concentration_of_phytoplankton_expressed_as_carbon_in_sea_water", 
+            "units": "mol m-3", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Carbon Mass in Litter Pool", 
             "comment": "", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "cLitter", 
             "type": "", 
+=======
+            "out_name": "phycos", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "ppcalc": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_calcareous_phytoplankton", 
+            "units": "mol m-3 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Tendency of Mole Concentration of Organic Carbon in Sea Water due to Net Primary Production by Calcareous Phytoplankton", 
+            "comment": "Primary (organic carbon) production by the calcite-producing phytoplankton component alone", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "ppcalc", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "ppdiat": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_diatoms", 
+            "units": "mol m-3 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Diatom Primary Carbon Production", 
+            "comment": "Primary (organic carbon) production by the diatom component alone", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "ppdiat", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "ppdiaz": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_diazotrophs", 
+            "units": "mol m-3 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Tendency of Mole Concentration of Organic Carbon in Sea Water due to Net Primary Production by Diazotrophs", 
+            "comment": "Primary (organic carbon) production by the diazotrophic phytoplankton component alone", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "ppdiaz", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "ppmisc": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_miscellaneous_phytoplankton", 
+            "units": "mol m-3 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Other Phytoplankton Carbon Production", 
+            "comment": "Primary (organic carbon) production by other phytoplankton components alone", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "ppmisc", 
+            "type": "real", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
+        "pppico": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_picophytoplankton", 
+            "units": "mol m-3 s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Tendency of Mole Concentration of Organic Carbon in Sea Water due to Net Primary Production by Picophytoplankton", 
+            "comment": "Primary (organic carbon) production by the picophytoplankton (<2 um) component alone", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "pppico", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -6202,6 +8250,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "cropFrac": {
             "modeling_realm": "land", 
             "standard_name": "area_fraction", 
@@ -6220,6 +8269,9 @@
             "ok_max_mean_abs": ""
         }, 
         "rhc13": {
+=======
+        "raLeaf": {
+>>>>>>> Stashed changes
             "modeling_realm": "land", 
             "standard_name": "heterotrophic_respiration_c13_flux", 
             "units": "kg m-2 s-1", 
@@ -6321,10 +8373,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "O18s": {
             "modeling_realm": "atmos", 
             "standard_name": "", 
             "units": "", 
+=======
+        "rac13": {
+            "modeling_realm": "land", 
+            "standard_name": "plant_respiration_c13_flux", 
+            "units": "kg m-2 s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "18O in solid precipitation", 
@@ -6338,10 +8397,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "tdps": {
             "modeling_realm": "atmos", 
             "standard_name": "dew_point_temperature", 
             "units": "K", 
+=======
+        "rac14": {
+            "modeling_realm": "land", 
+            "standard_name": "plant_respiration_c14_flux", 
+            "units": "kg m-2 s-1", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "2m dewpoint temperature", 
@@ -6355,6 +8421,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "wo": {
             "modeling_realm": "ocean", 
             "standard_name": "upward_sea_water_velocity", 
@@ -6365,6 +8432,18 @@
             "comment": "", 
             "dimensions": "longitude latitude olevel time", 
             "out_name": "wo", 
+=======
+        "rainmxrat27": {
+            "modeling_realm": "atmos", 
+            "standard_name": "mass_fraction_of_rain_in_air", 
+            "units": "1.0", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "rain_mixing_ratio", 
+            "comment": "Rain mixing ratio", 
+            "dimensions": "longitude latitude plev27 time", 
+            "out_name": "rainmxrat27", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -6378,11 +8457,19 @@
             "units": "km-2 s-1", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "lightning flash rate", 
             "comment": "proposed name: lightning_flash_rate (units to be interpreted as 'counts km-2 s-1)", 
             "dimensions": "longitude latitude time", 
             "out_name": "flashrate", 
             "type": "", 
+=======
+            "long_name": "Hydrometeor Effective Radius of Convective Cloud Ice", 
+            "comment": "This is defined as the in-cloud ratio of the third moment over the second moment of the particle size distribution (obtained by considering only the cloudy portion of the grid cell).", 
+            "dimensions": "longitude latitude alevel time", 
+            "out_name": "reffclic", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -6395,11 +8482,19 @@
             "units": "m", 
             "cell_methods": "area: mean where land time: mean", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "Vegetation height averaged over the shrub fraction of a grid cell.", 
             "comment": "as specified by C4MIP", 
             "dimensions": "longitude latitude time", 
             "out_name": "vegHeightShrub", 
             "type": "", 
+=======
+            "long_name": "Hydrometeor Effective Radius of Stratiform Cloud Ice", 
+            "comment": "This is defined as the in-cloud ratio of the third moment over the second moment of the particle size distribution (obtained by considering only the cloudy portion of the grid cell).", 
+            "dimensions": "longitude latitude alevel time", 
+            "out_name": "reffclis", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -6412,11 +8507,19 @@
             "units": "", 
             "cell_methods": "", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "O17 in water vapor", 
             "comment": "Roche - LSCE", 
             "dimensions": "longitude latitude alevel time", 
             "out_name": "O17wv", 
             "type": "", 
+=======
+            "long_name": "Hydrometeor Effective Radius of Convective Cloud Liquid Water", 
+            "comment": "Droplets are liquid.  The effective radius is defined as the ratio of the third moment over the second moment of the particle size distribution and the time-mean should be calculated, weighting the individual samples by the cloudy fraction of the grid cell.", 
+            "dimensions": "longitude latitude alevel time", 
+            "out_name": "reffclwc", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -6429,6 +8532,7 @@
             "units": "kg m-1 s-1", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "Vertically integrated Northward moisture transport (Mass_weighted_vertical integral of the product of northward wind by total water mass per unit mass)", 
             "comment": "Used in PMIP2", 
             "dimensions": "longitude latitude time", 
@@ -6485,6 +8589,13 @@
             "dimensions": "longitude latitude alevel time", 
             "out_name": "H2wv", 
             "type": "", 
+=======
+            "long_name": "Hydrometeor Effective Radius of Stratiform Cloud Liquid Water", 
+            "comment": "Droplets are liquid.  The effective radius is defined as the ratio of the third moment over the second moment of the particle size distribution and the time-mean should be calculated, weighting the individual samples by the cloudy fraction of the grid cell.", 
+            "dimensions": "longitude latitude alevel time", 
+            "out_name": "reffclws", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -6627,6 +8738,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "swtoaasdust": {
             "modeling_realm": "atmos", 
             "standard_name": "toa_instantaneous_shortwave_forcing_due_to_dust_ambient_aerosol", 
@@ -6637,6 +8749,18 @@
             "comment": "proposed name: toa_instantaneous_shortwave_forcing_due_to_dust_ambient_aerosol", 
             "dimensions": "longitude latitude time", 
             "out_name": "swtoaasdust", 
+=======
+        "rsdscsdiff": {
+            "modeling_realm": "atmos", 
+            "standard_name": "surface_diffuse_downwelling_shortwave_flux_in_air_assuming_clear_sky", 
+            "units": "W m-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Surface Diffuse Downwelling Clear Sky Shortwave Radiation", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "rsdscsdiff", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -6650,11 +8774,19 @@
             "units": "kg m-2", 
             "cell_methods": "area: mean where land time: mean", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "Frozen water content of soil layer", 
             "comment": "as specified by C4MIP", 
             "dimensions": "longitude latitude sdepth time", 
             "out_name": "mrsfl", 
             "type": "", 
+=======
+            "long_name": "Surface Diffuse Downwelling Shortwave Radiation", 
+            "comment": "", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "rsdsdiff", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -6806,6 +8938,7 @@
             "long_name": "lower tropospheric stability", 
             "comment": "proposed name: potential_temperature_difference_between_700hPa_and_1000hPa (Lower Tropospheric Stability)", 
             "dimensions": "longitude latitude time", 
+<<<<<<< Updated upstream
             "out_name": "lts", 
             "type": "", 
             "positive": "", 
@@ -6842,17 +8975,29 @@
             "dimensions": "longitude latitude time", 
             "out_name": "intuaw", 
             "type": "", 
+=======
+            "out_name": "sfcWindmax", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "grassFracC3": {
             "modeling_realm": "land", 
             "standard_name": "grass_fraction_c3", 
             "units": "%", 
             "cell_methods": "area: mean where land time: mean", 
+=======
+        "snowmxrat27": {
+            "modeling_realm": "atmos", 
+            "standard_name": "mass_fraction_of_snow_in_air", 
+            "units": "1.0", 
+            "cell_methods": "time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "C3 grass fraction", 
             "comment": "as specified by C4MIP", 
@@ -6865,6 +9010,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "treeFracNdlEvg": {
             "modeling_realm": "land", 
             "standard_name": "tree_fraction_needleleaf_evergreen", 
@@ -6886,6 +9032,12 @@
             "modeling_realm": "atmos", 
             "standard_name": "surface_net_downward_longwave_flux", 
             "units": "W m-2", 
+=======
+        "sweLut": {
+            "modeling_realm": "land", 
+            "standard_name": "", 
+            "units": "m", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Net Longwave Surface Radiation", 
@@ -6933,6 +9085,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "depdust": {
             "modeling_realm": "atmos", 
             "standard_name": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_total_deposition", 
@@ -6972,6 +9125,13 @@
             "standard_name": "gross_primary_productivity_of_c13", 
             "units": "kg m-2 s-1", 
             "cell_methods": "area: mean where land time: mean", 
+=======
+        "t2": {
+            "modeling_realm": "atmos", 
+            "standard_name": "square_of_air_temperature", 
+            "units": "K2", 
+            "cell_methods": "time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Mass Flux of 13C out of Atmosphere due to Gross Primary Production on Land", 
             "comment": "as specified by C4MIP", 
@@ -7205,6 +9365,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "netAtmosLandCO2Flux": {
             "modeling_realm": "land", 
             "standard_name": "surface_net_downward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_all_land_processes", 
@@ -7250,6 +9411,19 @@
             "dimensions": "longitude latitude sdepth time", 
             "out_name": "mrsol", 
             "type": "", 
+=======
+        "tntlw23": {
+            "modeling_realm": "aerosol", 
+            "standard_name": "tendency_of_air_temperature_due_to_longwave_heating", 
+            "units": "K s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Longwave heating rate", 
+            "comment": "Longwave heating rates", 
+            "dimensions": "longitude latitude plev23 time", 
+            "out_name": "tntlw23", 
+            "type": "float", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -7262,11 +9436,19 @@
             "units": "kg kg-1", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "Dust aerosol mass mixing ratio", 
             "comment": "", 
             "dimensions": "longitude latitude time", 
             "out_name": "mmrdust", 
             "type": "", 
+=======
+            "long_name": "Tendency of Air Temperature due to Model Physics", 
+            "comment": "Tendency of air temperature due to model physics. This includes sources and sinks from parametrized physics (e.g. radiation, convection, boundary layer, stratiform condensation/evaporation, etc.). It excludes sources and sinks from resolved dynamics and numerical diffusion not associated with parametrized physics.  For example, any vertical diffusion which is part of the boundary layer mixing scheme should be included, while numerical diffusion applied in addition to physics or resolved dynamics should be excluded.  This term is required to check the closure of the heat budget.", 
+            "dimensions": "longitude latitude plev27 time", 
+            "out_name": "tntmp27", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -7409,6 +9591,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "rac14": {
             "modeling_realm": "land", 
             "standard_name": "plant_respiration_c14_flux", 
@@ -7420,6 +9603,19 @@
             "dimensions": "longitude latitude time", 
             "out_name": "rac14", 
             "type": "", 
+=======
+        "tntsw": {
+            "modeling_realm": "aerosol", 
+            "standard_name": "tendency_of_air_temperature_due_to_shortwave_heating", 
+            "units": "K s-1", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Shortwave heating rate", 
+            "comment": "shortwave heating rates", 
+            "dimensions": "longitude latitude plev23 time", 
+            "out_name": "tntsw", 
+            "type": "float", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -7432,21 +9628,36 @@
             "units": "", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "2H in total precipitation", 
             "comment": "Roche - LSCE", 
             "dimensions": "longitude latitude time", 
             "out_name": "H2p", 
             "type": "", 
+=======
+            "long_name": "Tree Cover Fraction", 
+            "comment": "Percentage of entire grid cell  that is covered by trees.", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "treeFrac", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "lwtoacsaer": {
             "modeling_realm": "atmos", 
             "standard_name": "toa_instantaneous_longwave_forcing_due_to_ambient_aerosol_assuming_clear_sky", 
             "units": "W m-2", 
+=======
+        "treeFracBdlDcd": {
+            "modeling_realm": "land", 
+            "standard_name": "tree_fraction_broadleaf_deciduous", 
+            "units": "%", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "clear sky lw-rf aerosols at toa", 
@@ -7479,9 +9690,15 @@
         }, 
         "cLand": {
             "modeling_realm": "land", 
+<<<<<<< Updated upstream
             "standard_name": "total_land_carbon", 
             "units": "kg m-2", 
             "cell_methods": "area: mean where land time: mean", 
+=======
+            "standard_name": "tree_fraction_needleleaf_deciduous", 
+            "units": "%", 
+            "cell_methods": "time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Total Carbon in All Terrestrial Carbon Pools", 
             "comment": "as specified by C4MIP", 
@@ -7579,6 +9796,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "lateralCtransfer": {
             "modeling_realm": "land", 
             "standard_name": "lateral_carbon_transfer_over_land", 
@@ -7597,6 +9815,9 @@
             "ok_max_mean_abs": ""
         }, 
         "mmrss": {
+=======
+        "ua27": {
+>>>>>>> Stashed changes
             "modeling_realm": "atmos", 
             "standard_name": "mass_fraction_of_seasalt_dry_aerosol_in_air", 
             "units": "kg kg-1", 
@@ -7664,11 +9885,19 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "gppc14": {
             "modeling_realm": "land", 
             "standard_name": "gross_primary_productivity_of_c14", 
             "units": "kg m-2 s-1", 
             "cell_methods": "area: mean where land time: mean", 
+=======
+        "utendnogw": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_eastward_wind_due_to_nonorographic_gravity_wave_drag", 
+            "units": "m s-2", 
+            "cell_methods": "time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Mass Flux of 14C out of Atmosphere due to Gross Primary Production on Land", 
             "comment": "as specified by C4MIP", 
@@ -7681,11 +9910,19 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "pfull": {
             "modeling_realm": "atmos", 
             "standard_name": "air_pressure", 
             "units": "Pa", 
             "cell_methods": "", 
+=======
+        "utendnogw19": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_eastward_wind_due_to_nonorographic_gravity_wave_drag", 
+            "units": "m s-2", 
+            "cell_methods": "time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Pressure on Model Levels", 
             "comment": "Air pressure on model levels", 
@@ -7698,11 +9935,19 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "vegHeight": {
             "modeling_realm": "land", 
             "standard_name": "canopy_height", 
             "units": "m", 
             "cell_methods": "area: mean where land time: mean", 
+=======
+        "utendnogw23": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_eastward_wind_due_to_nonorographic_gravity_wave_drag", 
+            "units": "m s-2", 
+            "cell_methods": "time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Vegetation height averaged over all vegetation types and over the vegetated fraction of a grid cell.", 
             "comment": "as specified by C4MIP", 
@@ -7715,11 +9960,19 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "dissi13c": {
             "modeling_realm": "land", 
             "standard_name": "mole_concentration_of_dissolved_inorganic_c13_in_sea_water", 
             "units": "mol m-3", 
             "cell_methods": "area: mean where sea time: mean", 
+=======
+        "utendogw": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_eastward_wind_due_to_orographic_gravity_wave_drag", 
+            "units": "m s-2", 
+            "cell_methods": "time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Concentration of DI13C", 
             "comment": "as specified by C4MIP", 
@@ -7732,10 +9985,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "intvadse": {
             "modeling_realm": "atmos", 
             "standard_name": "vertical_integral_northward_wind_by_dry_static_energy", 
             "units": "1.e6 J m-1 s-1", 
+=======
+        "utendogw19": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_eastward_wind_due_to_orographic_gravity_wave_drag", 
+            "units": "m s-2", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Vertically integrated Northward dry transport (cp.T +zg).v (Mass_weighted_vertical integral of the product of northward wind by dry static_energy per mass unit)", 
@@ -7749,11 +10009,19 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "md": {
             "modeling_realm": "atmos", 
             "standard_name": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_emission", 
             "units": "kg m-2 s-1", 
             "cell_methods": "", 
+=======
+        "utendogw23": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_eastward_wind_due_to_orographic_gravity_wave_drag", 
+            "units": "m s-2", 
+            "cell_methods": "time: mean", 
+>>>>>>> Stashed changes
             "cell_measures": "area: areacella", 
             "long_name": "Wet diameter mode coarse insoluble", 
             "comment": "Balkanski - LSCE", 
@@ -7885,10 +10153,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "od865dust": {
             "modeling_realm": "atmos", 
             "standard_name": "atmosphere_optical_thickness_due_to_dust_ambient_aerosol_particles", 
             "units": "1.0", 
+=======
+        "vegHeight": {
+            "modeling_realm": "land", 
+            "standard_name": "canopy_height", 
+            "units": "m", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Optical thickness at 865 nm Dust", 
@@ -7955,8 +10230,13 @@
         }, 
         "fDeforest": {
             "modeling_realm": "land", 
+<<<<<<< Updated upstream
             "standard_name": "deforested_biomass_due_to_anthorpogenic_land_use_change", 
             "units": "kg m-2 s-1", 
+=======
+            "standard_name": "canopy_height", 
+            "units": "m", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "Deforested biomass as a result of anthropogenic land use change", 
@@ -8004,10 +10284,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "mmrno3": {
             "modeling_realm": "atmos", 
             "standard_name": "mass_fraction_of_nitrate_dry_aerosol_in_air", 
             "units": "kg kg-1", 
+=======
+        "vtendnogw19": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_northward_wind_due_to_nonorographic_gravity_wave_drag", 
+            "units": "m s-2", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "NO3 aerosol mass mixing ratio", 
@@ -8021,10 +10308,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "O18p": {
             "modeling_realm": "atmos", 
             "standard_name": "", 
             "units": "", 
+=======
+        "vtendnogw23": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_northward_wind_due_to_nonorographic_gravity_wave_drag", 
+            "units": "m s-2", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "18O in total precipitation", 
@@ -8038,10 +10332,17 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "lwtoaasdust": {
             "modeling_realm": "atmos", 
             "standard_name": "toa_instantaneous_longwave_forcing_due_to_dust_ambient_aerosol", 
             "units": "W m-2", 
+=======
+        "vtendogw19": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_northward_wind_due_to_orographic_gravity_wave_drag", 
+            "units": "m s-2", 
+>>>>>>> Stashed changes
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
             "long_name": "all sky lw-rf dust at toa", 
@@ -8055,6 +10356,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "albs": {
             "modeling_realm": "atmos", 
             "standard_name": "planetary_albedo", 
@@ -8065,6 +10367,18 @@
             "comment": "", 
             "dimensions": "longitude latitude time", 
             "out_name": "albs", 
+=======
+        "vtendogw23": {
+            "modeling_realm": "atmos", 
+            "standard_name": "tendency_of_northward_wind_due_to_orographic_gravity_wave_drag", 
+            "units": "m s-2", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "v-tendency orographic gravity wave drag", 
+            "comment": "Tendency of the northward wind by parameterized orographic gravity waves.  (Note that CF name tables only have a general northward tendency for all gravity waves, and we need it separated by type.)", 
+            "dimensions": "longitude latitude plev23 time", 
+            "out_name": "vtendogw23", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -8095,11 +10409,19 @@
             "units": "kg m-2 s-1", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacella", 
+<<<<<<< Updated upstream
             "long_name": "Total precipitation", 
             "comment": "as specified by C4MIP", 
             "dimensions": "longitude latitude time", 
             "out_name": "pcp", 
             "type": "", 
+=======
+            "long_name": "omega (=dp/dt)", 
+            "comment": "Omega (vertical velocity in pressure coordinates, positive downwards)", 
+            "dimensions": "longitude latitude alevel time", 
+            "out_name": "wap", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
@@ -8276,6 +10598,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "vtendnogw19": {
             "modeling_realm": "", 
             "standard_name": "tendency_of_northward_wind_due_to_nonorographic_gravity_wave_drag", 
@@ -8287,12 +10610,26 @@
             "dimensions": "longitude latitude plev19 time", 
             "out_name": "vtendnogw19", 
             "type": "", 
+=======
+        "zoomeso": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "mole_concentration_of_mesozooplankton_expressed_as_carbon_in_sea_water", 
+            "units": "mol m-3", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Mole Concentration of Mesozooplankton expressed as Carbon in Sea Water", 
+            "comment": "carbon  concentration from mesozooplankton (20-200 um) component alone", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "zoomeso", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "utendogw19": {
             "modeling_realm": "", 
             "standard_name": "tendency_of_eastward_wind_due_to_orographic_gravity_wave_drag", 
@@ -8338,6 +10675,19 @@
             "dimensions": "longitude latitude plev23 time", 
             "out_name": "vtendogw23", 
             "type": "", 
+=======
+        "zoomicro": {
+            "modeling_realm": "ocnBgchem", 
+            "standard_name": "mole_concentration_of_microzooplankton_expressed_as_carbon_in_sea_water", 
+            "units": "mol m-3", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacello volume: volcello", 
+            "long_name": "Mole Concentration of Microzooplankton expressed as Carbon in Sea Water", 
+            "comment": "carbon  concentration from the microzooplankton (<20 um) component alone", 
+            "dimensions": "longitude latitude olevel time", 
+            "out_name": "zoomicro", 
+            "type": "real", 
+>>>>>>> Stashed changes
             "positive": "", 
             "valid_min": "", 
             "valid_max": "", 

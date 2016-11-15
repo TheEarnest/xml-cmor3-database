@@ -4,8 +4,13 @@
         "table_id": "Table LIfxgre", 
         "realm": "", 
         "frequency": "fx", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "", 
@@ -2453,7 +2458,7 @@
             "cell_measures": "area: areacellg", 
             "long_name": "Grid Cell Area for Interpolated Grids", 
             "comment": "Area of the target grid (not the interpolated area of the source grid). ", 
-            "dimensions": "xgre ygre time", 
+            "dimensions": "longitude latitude time", 
             "out_name": "areacellg", 
             "type": "", 
             "positive": "", 
@@ -2468,10 +2473,17 @@
             "units": "m", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Ice Sheet Thickness", 
             "comment": "The thickness of the ice sheet", 
             "dimensions": "xgre ygre time", 
             "out_name": "lithk", 
+=======
+            "long_name": "Geothermal Heat flux beneath land ice", 
+            "comment": "Upward geothermal heat flux per unit area beneath land ice", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "hfgeoubed", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2485,10 +2497,17 @@
             "units": "W m-2", 
             "cell_methods": "time: mean", 
             "cell_measures": "area: areacellg", 
+<<<<<<< Updated upstream
             "long_name": "Geothermal Heat flux beneath land ice", 
             "comment": "Upward geothermal heat flux per unit area beneath land ice", 
             "dimensions": "xgre ygre time", 
             "out_name": "hfgeoubed", 
+=======
+            "long_name": "Ice Sheet Thickness", 
+            "comment": "The thickness of the ice sheet", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "lithk", 
+>>>>>>> Stashed changes
             "type": "", 
             "positive": "", 
             "valid_min": "", 
@@ -2504,7 +2523,7 @@
             "cell_measures": "area: areacellg", 
             "long_name": "Bedrock Altitude", 
             "comment": "The bedrock topography beneath the land ice", 
-            "dimensions": "xgre ygre time", 
+            "dimensions": "longitude latitude time", 
             "out_name": "topg", 
             "type": "", 
             "positive": "", 

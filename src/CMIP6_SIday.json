@@ -4,8 +4,13 @@
         "table_id": "Table SIday", 
         "realm": "seaIce", 
         "frequency": "day", 
+<<<<<<< Updated upstream
         "cmor_version": "3.1", 
         "table_date": "27 October 2016", 
+=======
+        "cmor_version": "3.2", 
+        "table_date": "15 November 2016", 
+>>>>>>> Stashed changes
         "missing_value": "1e20", 
         "product": "output", 
         "approx_interval": "1.00000", 
@@ -13,6 +18,7 @@
         "mip_era": "CMIP6", 
         "Conventions": "CF-1.6 CMIP-6.0"
     }, 
+<<<<<<< Updated upstream
     "axis_entry": {
         "alev1": {
             "standard_name": "", 
@@ -603,6 +609,19 @@
             "requested_bounds": "", 
             "stored_direction": "increasing", 
             "tolerance": "", 
+=======
+    "variable_entry": {
+        "sispeed": {
+            "modeling_realm": "seaIce", 
+            "standard_name": "sea_ice_speed", 
+            "units": "m s-1", 
+            "cell_methods": "area: time: mean where sea_ice", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Sea-ice speed", 
+            "comment": "Speed of ice (i.e. mean absolute velocity) to account for back-and-forth movement of the ice", 
+            "dimensions": "longitude latitude time", 
+            "out_name": "sispeed", 
+>>>>>>> Stashed changes
             "type": "", 
             "valid_max": "", 
             "valid_min": "0.0", 
@@ -658,6 +677,7 @@
             "z_factors": "", 
             "bounds_values": ""
         }, 
+<<<<<<< Updated upstream
         "landuse": {
             "standard_name": "area_type", 
             "units": "", 
@@ -2445,6 +2465,8 @@
             "dimensions": "olevel", 
             "type": "double"
         }, 
+=======
+>>>>>>> Stashed changes
         "sithick": {
             "modeling_realm": "seaIce", 
             "standard_name": "sea_ice_thickness", 
@@ -2462,6 +2484,7 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+<<<<<<< Updated upstream
         "siconc": {
             "modeling_realm": "seaIce", 
             "standard_name": "sea_ice_area_fraction", 
@@ -2479,6 +2502,8 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+=======
+>>>>>>> Stashed changes
         "siu": {
             "modeling_realm": "seaIce", 
             "standard_name": "sea_ice_x_velocity", 
@@ -2489,23 +2514,6 @@
             "comment": "The x-velocity of ice on native model grid", 
             "dimensions": "longitude latitude time", 
             "out_name": "siu", 
-            "type": "", 
-            "positive": "", 
-            "valid_min": "", 
-            "valid_max": "", 
-            "ok_min_mean_abs": "", 
-            "ok_max_mean_abs": ""
-        }, 
-        "siv": {
-            "modeling_realm": "seaIce", 
-            "standard_name": "sea_ice_y_velocity", 
-            "units": "m s-1", 
-            "cell_methods": "area: time: mean where sea_ice", 
-            "cell_measures": "--MODEL", 
-            "long_name": "Y-component of sea ice velocity", 
-            "comment": "The y-velocity of ice on native model grid", 
-            "dimensions": "longitude latitude time", 
-            "out_name": "siv", 
             "type": "", 
             "positive": "", 
             "valid_min": "", 
