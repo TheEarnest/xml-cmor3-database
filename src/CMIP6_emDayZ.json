@@ -2501,6 +2501,23 @@
             "ok_min_mean_abs": "", 
             "ok_max_mean_abs": ""
         }, 
+        "zg": {
+            "modeling_realm": "atmos", 
+            "standard_name": "geopotential_height", 
+            "units": "m", 
+            "cell_methods": "time: mean", 
+            "cell_measures": "area: areacella", 
+            "long_name": "Geopotential Height", 
+            "comment": "", 
+            "dimensions": "latitude plev39 time", 
+            "out_name": "zg", 
+            "type": "", 
+            "positive": "", 
+            "valid_min": "", 
+            "valid_max": "", 
+            "ok_min_mean_abs": "", 
+            "ok_max_mean_abs": ""
+        }, 
         "ua": {
             "modeling_realm": "atmos", 
             "standard_name": "eastward_wind", 

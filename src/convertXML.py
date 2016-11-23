@@ -6,7 +6,6 @@ import xml.etree.ElementTree as ET
 import pylibconfig2 as cfg
 import uuid
 import sys
-import pdb
 # https://github.com/heinzK1X/pylibconfig2
 
 
@@ -428,8 +427,6 @@ for child in axes.getchildren():
     name               = child.get('label') or ""
     if name in ['alevel', 'olevel', 'alevhalf' ]:
         continue
-    if name == 'sdepth1':
-        pdb.set_trace()
     caxis              = child.get('axis') or ""
     long_name          = child.get('title') or ""
     must_have_bounds   = child.get('bounds') or ""

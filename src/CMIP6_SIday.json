@@ -2467,23 +2467,6 @@
             "dimensions": "olevel", 
             "type": "double"
         }, 
-        "siu": {
-            "modeling_realm": "seaIce", 
-            "standard_name": "sea_ice_x_velocity", 
-            "units": "m s-1", 
-            "cell_methods": "area: time: mean where sea_ice", 
-            "cell_measures": "--MODEL", 
-            "long_name": "X-component of sea ice velocity", 
-            "comment": "The x-velocity of ice on native model grid", 
-            "dimensions": "longitude latitude time", 
-            "out_name": "siu", 
-            "type": "", 
-            "positive": "", 
-            "valid_min": "", 
-            "valid_max": "", 
-            "ok_min_mean_abs": "", 
-            "ok_max_mean_abs": ""
-        }, 
         "sispeed": {
             "modeling_realm": "seaIce", 
             "standard_name": "sea_ice_speed", 
