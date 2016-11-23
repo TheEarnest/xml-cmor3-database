@@ -9,4 +9,6 @@ for realm in $(${SQLITE3} "${CMIP6DB}" \
     echo "python CMORCreateTable.py -r ${realm} -j  > /tmp/${filename}"
     echo "python CMORCreateTable.py -r ${realm} -j  > /tmp/${filename}" |sh
 done
+python CMORCreateTable.py -j  -A > /tmp/CMIP6_coordinate.json
+python CMORCreateTable.py -j  -F > /tmp/CMIP6_formula_terms.json
 exit 0

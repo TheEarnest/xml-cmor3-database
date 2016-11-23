@@ -302,7 +302,7 @@ def createVariables(bJSON=True):
 
         dimensions = var[9].replace("|", " ") + " " 
         if( var[18] != "" ):
-            dimensions = dimensions + var[18].strip(" ") + " "
+            dimensions = dimensions + var[18].replace("|", " ").strip(" ") + " "
         dimensions = dimensions + var[10].replace("|", " ").strip(" ") + " "
         if( var[19] != "" ):
             dimensions = dimensions + var[19].strip(" ") + " "

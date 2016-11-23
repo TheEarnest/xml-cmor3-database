@@ -1,5 +1,5 @@
 #!/bin/bash
-pushd ~/software/cmor3/trunk/dreqPy/docs/
+pushd /software/svn/trunk/dreqPy/docs/
 svn update
 popd
 cp ../docs/dreq.xml ../docs/dreq.xml.old

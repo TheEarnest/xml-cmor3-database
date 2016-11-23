@@ -181,7 +181,7 @@ tableDict = { "Amon": { "approxInterval" : "30.00000",
                         "frequency"      : "day"
                       },
               "cf3hr":  { "approxInterval" : "0.125000",
-                        "genericLevels"  : "",
+                        "genericLevels"  : "alevel alevhalf",
                         "frequency"      : "3hr"
                       },
               "3hr":  { "approxInterval" : "0.125000",
@@ -200,7 +200,7 @@ tableDict = { "Amon": { "approxInterval" : "30.00000",
                         "genericLevels"  : "alevel alevhalf",
                         "frequency"      : "subhr"
                       },
-              "cfsites": { "approxInterval" : "0.017361",
+              "cfSites": { "approxInterval" : "0.017361",
                            "genericLevels"  : "alevel alevhalf",
                            "approxIntervalWarning":  "0.25",
                            "approxIntervalError":  "0.75",
