@@ -10,4 +10,15 @@ for realm in $(${SQLITE3} "${CMIP6DB}" \
     cp $filename /software/cmor3/cmor/Tables/
     cp $filename /software/cmip6-cmor-tables/Tables
 done
+for filename in CMIP6_coordinate.json CMIP6_formula_terms.json; do 
+    cmd="cp /tmp/$filename ."
+    echo $cmd
+    $cmd
+    cmd="cp /tmp/$filename /software/cmor3/cmor/Tables/"
+    echo $cmd
+    $cmd
+    cmd="cp /tmp/$filename /software/cmip6-cmor-tables/Tables"
+    echo $cmd
+    $cmd
+done
 exit 0

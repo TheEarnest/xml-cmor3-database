@@ -428,8 +428,8 @@ for child in axes.getchildren():
     name               = child.get('label') or ""
     if name in ['alevel', 'olevel', 'alevhalf' ]:
         continue
-    if name == 'sdepth1':
-        pdb.set_trace()
+#    if name == 'sdepth1':
+#        pdb.set_trace()
     caxis              = child.get('axis') or ""
     long_name          = child.get('title') or ""
     must_have_bounds   = child.get('bounds') or ""
