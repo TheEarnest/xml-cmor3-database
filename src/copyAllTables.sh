@@ -14,7 +14,7 @@ for filename in CMIP6_coordinate.json CMIP6_formula_terms.json; do
     cmd="cp /tmp/$filename ."
     echo $cmd
     $cmd
-    cmd="cp /tmp/$filename /software/cmor3/cmor/Tables/"
+    cmd="cp /tmp/$filename /software/cmor3/cmor/TestTables/"
     echo $cmd
     $cmd
     cmd="cp /tmp/$filename /software/cmip6-cmor-tables/Tables"
