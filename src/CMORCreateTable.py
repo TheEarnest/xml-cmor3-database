@@ -197,10 +197,11 @@ def createFormulaVar(bJSON=True):
 # ==============================================================
 def createGrids(bJSON=True):
     """
-    Create grib tables
+    Create grid tables
     """
 
     Header = CMOR3Template.GridHeaderJSON
+    Header = replaceString(Header, data_specs_version, "data_specs_version")
     Header = replaceString(Header, cmorVersion,    "cmorVersion")
     Header = replaceString(Header, cfVersion,      "cfVersion")
     Header = replaceString(Header, activityID,      "activityID")
